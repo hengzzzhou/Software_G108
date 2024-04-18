@@ -3,22 +3,26 @@ package Model;
 import View.Signup;
 import org.json.JSONObject;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.*;
 
 public class Signup_m {
 
     private Signup signup;
-    private File file=new File("C:\\Users\\84977\\Desktop\\childBank\\childBank\\src\\main\\java\\Accounts.jsonl");
+    private File file=new File("src/main/java/Accounts.jsonl");
 
     public Signup_m(Signup signup){
         this.signup=signup;
     }
+
+    // This method checks if the ID is already taken
     public boolean checkID(){
         if(this.signup.getTextField1().getText()==null){
             return false;
         }else{
             String id=this.signup.getTextField1().getText();
-            File file =new File("C:\\Users\\84977\\Desktop\\childBank\\childBank\\src\\main\\java\\Accounts.jsonl");
+            File file =new File("src/main/java/Accounts.jsonl");
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 String line =null;
@@ -35,6 +39,7 @@ public class Signup_m {
         }
     }
 
+    // This method checks if the password is the same in both fields
     public boolean checkPassword(){
         if(this.signup.getPasswordField1().getPassword()==null||this.signup.getPasswordField2().getPassword()==null){
             return false;
@@ -50,6 +55,7 @@ public class Signup_m {
         }
     }
 
+    // This method registers the user
     public void register(){
         JSONObject jsonObject=new JSONObject();
         jsonObject.put("ID",this.signup.getTextField1().getText());
@@ -66,9 +72,17 @@ public class Signup_m {
         this.clear();
     }
 
+    // This method clears the fields
     public void clear(){
         this.signup.getTextField1().setText("");
         this.signup.getPasswordField1().setText("");
         this.signup.getPasswordField2().setText("");
+    }
+
+    public void init(JFrame welcome){
+        welcome.getContentPane().removeAll();
+        welcome.getContentPane().add(this.signup);
+        welcome.repaint();
+        welcome.revalidate();
     }
 }

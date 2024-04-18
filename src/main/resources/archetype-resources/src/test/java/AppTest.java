@@ -5,15 +5,15 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App.
+ * Unit test1 for simple App.
  */
 public class AppTest 
     extends TestCase
 {
     /**
-     * Create the test case
+     * Create the test1 case
      *
-     * @param testName name of the test case
+     * @param testName name of the test1 case
      */
     public AppTest( String testName )
     {
@@ -29,7 +29,7 @@ public class AppTest
     }
 
     /**
-     * Rigourous Test :-)
+     * Rigourous Test1 :-)
      */
     public void testApp()
     {

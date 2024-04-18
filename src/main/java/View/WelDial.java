@@ -11,8 +11,8 @@ import net.miginfocom.swing.*;
 /**
  * @author 84977
  */
-public class IDExists extends JDialog {
-    public IDExists(Window owner) {
+public class WelDial extends JDialog {
+    public WelDial(Window owner) {
         super(owner);
         initComponents();
     }
@@ -55,4 +55,10 @@ public class IDExists extends JDialog {
     // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
     private JLabel label1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+
+    public JLabel getLabel1(){
+        return this.label1;
+    }
+
+
 }

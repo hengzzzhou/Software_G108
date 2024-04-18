@@ -4,6 +4,7 @@ import javax.swing.*;
 import net.miginfocom.swing.*;
 import org.json.JSONObject;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -62,26 +63,50 @@ public class Login extends JPanel {
 
         //---- button2 ----
         button2.setText("R");
-        add(button2, "cell 1 0,wmax 20,hmax 20");
+        button2.setFont(new Font("Georgia", Font.BOLD, 12));
+        add(button2, "cell 1 0,width 30:30:40,height 30:30:40");
+
+        //---- vSpacer1 ----
+        vSpacer1.setOpaque(false);
         add(vSpacer1, "cell 3 0,hmin 80");
 
         //---- label1 ----
         label1.setText("ID");
+        label1.setForeground(Color.white);
+        label1.setFont(new Font("Georgia", Font.BOLD, 36));
         add(label1, "cell 3 1,aligny bottom,growy 0");
+
+        //---- hSpacer1 ----
+        hSpacer1.setOpaque(false);
         add(hSpacer1, "cell 1 2,wmin 150");
         add(textField1, "cell 3 2,dock center,height 40::80");
+
+        //---- hSpacer2 ----
+        hSpacer2.setOpaque(false);
         add(hSpacer2, "cell 5 2,wmin 150");
 
         //---- label2 ----
         label2.setText("Password");
+        label2.setForeground(Color.white);
+        label2.setFont(new Font("Georgia", Font.BOLD, 36));
         add(label2, "cell 3 4,aligny bottom,growy 0");
         add(passwordField1, "cell 3 5,dock center,height 40::80");
+
+        //---- hSpacer4 ----
+        hSpacer4.setOpaque(false);
         add(hSpacer4, "cell 3 6");
 
         //---- button1 ----
-        button1.setText("Login_m");
-        add(button1, "cell 3 6,dock center,wmax 80,hmax 40");
+        button1.setText("Login");
+        button1.setFont(new Font("Georgia", Font.BOLD, 12));
+        add(button1, "cell 3 6,dock center,width 40::80,height 20::40");
+
+        //---- hSpacer5 ----
+        hSpacer5.setOpaque(false);
         add(hSpacer5, "cell 3 6");
+
+        //---- vSpacer3 ----
+        vSpacer3.setOpaque(false);
         add(vSpacer3, "cell 3 7,hmin 60");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
@@ -114,5 +139,12 @@ public class Login extends JPanel {
 
     public JPasswordField getPasswordField1() {
         return passwordField1;
+    }
+
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        this.repaint();
+        ImageIcon image =new ImageIcon("src/main/imgs/welcome.png");
+        g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
     }
 }

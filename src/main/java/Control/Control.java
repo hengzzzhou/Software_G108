@@ -1,7 +1,6 @@
 package Control;
 
-import Model.Login_m;
-import Model.Signup_m;
+import Model.*;
 import View.*;
 
 import javax.swing.*;
@@ -17,20 +16,39 @@ public class Control {
 
     private Signup_m signup_m;
 
-    private IDExists idExists;
+    private Welcome_m welcome_m;
+
+    private WelDial welDial;
+
+    private WelDial_m welDial_m;
+
+    private Main_page main_page;
+    private Main_page_m main_page_m;
+    private Tutorial tutorial;
+    private Tutorial_m tutorial_m;
 
     public void init(){
-        welcome = new Welcome();
+        this.welcome = new Welcome();
 
-        welcome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.welcome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // 设置主界面大小及可见性
-        welcome.setSize(1200, 900);
-        welcome.setVisible(true);
+        this.welcome.setSize(1200, 900);
+        this.welcome.setVisible(true);
+        this.welcome.setLocationRelativeTo(null);
+
         this.signup=new Signup();
         this.login=new Login();
-        this.idExists=new IDExists(this.welcome);
-        this.login_m=new Login_m(login);
-        this.signup_m=new Signup_m(signup);
+        this.welDial=new WelDial(this.welcome);
+        this.login_m=new Login_m(this.login);
+        this.signup_m=new Signup_m(this.signup);
+        this.welcome_m=new Welcome_m(this.welcome);
+        this.welDial_m=new WelDial_m(this.welDial);
+        this.main_page=new Main_page();
+        this.main_page_m=new Main_page_m(this.main_page);
+        this.tutorial=new Tutorial();
+        this.tutorial_m=new Tutorial_m(this.tutorial);
+
+
 
         this.welcome.getButton1().addMouseListener(new MouseAdapter() {
             @Override
@@ -45,44 +63,44 @@ public class Control {
                 SignupButtonMouseClicked(e);
             }
         });
+
+        this.welcome.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Wel2TutMouseClicked(e);
+            }
+        });
     }
 
     private void returnMouseClicked(MouseEvent e){
-        this.welcome.getContentPane().removeAll();
-        this.welcome.repaint();
-        this.welcome.getContentPane().add(this.welcome.getPanel1());
-        this.welcome.repaint();
-        this.welcome.revalidate();
+        this.welcome_m.refreshWelcome();
         this.signup_m.clear();
     }
     private void registerMouseClicked(MouseEvent e){
         if(this.signup_m.checkID()){
             if(this.signup_m.checkPassword()) {
                 this.signup_m.register();
-                this.welcome.getContentPane().removeAll();
-                this.welcome.repaint();
-                this.welcome.getContentPane().add(this.welcome.getPanel1());
-                this.welcome.repaint();
-                this.welcome.revalidate();
+                this.welcome_m.refreshWelcome();
+            }else{
+                this.welDial_m.init();
+                this.welDial_m.changeVal("Two passwords are different!");
+                this.signup_m.clear();
             }
         }else{
-            this.idExists.setSize(400,200);
-            this.idExists.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-            this.idExists.setVisible(true);
+            this.welDial_m.init();
+            this.welDial_m.changeVal("ID Exists!");
+            this.signup_m.clear();
         }
     }
+
     private void LoginMouseClicked(MouseEvent e){
         if(this.login_m.check()){
-            this.welcome.getContentPane().removeAll();
-            this.welcome.repaint();
-            this.welcome.getContentPane().add(this.welcome.getPanel1());
-            this.welcome.repaint();
-            this.welcome.revalidate();
+            this.main_page_m.init(this.welcome);
         }
     }
+
     private void LoginButtonMouseClicked(MouseEvent e) {
-        this.welcome.getContentPane().removeAll();
-        this.welcome.repaint();
+
         this.login.getButton2().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -95,14 +113,11 @@ public class Control {
                 LoginMouseClicked(e);
             }
         });
-        this.welcome.getContentPane().add(this.login);
-        this.welcome.repaint();
-        this.welcome.revalidate();
+        this.login_m.init(this.welcome);
     }
 
     private void SignupButtonMouseClicked(MouseEvent e) {
-        this.welcome.getContentPane().removeAll();
-        this.welcome.repaint();
+
         this.signup.getButton2().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -115,8 +130,16 @@ public class Control {
                 registerMouseClicked(e);
             }
         });
-        this.welcome.getContentPane().add(this.signup);
-        this.welcome.repaint();
-        this.welcome.revalidate();// TODO add your code here
+        this.signup_m.init(this.welcome);
+    }
+
+    private void Wel2TutMouseClicked(MouseEvent e) {
+        this.tutorial_m.init(this.welcome);
+        this.tutorial.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnMouseClicked(e);
+            }
+        });
     }
 }
