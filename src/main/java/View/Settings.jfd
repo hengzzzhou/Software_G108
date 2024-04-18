@@ -1,0 +1,24 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+			"hGap": 5
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "<html> <head>  <meta charset=\"utf-8\">  <title>菜鸟教程(runoob.com)</title>  </head> <body>  <p> 这是一个电子邮件链接： <a href=\"mailto:someone@example.com?Subject=Hello%20again\" target=\"_top\"> 发送邮件</a> </p>  <p> <b>注意:</b> 单词之间空格使用 %20 代替，以确保浏览器可以正常显示文本。 </p>  </body> </html>"
+				"verticalAlignment": 1
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"fill": 3
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
