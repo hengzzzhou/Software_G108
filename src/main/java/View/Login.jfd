@@ -26,7 +26,7 @@ new FormModel {
 				name: "label1"
 				"text": "ID"
 				"foreground": new java.awt.Color( 255, 255, 255, 255 )
-				"font": new java.awt.Font( "Georgia", 1, 36 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 36 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 3 1,aligny bottom,growy 0"
 			} )
@@ -51,7 +51,7 @@ new FormModel {
 				name: "label2"
 				"text": "Password"
 				"foreground": new java.awt.Color( 255, 255, 255, 255 )
-				"font": new java.awt.Font( "Georgia", 1, 36 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 36 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 3 4,aligny bottom,growy 0"
 			} )
@@ -69,7 +69,9 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "Login"
-				"font": new java.awt.Font( "Georgia", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"background": new java.awt.Color( 108, 232, 36, 255 )
+				"foreground": new java.awt.Color( 239, 239, 239, 255 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 3 6,dock center,width 40::80,height 20::40"
 			} )

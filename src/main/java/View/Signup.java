@@ -88,14 +88,14 @@ public class Signup extends JPanel {
 
         //---- label4 ----
         label4.setText("Welcome to Join Us!");
-        label4.setFont(new Font("Georgia", Font.BOLD, 36));
+        label4.setFont(new Font("Eras Bold ITC", Font.BOLD, 36));
         label4.setForeground(Color.white);
         add(label4, "cell 2 1,alignx center,growx 0");
 
         //---- label1 ----
         label1.setText("ID");
         label1.setForeground(Color.white);
-        label1.setFont(new Font("Georgia", Font.BOLD, 36));
+        label1.setFont(new Font("Eras Bold ITC", Font.BOLD, 36));
         add(label1, "cell 2 2,aligny bottom,growy 0");
 
         //---- textField1 ----
@@ -105,7 +105,7 @@ public class Signup extends JPanel {
         //---- label2 ----
         label2.setText("Password");
         label2.setForeground(Color.white);
-        label2.setFont(new Font("Georgia", Font.BOLD, 36));
+        label2.setFont(new Font("Eras Bold ITC", Font.BOLD, 36));
         add(label2, "cell 2 4,aligny bottom,growy 0");
 
         //---- hSpacer1 ----
@@ -120,7 +120,7 @@ public class Signup extends JPanel {
         //---- label3 ----
         label3.setText("Confirm your password");
         label3.setForeground(Color.white);
-        label3.setFont(new Font("Georgia", Font.BOLD, 36));
+        label3.setFont(new Font("Eras Bold ITC", Font.BOLD, 36));
         add(label3, "cell 2 6,aligny bottom,growy 0");
 
         //---- passwordField2 ----
@@ -133,7 +133,7 @@ public class Signup extends JPanel {
 
         //---- button1 ----
         button1.setText("Sing Up!");
-        button1.setFont(new Font("Georgia", Font.BOLD, 12));
+        button1.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
         button1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -195,7 +195,7 @@ public class Signup extends JPanel {
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         this.repaint();
-        ImageIcon image =new ImageIcon("src/main/imgs/welcome.png");
+        ImageIcon image =new ImageIcon("src/main/imgs/welcome_dark.png");
         g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
     }
 }

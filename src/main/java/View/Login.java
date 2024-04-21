@@ -73,7 +73,7 @@ public class Login extends JPanel {
         //---- label1 ----
         label1.setText("ID");
         label1.setForeground(Color.white);
-        label1.setFont(new Font("Georgia", Font.BOLD, 36));
+        label1.setFont(new Font("Eras Bold ITC", Font.BOLD, 36));
         add(label1, "cell 3 1,aligny bottom,growy 0");
 
         //---- hSpacer1 ----
@@ -88,7 +88,7 @@ public class Login extends JPanel {
         //---- label2 ----
         label2.setText("Password");
         label2.setForeground(Color.white);
-        label2.setFont(new Font("Georgia", Font.BOLD, 36));
+        label2.setFont(new Font("Eras Bold ITC", Font.BOLD, 36));
         add(label2, "cell 3 4,aligny bottom,growy 0");
         add(passwordField1, "cell 3 5,dock center,height 40::80");
 
@@ -98,7 +98,9 @@ public class Login extends JPanel {
 
         //---- button1 ----
         button1.setText("Login");
-        button1.setFont(new Font("Georgia", Font.BOLD, 12));
+        button1.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button1.setBackground(new Color(0x6ce824));
+        button1.setForeground(new Color(0xefefef));
         add(button1, "cell 3 6,dock center,width 40::80,height 20::40");
 
         //---- hSpacer5 ----
@@ -144,7 +146,7 @@ public class Login extends JPanel {
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         this.repaint();
-        ImageIcon image =new ImageIcon("src/main/imgs/welcome.png");
+        ImageIcon image =new ImageIcon("src/main/imgs/welcome_dark.png");
         g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
     }
 }

@@ -27,7 +27,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
 				"text": "Welcome to Join Us!"
-				"font": new java.awt.Font( "Georgia", 1, 36 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 36 )
 				"foreground": new java.awt.Color( 255, 255, 255, 255 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 2 1,alignx center,growx 0"
@@ -36,7 +36,7 @@ new FormModel {
 				name: "label1"
 				"text": "ID"
 				"foreground": sfield java.awt.Color white
-				"font": new java.awt.Font( "Georgia", 1, 36 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 36 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 2 2,aligny bottom,growy 0"
 			} )
@@ -50,7 +50,7 @@ new FormModel {
 				name: "label2"
 				"text": "Password"
 				"foreground": sfield java.awt.Color white
-				"font": new java.awt.Font( "Georgia", 1, 36 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 36 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 2 4,aligny bottom,growy 0"
 			} )
@@ -75,7 +75,7 @@ new FormModel {
 				name: "label3"
 				"text": "Confirm your password"
 				"foreground": sfield java.awt.Color white
-				"font": new java.awt.Font( "Georgia", 1, 36 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 36 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 2 6,aligny bottom,growy 0"
 			} )
@@ -94,7 +94,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "Sing Up!"
-				"font": new java.awt.Font( "Georgia", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
 				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 2 8,dock center,width :80:100,hmax 50"

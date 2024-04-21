@@ -5,6 +5,7 @@
 package View;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;
@@ -16,6 +17,10 @@ import com.intellij.uiDesigner.core.*;
 public class Main_page extends JPanel {
     public Main_page() {
         initComponents();
+    }
+
+    private void button3MouseClicked(MouseEvent e) {
+        // TODO add your code here
     }
 
     private void initComponents() {
@@ -52,10 +57,12 @@ public class Main_page extends JPanel {
         //======== panel5 ========
         {
             panel5.setOpaque(false);
+            panel5.setForeground(new Color(0xefefef));
 
             //---- label1 ----
             label1.setText("saving task");
-            label1.setFont(new Font("Georgia", Font.BOLD, 12));
+            label1.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
+            label1.setForeground(new Color(0xefefef));
 
             GroupLayout panel5Layout = new GroupLayout(panel5);
             panel5.setLayout(panel5Layout);
@@ -83,10 +90,12 @@ public class Main_page extends JPanel {
         //======== panel6 ========
         {
             panel6.setOpaque(false);
+            panel6.setForeground(new Color(0xefefef));
 
             //---- label2 ----
             label2.setText("daily task");
-            label2.setFont(new Font("Georgia", Font.BOLD, 12));
+            label2.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
+            label2.setForeground(new Color(0xefefef));
 
             GroupLayout panel6Layout = new GroupLayout(panel6);
             panel6.setLayout(panel6Layout);
@@ -114,10 +123,12 @@ public class Main_page extends JPanel {
         //======== panel8 ========
         {
             panel8.setOpaque(false);
+            panel8.setForeground(new Color(0xefefef));
 
             //---- label3 ----
             label3.setText("text");
-            label3.setFont(new Font("Georgia", Font.BOLD, 12));
+            label3.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
+            label3.setForeground(new Color(0xefefef));
 
             GroupLayout panel8Layout = new GroupLayout(panel8);
             panel8.setLayout(panel8Layout);
@@ -145,10 +156,12 @@ public class Main_page extends JPanel {
         //======== panel7 ========
         {
             panel7.setOpaque(false);
+            panel7.setForeground(new Color(0xefefef));
 
             //---- label4 ----
             label4.setText("text");
-            label4.setFont(new Font("Georgia", Font.BOLD, 12));
+            label4.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
+            label4.setForeground(new Color(0xefefef));
 
             GroupLayout panel7Layout = new GroupLayout(panel7);
             panel7.setLayout(panel7Layout);
@@ -179,7 +192,7 @@ public class Main_page extends JPanel {
 
             //---- label7 ----
             label7.setText("goal progress");
-            label7.setFont(new Font("Georgia", Font.BOLD, 12));
+            label7.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
 
             GroupLayout panel9Layout = new GroupLayout(panel9);
             panel9.setLayout(panel9Layout);
@@ -236,7 +249,7 @@ public class Main_page extends JPanel {
 
             //---- button5 ----
             button5.setText("target");
-            button5.setFont(new Font("Georgia", Font.BOLD, 12));
+            button5.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
 
             GroupLayout panel11Layout = new GroupLayout(panel11);
             panel11.setLayout(panel11Layout);
@@ -266,7 +279,7 @@ public class Main_page extends JPanel {
 
             //---- label5 ----
             label5.setText("Messgage");
-            label5.setFont(new Font("Georgia", Font.BOLD, 12));
+            label5.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
 
             GroupLayout panel10Layout = new GroupLayout(panel10);
             panel10.setLayout(panel10Layout);
@@ -374,7 +387,8 @@ public class Main_page extends JPanel {
 
         //---- button1 ----
         button1.setText("shop");
-        button1.setFont(new Font("Georgia", Font.BOLD, 12));
+        button1.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button1.setBackground(new Color(0xb5ffff00, true));
         add(button1, new GridConstraints(5, 0, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -383,7 +397,8 @@ public class Main_page extends JPanel {
 
         //---- button2 ----
         button2.setText("home");
-        button2.setFont(new Font("Georgia", Font.BOLD, 12));
+        button2.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button2.setBackground(new Color(0xdfffcc00, true));
         add(button2, new GridConstraints(5, 1, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -392,7 +407,14 @@ public class Main_page extends JPanel {
 
         //---- button3 ----
         button3.setText("setting");
-        button3.setFont(new Font("Georgia", Font.BOLD, 12));
+        button3.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button3.setBackground(new Color(0xd30099ff, true));
+        button3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                button3MouseClicked(e);
+            }
+        });
         add(button3, new GridConstraints(5, 2, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -401,7 +423,8 @@ public class Main_page extends JPanel {
 
         //---- button4 ----
         button4.setText("investment");
-        button4.setFont(new Font("Georgia", Font.BOLD, 12));
+        button4.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button4.setBackground(new Color(0xc6339900, true));
         add(button4, new GridConstraints(5, 3, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -441,7 +464,11 @@ public class Main_page extends JPanel {
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         this.repaint();
-        ImageIcon image =new ImageIcon("src/main/imgs/welcome.png");
+        ImageIcon image =new ImageIcon("src/main/imgs/welcome_dark.png");
         g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
+    }
+
+    public JButton getButton3() {
+        return button3;
     }
 }

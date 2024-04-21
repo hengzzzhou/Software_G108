@@ -1,5 +1,6 @@
 package Model;
 
+import View.BasicFrame;
 import View.Welcome;
 
 public class Welcome_m {
@@ -9,11 +10,11 @@ public class Welcome_m {
     }
 
     // Refresh the welcome page
-    public void refreshWelcome(){
-        this.welcome.getContentPane().removeAll();
-        this.welcome.repaint();
-        this.welcome.getContentPane().add(this.welcome.getPanel1());
-        this.welcome.repaint();
-        this.welcome.revalidate();
+    public void refreshWelcome(BasicFrame basicFrame){
+        basicFrame.getContentPane().removeAll();
+        basicFrame.repaint();
+        basicFrame.getContentPane().add(this.welcome);
+        basicFrame.repaint();
+        basicFrame.revalidate();
     }
 }

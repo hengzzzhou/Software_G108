@@ -18,10 +18,10 @@ public class Test1 {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // 设置主界面大小及可见性
-        frame.setSize(1200, 900);
+        frame.setSize(1000, 600);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().add(page);
+        frame.getContentPane().add(settings);
         frame.repaint();
         frame.revalidate();
         frame.setVisible(true);

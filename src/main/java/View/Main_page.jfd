@@ -16,10 +16,12 @@ new FormModel {
 			} ) {
 				name: "panel5"
 				"opaque": false
+				"foreground": &Color0 new java.awt.Color( 239, 239, 239, 255 )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label1"
 					"text": "saving task"
-					"font": new java.awt.Font( "Georgia", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
+					"foreground": #Color0
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
@@ -28,10 +30,12 @@ new FormModel {
 			} ) {
 				name: "panel6"
 				"opaque": false
+				"foreground": #Color0
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label2"
 					"text": "daily task"
-					"font": new java.awt.Font( "Georgia", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
+					"foreground": #Color0
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 1
@@ -42,10 +46,12 @@ new FormModel {
 			} ) {
 				name: "panel8"
 				"opaque": false
+				"foreground": #Color0
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label3"
 					"text": "text"
-					"font": new java.awt.Font( "Georgia", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
+					"foreground": #Color0
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 2
@@ -56,10 +62,12 @@ new FormModel {
 			} ) {
 				name: "panel7"
 				"opaque": false
+				"foreground": #Color0
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label4"
 					"text": "text"
-					"font": new java.awt.Font( "Georgia", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
+					"foreground": #Color0
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 3
@@ -76,7 +84,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label7"
 					"text": "goal progress"
-					"font": new java.awt.Font( "Georgia", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"row": 1
@@ -100,7 +108,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button5"
 					"text": "target"
-					"font": new java.awt.Font( "Georgia", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 1
@@ -116,7 +124,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label5"
 					"text": "Messgage"
-					"font": new java.awt.Font( "Georgia", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"row": 3
@@ -162,14 +170,16 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "shop"
-				"font": new java.awt.Font( "Georgia", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"background": new java.awt.Color( 255, 255, 0, 181 )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"row": 5
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"
 				"text": "home"
-				"font": new java.awt.Font( "Georgia", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"background": new java.awt.Color( 255, 204, 0, 223 )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 1
 				"row": 5
@@ -177,7 +187,9 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button3"
 				"text": "setting"
-				"font": new java.awt.Font( "Georgia", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"background": new java.awt.Color( 0, 153, 255, 211 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button3MouseClicked", true ) )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 2
 				"row": 5
@@ -185,7 +197,8 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button4"
 				"text": "investment"
-				"font": new java.awt.Font( "Georgia", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"background": new java.awt.Color( 51, 153, 0, 198 )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 3
 				"row": 5

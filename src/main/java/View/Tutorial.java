@@ -39,10 +39,14 @@ public class Tutorial extends JPanel {
 
         //======== panel1 ========
         {
+            panel1.setOpaque(false);
+            panel1.setForeground(new Color(0xefefef));
 
             //---- label1 ----
             label1.setText("Tutorial");
             label1.setHorizontalAlignment(SwingConstants.CENTER);
+            label1.setFont(new Font("Eras Bold ITC", Font.BOLD, 18));
+            label1.setForeground(new Color(0xefefef));
 
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
@@ -69,6 +73,7 @@ public class Tutorial extends JPanel {
 
         //======== panel4 ========
         {
+            panel4.setOpaque(false);
 
             //---- label2 ----
             label2.setText("Video");
@@ -98,9 +103,11 @@ public class Tutorial extends JPanel {
 
         //======== panel3 ========
         {
+            panel3.setOpaque(false);
 
             //---- button1 ----
             button1.setText("R");
+            button1.setFont(new Font("Eras Bold ITC", Font.PLAIN, 12));
             button1.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -133,6 +140,10 @@ public class Tutorial extends JPanel {
 
         //======== panel2 ========
         {
+            panel2.setOpaque(false);
+
+            //---- hSpacer1 ----
+            hSpacer1.setOpaque(false);
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
@@ -178,7 +189,7 @@ public class Tutorial extends JPanel {
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         this.repaint();
-        ImageIcon image =new ImageIcon("src/main/imgs/welcome.png");
+        ImageIcon image =new ImageIcon("src/main/imgs/welcome_dark.png");
         g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
     }
 }
