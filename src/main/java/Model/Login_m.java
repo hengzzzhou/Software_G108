@@ -2,6 +2,7 @@ package Model;
 
 import View.Login;
 import org.json.JSONObject;
+import Class.*;
 
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -17,23 +18,16 @@ public class Login_m {
     }
 
     // This method checks if the ID and password are correct
-    public boolean check(){
-        String id=this.login.getTextField1().getText();
-        String password=new String(this.login.getPasswordField1().getPassword());
-        File file =new File("src/main/java/Accounts.jsonl");
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line =null;
-            while((line=reader.readLine())!=null){
-                JSONObject jsonObject= new JSONObject(line);
-                if(id.equals(jsonObject.get("ID"))&&password.equals(jsonObject.get("Password"))){
-                    return true;
-                }
-            }
-        }catch (IOException e){
-            e.printStackTrace();
+    public User check() throws IOException {
+
+        User user_account = new User();
+        if(this.login.getTextField1().getText()!=null && this.login.getPasswordField1().getPassword()!=null){
+            String id=this.login.getTextField1().getText();
+            char[] password=this.login.getPasswordField1().getPassword();
+            String pass = String.valueOf(password);
+            user_account = new User(id, pass);
         }
-        return false;
+        return user_account;
     }
 
     public void init(JFrame welcome){

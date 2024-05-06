@@ -6,24 +6,30 @@ import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighte
 
 import javax.swing.*;
 
-public class Test1 {
-    public static void main(String[] args) {
-        FlatMaterialLighterIJTheme.setup();
-        //test1 test12 = new test1();
-        Login login =new Login();
-        Tutorial tut=new Tutorial();
-        Main_page page=new Main_page();
-        Settings settings = new Settings();
-        JFrame frame= new JFrame();
+import Class.User;
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // 设置主界面大小及可见性
-        frame.setSize(1000, 600);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-        frame.getContentPane().add(settings);
-        frame.repaint();
-        frame.revalidate();
-        frame.setVisible(true);
+import java.io.IOException;
+
+public class Test1 {
+    public static void main(String[] args) throws IOException {
+        User user1 = new User("user1", "hash1");
+        System.out.println("successful!");
+//        FlatMaterialLighterIJTheme.setup();
+//        //test1 test12 = new test1();
+//        Login login =new Login();
+//        Tutorial tut=new Tutorial();
+//        Main_page page=new Main_page();
+//        Settings settings = new Settings();
+//        JFrame frame= new JFrame();
+//
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        // 设置主界面大小及可见性
+//        frame.setSize(1000, 600);
+//        frame.setVisible(true);
+//        frame.setLocationRelativeTo(null);
+//        frame.getContentPane().add(settings);
+//        frame.repaint();
+//        frame.revalidate();
+//        frame.setVisible(true);
     }
 }

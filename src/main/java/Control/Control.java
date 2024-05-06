@@ -2,10 +2,21 @@ package Control;
 
 import Model.*;
 import View.*;
+import Class.*;
+import org.json.JSONObject;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Control {
     // Register all the components
@@ -24,10 +35,14 @@ public class Control {
     private Tutorial_m tutorial_m;
     private Settings settings;
     private Settings_m settings_m;
+    private User user_account;
+    private int login_flag = 0;
 
     public void init(){
-        //initialize all the components
+        /* initialize all the components */
         this.basicFrame = new BasicFrame();
+        this.basicFrame_close_event();
+
         this.welcome = new Welcome();
         this.welcome_m=new Welcome_m(this.welcome);
         this.signup=new Signup();
@@ -53,6 +68,66 @@ public class Control {
         //Register all the events
         this.eventRegistration();
 
+    }
+
+    private void basicFrame_close_event(){
+        basicFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+
+        // 创建一个实现了WindowListener接口的匿名类实例
+        basicFrame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {}
+            @Override
+            public void windowClosing(WindowEvent e) {
+                // 窗口关闭时的事件处理 --> 将user中信息重新存储到jsonl中\
+                if (login_flag != 0){
+                    File file = new File("src/main/java/Accounts.jsonl");
+                    File tempFile = new File("src/main/java/Accounts_temp.jsonl");
+                    String line;
+                    List<String> lines = new ArrayList<>();
+                    try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                        // 读取所有条目到列表中
+                        while ((line = reader.readLine()) != null) {
+                            lines.add(line);
+                        }
+                        for (int i = 0; i < lines.size(); i++){
+                            JSONObject jsonObject = new JSONObject(lines.get(i));
+                            /*** 该处需要在jsonl修改时进行修改 ***/
+                            if (jsonObject.getString("ID").equals(user_account.getID())) {
+                                jsonObject.put("task_list", "123");
+                                jsonObject.put("email", user_account.getEmail());
+
+                                lines.set(i, jsonObject.toString());
+                            }
+                        }
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    // 写入新文件并执行替换
+                    try (BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
+                        for (String jsonLine : lines) {
+                            writer.write(jsonLine);
+                            writer.newLine();
+                        }
+                    }
+                    catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    file.delete();
+                    tempFile.renameTo(file);
+                }
+            }
+            @Override
+            public void windowClosed(WindowEvent e) {}
+            @Override
+            public void windowIconified(WindowEvent e) {}
+            @Override
+            public void windowDeiconified(WindowEvent e) {}
+            @Override
+            public void windowActivated(WindowEvent e) {}
+            @Override
+            public void windowDeactivated(WindowEvent e) {}
+        });
     }
 
     private void eventRegistration() {
@@ -86,7 +161,11 @@ public class Control {
         this.login.getButton1().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                LoginMouseClicked(e);
+                try {
+                    LoginMouseClicked(e);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
@@ -160,10 +239,11 @@ public class Control {
         }
     }
 
-    private void LoginMouseClicked(MouseEvent e){
-        if(this.login_m.check()){
+    private void LoginMouseClicked(MouseEvent e) throws IOException {
+        this.user_account = this.login_m.check();
+        if(this.user_account.flag != 0){
+            this.login_flag = 1;
             this.main_page_m.init(this.basicFrame);
-
         }
     }
 

@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import Class.*;
 
 public class Signup_m {
 
@@ -23,9 +24,8 @@ public class Signup_m {
         }else{
             String id=this.signup.getTextField1().getText();
             File file =new File("src/main/java/Accounts.jsonl");
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader(file));
-                String line =null;
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))){
+                String line = null;
                 while((line=reader.readLine())!=null){
                     JSONObject jsonObject= new JSONObject(line);
                     if(id.equals(jsonObject.get("ID"))){
@@ -55,10 +55,12 @@ public class Signup_m {
         }
     }
 
-    // This method registers the user
+    /****** This method registers the user, 每次改变user中的类别信息，该方法均需添加有关的条目 ******/
     public void register(){
         JSONObject jsonObject=new JSONObject();
         jsonObject.put("ID",this.signup.getTextField1().getText());
+        jsonObject.put("task_list","");
+        jsonObject.put("email","");
         jsonObject.put("Password",new String (this.signup.getPasswordField1().getPassword()));
         try{
             FileWriter fileWriter=new FileWriter(this.file,true);
