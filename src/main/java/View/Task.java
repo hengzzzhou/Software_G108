@@ -24,6 +24,7 @@ public class Task extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
+        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
         button2 = new JButton();
         label2 = new JLabel();
         label3 = new JLabel();
@@ -79,6 +80,7 @@ public class Task extends JPanel {
         button35 = new JButton();
         label14 = new JLabel();
         label15 = new JLabel();
+        Spacer vSpacer2 = new Spacer();
         label4 = new JLabel();
         label1 = new JLabel();
         checkBox1 = new JCheckBox();
@@ -86,6 +88,7 @@ public class Task extends JPanel {
         button3 = new JButton();
         Spacer hSpacer1 = new Spacer();
         button4 = new JButton();
+        Spacer vSpacer3 = new Spacer();
 
         //======== this ========
         setLayout(new GridLayoutManager(15, 10, new Insets(0, 0, 0, 0), -1, -1));
@@ -540,6 +543,11 @@ public class Task extends JPanel {
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             null, null, null));
+        add(vSpacer2, new GridConstraints(10, 3, 1, 1,
+            GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL,
+            GridConstraints.SIZEPOLICY_CAN_SHRINK,
+            GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW,
+            null, null, null));
 
         //---- label4 ----
         label4.setText("Daily Tasks");
@@ -593,10 +601,16 @@ public class Task extends JPanel {
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             null, null, null));
+        add(vSpacer3, new GridConstraints(14, 4, 1, 1,
+            GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL,
+            GridConstraints.SIZEPOLICY_CAN_SHRINK,
+            GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW,
+            null, null, null));
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
+    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
     private JButton button2;
     private JLabel label2;
     private JLabel label3;
@@ -657,4 +671,14 @@ public class Task extends JPanel {
     private JButton button3;
     private JButton button4;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        this.repaint();
+        ImageIcon image =new ImageIcon("src/main/imgs/Setting.png");
+        g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
+    }
+
+    public JButton getButton2() {
+        return button2;
+    }
 }

@@ -12,7 +12,7 @@ new FormModel {
 			name: "this"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {seq l {space :p:15:p, comp label1:::p::p, space ::19:x}}"
-				"$verticalGroup": "par l {seq l {space :::p, comp label1:::p::p, space ::26:x}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp label1:::p::p, space ::21:x}}"
 			} ) {
 				name: "panel1"
 				"opaque": false
@@ -53,6 +53,8 @@ new FormModel {
 					name: "button1"
 					"text": "R"
 					"font": new java.awt.Font( "Eras Bold ITC", 0, 12 )
+					"background": new java.awt.Color( 255, 204, 0, 229 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
 					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {

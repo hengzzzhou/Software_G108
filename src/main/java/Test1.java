@@ -14,13 +14,14 @@ public class Test1 {
         JFrame frame= new JFrame();
         IDPasswordManagement idPasswordManagement = new IDPasswordManagement();
         ContactUs contactUs = new ContactUs();
+        Home home = new Home();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // 设置主界面大小及可见性
         frame.setSize(1200, 900);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().add(page);
+        frame.getContentPane().add(home);
         frame.repaint();
         frame.revalidate();
         frame.setVisible(true);

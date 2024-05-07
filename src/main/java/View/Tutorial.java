@@ -62,7 +62,7 @@ public class Tutorial extends JPanel {
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(label1)
-                        .addContainerGap(26, Short.MAX_VALUE))
+                        .addContainerGap(21, Short.MAX_VALUE))
             );
         }
         add(panel1, new GridConstraints(0, 1, 1, 1,
@@ -108,6 +108,8 @@ public class Tutorial extends JPanel {
             //---- button1 ----
             button1.setText("R");
             button1.setFont(new Font("Eras Bold ITC", Font.PLAIN, 12));
+            button1.setBackground(new Color(0xe5ffcc00, true));
+            button1.setForeground(new Color(0xefefef));
             button1.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {

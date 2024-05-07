@@ -3,6 +3,7 @@ package Control;
 import Model.*;
 import View.*;
 import Class.*;
+import View.Task;
 import org.json.JSONObject;
 
 import javax.swing.*;
@@ -49,6 +50,10 @@ public class Control {
     private ShoppingTrolley_m shoppingTrolley_m;
     private PurchaseRecord purchaseRecord;
     private PurchaseRecord_m purchaseRecord_m;
+    private Task task;
+    private Task_m task_m;
+    private Home home;
+    private Home_m home_m;
 
 
     public void init(){
@@ -82,6 +87,10 @@ public class Control {
         this.shoppingTrolley_m=new ShoppingTrolley_m(this.shoppingTrolley);
         this.purchaseRecord=new PurchaseRecord();
         this.purchaseRecord_m=new PurchaseRecord_m(this.purchaseRecord);
+        this.task=new Task();
+        this.task_m=new Task_m(this.task);
+        this.home=new Home();
+        this.home_m=new Home_m(this.home);
 
         //Initialize the basic frame and welcome page
         this.basicFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -312,6 +321,42 @@ public class Control {
                 returnWelMouseClicked(e);
             }
         });
+        this.main_page.getButtonA().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                taskMouseClicked(e);
+            }
+        });
+        this.task.getButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnMainMouseClicked(e);
+            }
+        });
+        this.main_page.getButtonB().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                taskMouseClicked(e);
+            }
+        });
+        this.main_page.getButtonC().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                taskMouseClicked(e);
+            }
+        });
+        this.main_page.getButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                homeMouseClicked(e);
+            }
+        });
+        this.home.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnMainMouseClicked(e);
+            }
+        });
     }
 
     private void Wel2LoginButtonMouseClicked(MouseEvent e) {
@@ -387,5 +432,11 @@ public class Control {
     }
     private void purchaseRecordMouseClicked(MouseEvent e){
         this.purchaseRecord_m.init(this.basicFrame);
+    }
+    private void taskMouseClicked(MouseEvent e){
+        this.task_m.init(this.basicFrame);
+    }
+    private void homeMouseClicked(MouseEvent e){
+        this.home_m.init(this.basicFrame);
     }
 }

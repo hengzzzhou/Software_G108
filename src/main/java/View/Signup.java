@@ -73,7 +73,9 @@ public class Signup extends JPanel {
 
         //---- button2 ----
         button2.setText("R");
-        button2.setFont(new Font("Georgia", Font.BOLD, 12));
+        button2.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button2.setBackground(new Color(0xa9ffcc00, true));
+        button2.setForeground(new Color(0xefefef));
         button2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

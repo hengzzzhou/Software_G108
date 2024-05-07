@@ -63,7 +63,9 @@ public class Login extends JPanel {
 
         //---- button2 ----
         button2.setText("R");
-        button2.setFont(new Font("Georgia", Font.BOLD, 12));
+        button2.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button2.setBackground(new Color(0xa5ffcc00, true));
+        button2.setForeground(new Color(0xadefefef, true));
         add(button2, "cell 1 0,width 30:30:40,height 30:30:40");
 
         //---- vSpacer1 ----

@@ -12,7 +12,9 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"
 				"text": "R"
-				"font": new java.awt.Font( "Georgia", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"background": new java.awt.Color( 255, 204, 0, 165 )
+				"foreground": new java.awt.Color( 239, 239, 239, 173 )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 0,width 30:30:40,height 30:30:40"
 			} )

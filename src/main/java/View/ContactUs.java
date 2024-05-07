@@ -39,6 +39,9 @@ public class ContactUs extends JPanel {
 
             //---- button1 ----
             button1.setText("R");
+            button1.setBackground(new Color(0xc0ffcc00, true));
+            button1.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+            button1.setForeground(new Color(0xefefef));
 
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
