@@ -5,7 +5,7 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
 			"$columnCount": 4
-			"$rowCount": 6
+			"$rowCount": 5
 			"sameSizeHorizontally": true
 			"sameSizeVertically": true
 		} ) {
@@ -21,7 +21,7 @@ new FormModel {
 					name: "label1"
 					"text": "saving task"
 					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
-					"foreground": #Color0
+					"foreground": new java.awt.Color( 255, 51, 51, 255 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
@@ -35,7 +35,7 @@ new FormModel {
 					name: "label2"
 					"text": "daily task"
 					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
-					"foreground": #Color0
+					"foreground": new java.awt.Color( 255, 0, 51, 255 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 1
@@ -51,13 +51,13 @@ new FormModel {
 					name: "label3"
 					"text": "text"
 					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
-					"foreground": #Color0
+					"foreground": new java.awt.Color( 255, 0, 51, 255 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 2
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space ::55:x, comp label4:::p::p, space :p:22:p}}"
+				"$horizontalGroup": "par l {seq l {space :p:37:p, comp label4:::p::p, space ::40:x}}"
 				"$verticalGroup": "par l {seq t {space ::23:x, comp label4:::p::p, space :::p}}"
 			} ) {
 				name: "panel7"
@@ -67,69 +67,66 @@ new FormModel {
 					name: "label4"
 					"text": "text"
 					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
-					"foreground": #Color0
+					"foreground": new java.awt.Color( 255, 0, 51, 255 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 3
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space :::x, par l {seq {space :6:6:p, comp label7:::p::p}, comp progressBar1:::p:755:p}, space :::p}}"
-				"$verticalGroup": "par l {seq l {space :p:15:p, comp progressBar1:::p:4:p, space ::10:x, comp label7:::p::p}}"
+				"$horizontalGroup": "par l {seq {space :::x, par l {seq t {comp progressBar1:::p:755:p, space :::p}, seq t {comp label7:::p:171:p, space :p:110:p, comp button5:::p:180:p, space :p:297:p}}}}"
+				"$verticalGroup": "par l {seq l {space :::x, comp progressBar1:::p:12:p, space u:::p, par b {comp label7::b:p:32:p, comp button5::b:::x}, space :::p}}"
 			} ) {
 				name: "panel9"
 				"opaque": false
 				add( new FormComponent( "javax.swing.JProgressBar" ) {
 					name: "progressBar1"
+					"preferredSize": new java.awt.Dimension( 176, 12 )
+					"maximumSize": new java.awt.Dimension( 32767, 12 )
+					"stringPainted": true
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label7"
 					"text": "goal progress"
-					"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 22 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button5"
+					"text": "check my target"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 16 )
+					"background": new java.awt.Color( 255, 153, 51, 175 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"row": 1
 				"colSpan": 4
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {space :0:78:x}"
-				"$verticalGroup": "par l {space :0:29:x}"
+				"$horizontalGroup": "par l {seq l {space :::p, comp button6:::p::p, space ::18:x}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp button6:::p::p, space ::54:x}}"
 			} ) {
-				name: "panel12"
+				name: "panel10"
 				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button6"
+					"text": "message"
+				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"row": 2
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space ::21:x, comp button5:::p::p, space :::p}}"
-				"$verticalGroup": "par l {seq l {comp button5:::p::p, space :0:19:x}}"
+				"$horizontalGroup": "par l {seq l {space :::p, comp label6:::p::p, space ::61:x}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp label6:::p::p, space ::64:x}}"
 			} ) {
-				name: "panel11"
+				name: "panel13"
 				"opaque": false
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button5"
-					"text": "target"
-					"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": "Mom: i paid u for doing the dishes."
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 1
 				"row": 2
-				"colSpan": 2
-			} )
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :p:28:p, comp label5:::p::p, space ::50:x}}"
-				"$verticalGroup": "par l {seq l {space :::p, comp label5:::p::p, space ::23:x}}"
-			} ) {
-				name: "panel10"
-				"opaque": false
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "label5"
-					"text": "Messgage"
-					"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
-				} )
-			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
-				"row": 3
-				"colSpan": 2
-				"rowSpan": 2
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {space :0:0:x}"
@@ -137,16 +134,7 @@ new FormModel {
 			} ) {
 				name: "panel1"
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
-				"row": 4
-			} )
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {space :0:0:x}"
-				"$verticalGroup": "par l {space :0:14:x}"
-			} ) {
-				name: "panel2"
-			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
-				"column": 1
-				"row": 4
+				"row": 3
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {space :0:0:x}"
@@ -155,7 +143,7 @@ new FormModel {
 				name: "panel3"
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 2
-				"row": 4
+				"row": 3
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {space :0:92:x}"
@@ -165,47 +153,54 @@ new FormModel {
 				"opaque": false
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 3
-				"row": 4
+				"row": 3
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "shop"
-				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 18 )
 				"background": new java.awt.Color( 255, 255, 0, 181 )
+				"maximumSize": new java.awt.Dimension( 159, 50 )
+				"preferredSize": new java.awt.Dimension( 100, 43 )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
-				"row": 5
+				"row": 4
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"
 				"text": "home"
-				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 16 )
 				"background": new java.awt.Color( 255, 204, 0, 223 )
+				"maximumSize": new java.awt.Dimension( 100, 43 )
+				"preferredSize": new java.awt.Dimension( 100, 43 )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 1
-				"row": 5
+				"row": 4
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button3"
 				"text": "setting"
-				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 16 )
 				"background": new java.awt.Color( 0, 153, 255, 211 )
+				"maximumSize": new java.awt.Dimension( 100, 43 )
+				"preferredSize": new java.awt.Dimension( 100, 43 )
 				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button3MouseClicked", true ) )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 2
-				"row": 5
+				"row": 4
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button4"
 				"text": "investment"
-				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 16 )
 				"background": new java.awt.Color( 51, 153, 0, 198 )
+				"preferredSize": new java.awt.Dimension( 100, 43 )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 3
-				"row": 5
+				"row": 4
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 785, 295 )
+			"size": new java.awt.Dimension( 1075, 550 )
 		} )
 	}
 }

@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class Login_m {
     private Login login;
-
     public Login_m(Login login){
         this.login=login;
     }

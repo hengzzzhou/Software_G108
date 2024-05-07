@@ -1,0 +1,3 @@
+{"username": "user1", "task_list": "1,2,3,5", "email": "user1@example.com", "passwordHash": "hash1"}
+{"username": "user2", "task_list": "1,2,3,5", "email": "user2@example.com", "passwordHash": "hash2"}
+{"username": "targetUser", "task_list": "1,2,3,5", "email": "target@example.com", "passwordHash": "hash3"}

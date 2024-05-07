@@ -37,13 +37,12 @@ public class Main_page extends JPanel {
         panel9 = new JPanel();
         progressBar1 = new JProgressBar();
         label7 = new JLabel();
-        panel12 = new JPanel();
-        panel11 = new JPanel();
         button5 = new JButton();
         panel10 = new JPanel();
-        label5 = new JLabel();
+        button6 = new JButton();
+        panel13 = new JPanel();
+        label6 = new JLabel();
         panel1 = new JPanel();
-        panel2 = new JPanel();
         panel3 = new JPanel();
         panel4 = new JPanel();
         button1 = new JButton();
@@ -52,7 +51,7 @@ public class Main_page extends JPanel {
         button4 = new JButton();
 
         //======== this ========
-        setLayout(new GridLayoutManager(6, 4, new Insets(0, 0, 0, 0), -1, -1, true, true));
+        setLayout(new GridLayoutManager(5, 4, new Insets(0, 0, 0, 0), -1, -1, true, true));
 
         //======== panel5 ========
         {
@@ -62,7 +61,7 @@ public class Main_page extends JPanel {
             //---- label1 ----
             label1.setText("saving task");
             label1.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
-            label1.setForeground(new Color(0xefefef));
+            label1.setForeground(new Color(0xff3333));
 
             GroupLayout panel5Layout = new GroupLayout(panel5);
             panel5.setLayout(panel5Layout);
@@ -95,7 +94,7 @@ public class Main_page extends JPanel {
             //---- label2 ----
             label2.setText("daily task");
             label2.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
-            label2.setForeground(new Color(0xefefef));
+            label2.setForeground(new Color(0xff0033));
 
             GroupLayout panel6Layout = new GroupLayout(panel6);
             panel6.setLayout(panel6Layout);
@@ -128,7 +127,7 @@ public class Main_page extends JPanel {
             //---- label3 ----
             label3.setText("text");
             label3.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
-            label3.setForeground(new Color(0xefefef));
+            label3.setForeground(new Color(0xff0033));
 
             GroupLayout panel8Layout = new GroupLayout(panel8);
             panel8.setLayout(panel8Layout);
@@ -161,16 +160,16 @@ public class Main_page extends JPanel {
             //---- label4 ----
             label4.setText("text");
             label4.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
-            label4.setForeground(new Color(0xefefef));
+            label4.setForeground(new Color(0xff0033));
 
             GroupLayout panel7Layout = new GroupLayout(panel7);
             panel7.setLayout(panel7Layout);
             panel7Layout.setHorizontalGroup(
                 panel7Layout.createParallelGroup()
-                    .addGroup(GroupLayout.Alignment.TRAILING, panel7Layout.createSequentialGroup()
-                        .addContainerGap(55, Short.MAX_VALUE)
+                    .addGroup(panel7Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
                         .addComponent(label4)
-                        .addGap(22, 22, 22))
+                        .addContainerGap(40, Short.MAX_VALUE))
             );
             panel7Layout.setVerticalGroup(
                 panel7Layout.createParallelGroup()
@@ -190,84 +189,51 @@ public class Main_page extends JPanel {
         {
             panel9.setOpaque(false);
 
+            //---- progressBar1 ----
+            progressBar1.setPreferredSize(new Dimension(176, 12));
+            progressBar1.setMaximumSize(new Dimension(32767, 12));
+            progressBar1.setStringPainted(true);
+
             //---- label7 ----
             label7.setText("goal progress");
-            label7.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+            label7.setFont(new Font("Eras Bold ITC", Font.BOLD, 22));
+            label7.setForeground(new Color(0xefefef));
+
+            //---- button5 ----
+            button5.setText("check my target");
+            button5.setFont(new Font("Eras Bold ITC", Font.BOLD, 16));
+            button5.setBackground(new Color(0xafff9933, true));
+            button5.setForeground(Color.black);
 
             GroupLayout panel9Layout = new GroupLayout(panel9);
             panel9.setLayout(panel9Layout);
             panel9Layout.setHorizontalGroup(
                 panel9Layout.createParallelGroup()
-                    .addGroup(GroupLayout.Alignment.TRAILING, panel9Layout.createSequentialGroup()
+                    .addGroup(panel9Layout.createSequentialGroup()
                         .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panel9Layout.createParallelGroup()
-                            .addGroup(panel9Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(label7))
-                            .addComponent(progressBar1, GroupLayout.PREFERRED_SIZE, 755, GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
+                            .addGroup(GroupLayout.Alignment.TRAILING, panel9Layout.createSequentialGroup()
+                                .addComponent(progressBar1, GroupLayout.PREFERRED_SIZE, 755, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(GroupLayout.Alignment.TRAILING, panel9Layout.createSequentialGroup()
+                                .addComponent(label7, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+                                .addGap(110, 110, 110)
+                                .addComponent(button5, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+                                .addGap(297, 297, 297))))
             );
             panel9Layout.setVerticalGroup(
                 panel9Layout.createParallelGroup()
                     .addGroup(panel9Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(progressBar1, GroupLayout.PREFERRED_SIZE, 4, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addComponent(label7))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(progressBar1, GroupLayout.PREFERRED_SIZE, 12, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panel9Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(label7, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
             );
         }
         add(panel9, new GridConstraints(1, 0, 1, 4,
-            GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
-            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-            null, null, null));
-
-        //======== panel12 ========
-        {
-            panel12.setOpaque(false);
-
-            GroupLayout panel12Layout = new GroupLayout(panel12);
-            panel12.setLayout(panel12Layout);
-            panel12Layout.setHorizontalGroup(
-                panel12Layout.createParallelGroup()
-                    .addGap(0, 78, Short.MAX_VALUE)
-            );
-            panel12Layout.setVerticalGroup(
-                panel12Layout.createParallelGroup()
-                    .addGap(0, 29, Short.MAX_VALUE)
-            );
-        }
-        add(panel12, new GridConstraints(2, 0, 1, 1,
-            GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
-            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-            null, null, null));
-
-        //======== panel11 ========
-        {
-            panel11.setOpaque(false);
-
-            //---- button5 ----
-            button5.setText("target");
-            button5.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
-
-            GroupLayout panel11Layout = new GroupLayout(panel11);
-            panel11.setLayout(panel11Layout);
-            panel11Layout.setHorizontalGroup(
-                panel11Layout.createParallelGroup()
-                    .addGroup(GroupLayout.Alignment.TRAILING, panel11Layout.createSequentialGroup()
-                        .addContainerGap(21, Short.MAX_VALUE)
-                        .addComponent(button5)
-                        .addContainerGap())
-            );
-            panel11Layout.setVerticalGroup(
-                panel11Layout.createParallelGroup()
-                    .addGroup(panel11Layout.createSequentialGroup()
-                        .addComponent(button5)
-                        .addGap(0, 19, Short.MAX_VALUE))
-            );
-        }
-        add(panel11, new GridConstraints(2, 1, 1, 2,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -277,28 +243,57 @@ public class Main_page extends JPanel {
         {
             panel10.setOpaque(false);
 
-            //---- label5 ----
-            label5.setText("Messgage");
-            label5.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+            //---- button6 ----
+            button6.setText("message");
 
             GroupLayout panel10Layout = new GroupLayout(panel10);
             panel10.setLayout(panel10Layout);
             panel10Layout.setHorizontalGroup(
                 panel10Layout.createParallelGroup()
                     .addGroup(panel10Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(label5)
-                        .addContainerGap(50, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(button6)
+                        .addContainerGap(18, Short.MAX_VALUE))
             );
             panel10Layout.setVerticalGroup(
                 panel10Layout.createParallelGroup()
                     .addGroup(panel10Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(label5)
-                        .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(button6)
+                        .addContainerGap(54, Short.MAX_VALUE))
             );
         }
-        add(panel10, new GridConstraints(3, 0, 2, 2,
+        add(panel10, new GridConstraints(2, 0, 1, 1,
+            GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
+            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+            null, null, null));
+
+        //======== panel13 ========
+        {
+            panel13.setOpaque(false);
+
+            //---- label6 ----
+            label6.setText("Mom: i paid u for doing the dishes.");
+
+            GroupLayout panel13Layout = new GroupLayout(panel13);
+            panel13.setLayout(panel13Layout);
+            panel13Layout.setHorizontalGroup(
+                panel13Layout.createParallelGroup()
+                    .addGroup(panel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(label6)
+                        .addContainerGap(61, Short.MAX_VALUE))
+            );
+            panel13Layout.setVerticalGroup(
+                panel13Layout.createParallelGroup()
+                    .addGroup(panel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(label6)
+                        .addContainerGap(64, Short.MAX_VALUE))
+            );
+        }
+        add(panel13, new GridConstraints(2, 1, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -318,27 +313,7 @@ public class Main_page extends JPanel {
                     .addGap(0, 10, Short.MAX_VALUE)
             );
         }
-        add(panel1, new GridConstraints(4, 0, 1, 1,
-            GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
-            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-            null, null, null));
-
-        //======== panel2 ========
-        {
-
-            GroupLayout panel2Layout = new GroupLayout(panel2);
-            panel2.setLayout(panel2Layout);
-            panel2Layout.setHorizontalGroup(
-                panel2Layout.createParallelGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-            );
-            panel2Layout.setVerticalGroup(
-                panel2Layout.createParallelGroup()
-                    .addGap(0, 14, Short.MAX_VALUE)
-            );
-        }
-        add(panel2, new GridConstraints(4, 1, 1, 1,
+        add(panel1, new GridConstraints(3, 0, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -358,7 +333,7 @@ public class Main_page extends JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)
             );
         }
-        add(panel3, new GridConstraints(4, 2, 1, 1,
+        add(panel3, new GridConstraints(3, 2, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -379,7 +354,7 @@ public class Main_page extends JPanel {
                     .addGap(0, 46, Short.MAX_VALUE)
             );
         }
-        add(panel4, new GridConstraints(4, 3, 1, 1,
+        add(panel4, new GridConstraints(3, 3, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -387,9 +362,11 @@ public class Main_page extends JPanel {
 
         //---- button1 ----
         button1.setText("shop");
-        button1.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button1.setFont(new Font("Eras Bold ITC", Font.BOLD, 18));
         button1.setBackground(new Color(0xb5ffff00, true));
-        add(button1, new GridConstraints(5, 0, 1, 1,
+        button1.setMaximumSize(new Dimension(159, 50));
+        button1.setPreferredSize(new Dimension(100, 43));
+        add(button1, new GridConstraints(4, 0, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -397,9 +374,11 @@ public class Main_page extends JPanel {
 
         //---- button2 ----
         button2.setText("home");
-        button2.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button2.setFont(new Font("Eras Bold ITC", Font.BOLD, 16));
         button2.setBackground(new Color(0xdfffcc00, true));
-        add(button2, new GridConstraints(5, 1, 1, 1,
+        button2.setMaximumSize(new Dimension(100, 43));
+        button2.setPreferredSize(new Dimension(100, 43));
+        add(button2, new GridConstraints(4, 1, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -407,15 +386,17 @@ public class Main_page extends JPanel {
 
         //---- button3 ----
         button3.setText("setting");
-        button3.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button3.setFont(new Font("Eras Bold ITC", Font.BOLD, 16));
         button3.setBackground(new Color(0xd30099ff, true));
+        button3.setMaximumSize(new Dimension(100, 43));
+        button3.setPreferredSize(new Dimension(100, 43));
         button3.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 button3MouseClicked(e);
             }
         });
-        add(button3, new GridConstraints(5, 2, 1, 1,
+        add(button3, new GridConstraints(4, 2, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -423,9 +404,10 @@ public class Main_page extends JPanel {
 
         //---- button4 ----
         button4.setText("investment");
-        button4.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
+        button4.setFont(new Font("Eras Bold ITC", Font.BOLD, 16));
         button4.setBackground(new Color(0xc6339900, true));
-        add(button4, new GridConstraints(5, 3, 1, 1,
+        button4.setPreferredSize(new Dimension(100, 43));
+        add(button4, new GridConstraints(4, 3, 1, 1,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -446,13 +428,12 @@ public class Main_page extends JPanel {
     private JPanel panel9;
     private JProgressBar progressBar1;
     private JLabel label7;
-    private JPanel panel12;
-    private JPanel panel11;
     private JButton button5;
     private JPanel panel10;
-    private JLabel label5;
+    private JButton button6;
+    private JPanel panel13;
+    private JLabel label6;
     private JPanel panel1;
-    private JPanel panel2;
     private JPanel panel3;
     private JPanel panel4;
     private JButton button1;
@@ -470,5 +451,17 @@ public class Main_page extends JPanel {
 
     public JButton getButton3() {
         return button3;
+    }
+
+    public JProgressBar getProgressBar1() {
+        return progressBar1;
+    }
+
+    public JButton getButton5() {
+        return button5;
+    }
+
+    public JButton getButton1() {
+        return button1;
     }
 }

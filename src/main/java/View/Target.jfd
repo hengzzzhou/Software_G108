@@ -1,0 +1,316 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 11
+			"$rowCount": 16
+		} ) {
+			name: "this"
+			"opaque": false
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer1"
+				"opaque": false
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "R"
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"minimumSize": new java.awt.Dimension( 35, 35 )
+				"preferredSize": new java.awt.Dimension( 35, 35 )
+				"background": new java.awt.Color( 255, 204, 0, 170 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button2MouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 1
+				"column": 2
+				"anchor": 8
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": " Saving Goals "
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 36 )
+				"foreground": sfield java.awt.Color darkGray
+				"border": new javax.swing.border.LineBorder( sfield java.awt.Color white, 2, true )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"colSpan": 3
+				"row": 1
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button4"
+				"minimumSize": &Dimension0 new java.awt.Dimension( 45, 45 )
+				"maximumSize": &Dimension1 new java.awt.Dimension( 60, 60 )
+				"preferredSize": &Dimension2 new java.awt.Dimension( 35, 35 )
+				"font": &Font0 new java.awt.Font( "Eras Bold ITC", 1, 17 )
+				"background": &Color0 new java.awt.Color( 255, 204, 0, 189 )
+				"foreground": &Color1 new java.awt.Color( 239, 239, 239, 255 )
+				"text": " \ud83e\uddee"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button3MouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 8
+				"row": 1
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "?"
+				"minimumSize": #Dimension0
+				"maximumSize": #Dimension1
+				"preferredSize": #Dimension2
+				"font": #Font0
+				"background": #Color0
+				"foreground": #Color1
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button3MouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 9
+				"row": 1
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer3"
+				"opaque": false
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 2
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "My Goals"
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+				"foreground": sfield java.awt.Color darkGray
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 3
+				"column": 2
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button5"
+				"text": "Save $20 for a new toy"
+				"font": new java.awt.Font( "Euphemia UCAS", 1, 15 )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 3
+				"colSpan": 3
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer2"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 10
+				"row": 3
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer4"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 4
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Process"
+				"font": &Font1 new java.awt.Font( "Eras Bold ITC", 1, 24 )
+				"foreground": sfield java.awt.Color darkGray
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 5
+				"column": 2
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer4"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 3
+				"row": 5
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+				"$columnCount": 2
+				"$rowCount": 1
+			} ) {
+				name: "panel1"
+				"opaque": false
+				add( new FormComponent( "javax.swing.JProgressBar" ) {
+					name: "progressBar1"
+					"value": 75
+					"maximumSize": new java.awt.Dimension( 32767, 10 )
+					"preferredSize": new java.awt.Dimension( 146, 10 )
+					"foreground": new java.awt.Color( 51, 153, 255, 255 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "15"
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 1
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 5
+				"colSpan": 3
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer5"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 7
+				"row": 5
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "➕ New Goal"
+				"font": new java.awt.Font( "JetBrains Mono", 1, 15 )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 8
+				"row": 5
+				"colSpan": 2
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer5"
+				"opaque": false
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 6
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button6"
+				"text": "Do household and get $10 "
+				"font": new java.awt.Font( "Euphemia UCAS", 1, 15 )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 7
+				"colSpan": 3
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer6"
+				"opaque": false
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 8
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+				"$columnCount": 2
+				"$rowCount": 1
+			} ) {
+				name: "panel2"
+				"opaque": false
+				add( new FormComponent( "javax.swing.JProgressBar" ) {
+					name: "progressBar2"
+					"value": 30
+					"maximumSize": new java.awt.Dimension( 32767, 10 )
+					"preferredSize": new java.awt.Dimension( 146, 10 )
+					"foreground": new java.awt.Color( 51, 153, 255, 255 )
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "3"
+				}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+					"column": 1
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 9
+				"column": 4
+				"colSpan": 3
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer7"
+				"opaque": false
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 10
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer1"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 11
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": " Achievements"
+				"font": #Font1
+				"foreground": sfield java.awt.Color darkGray
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 11
+				"column": 2
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button7"
+				"text": "1"
+				"font": new java.awt.Font( "Inter", 1, 20 )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 11
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button8"
+				"text": "7"
+				"font": new java.awt.Font( "Inter", 1, 20 )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 6
+				"row": 11
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label12"
+				"text": "First try"
+				"font": &Font2 new java.awt.Font( "Eras Bold ITC", 0, 24 )
+				"foreground": sfield java.awt.Color darkGray
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 12
+				"column": 4
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer3"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 5
+				"row": 12
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label13"
+				"text": "Use for a week"
+				"font": #Font2
+				"foreground": sfield java.awt.Color darkGray
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 12
+				"column": 6
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer2"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+				"row": 13
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 95, 75 )
+			"size": new java.awt.Dimension( 730, 585 )
+		} )
+	}
+}

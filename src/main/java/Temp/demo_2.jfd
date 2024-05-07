@@ -1,0 +1,42 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:34:p, comp button2:::p::p, space ::1088:x}, seq t {space :p:40:p, comp button1:::p:238:p, space ::291:x, comp label1:::p:612:p, space :p:19:p}, seq l {space :::p, comp scrollBar1::::1188:x, space :::p}}"
+				"$verticalGroup": "par l {seq t {space :p:21:p, comp button2:::p::p, space :p:44:p, comp scrollBar1:::p:477:p, space ::81:x, par l {seq t {comp label1:::p:173:p, space :p:70:p}, seq t {comp button1:::p:72:p, space :p:51:p}}}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 1200, 900 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "<html>Different bank cards have different functions. Complete your task to unlock more functions of the bank card!</html>"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 28 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "Bank Card List"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 28 )
+				} )
+				add( new FormComponent( "javax.swing.JScrollBar" ) {
+					name: "scrollBar1"
+					"orientation": 0
+					"focusable": true
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "R"
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1205, 900 )
+		} )
+	}
+}
