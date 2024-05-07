@@ -173,6 +173,7 @@ new FormModel {
 					name: "label5"
 					"text": "+10 / -5"
 					"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+					"opaque": true
 				} )
 			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
 				"column": 1

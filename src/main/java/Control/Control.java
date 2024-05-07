@@ -54,6 +54,10 @@ public class Control {
     private Task_m task_m;
     private Home home;
     private Home_m home_m;
+    private Deposit deposit;
+    private Deposit_m deposit_m;
+    private WithDrawal withDrawal;
+    private Withdrawal_m withdrawal_m;
 
 
     public void init(){
@@ -91,6 +95,10 @@ public class Control {
         this.task_m=new Task_m(this.task);
         this.home=new Home();
         this.home_m=new Home_m(this.home);
+        this.deposit=new Deposit();
+        this.deposit_m=new Deposit_m(this.deposit);
+        this.withDrawal=new WithDrawal();
+        this.withdrawal_m=new Withdrawal_m(this.withDrawal);
 
         //Initialize the basic frame and welcome page
         this.basicFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -357,6 +365,30 @@ public class Control {
                 returnMainMouseClicked(e);
             }
         });
+        this.home.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                depositMouseClicked(e);
+            }
+        });
+        this.deposit.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                homeMouseClicked(e);
+            }
+        });
+        this.home.getButton4().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                withDrawalMouseClicked(e);
+            }
+        });
+        this.withDrawal.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                homeMouseClicked(e);
+            }
+        });
     }
 
     private void Wel2LoginButtonMouseClicked(MouseEvent e) {
@@ -402,6 +434,7 @@ public class Control {
         }
     }
 
+
     private void main2SetMouseClicked(MouseEvent e){
         this.settings_m.init(this.basicFrame);
     }
@@ -438,5 +471,11 @@ public class Control {
     }
     private void homeMouseClicked(MouseEvent e){
         this.home_m.init(this.basicFrame);
+    }
+    private void depositMouseClicked(MouseEvent e){
+        this.deposit_m.init(this.basicFrame);
+    }
+    private void withDrawalMouseClicked(MouseEvent e){
+        this.withdrawal_m.init(this.basicFrame);
     }
 }

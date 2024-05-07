@@ -307,6 +307,7 @@ public class Home extends JPanel {
             //---- label5 ----
             label5.setText("+10 / -5");
             label5.setFont(new Font("Eras Bold ITC", Font.BOLD, 24));
+            label5.setOpaque(true);
 
             GroupLayout panel4Layout = new GroupLayout(panel4);
             panel4.setLayout(panel4Layout);
@@ -386,5 +387,13 @@ public class Home extends JPanel {
 
     public JButton getButton1() {
         return button1;
+    }
+
+    public JButton getButton3() {
+        return button3;
+    }
+
+    public JButton getButton4() {
+        return button4;
     }
 }
