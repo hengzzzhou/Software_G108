@@ -16,6 +16,7 @@ public class User {
     private String email;
     private String password;
     private String task_list;
+    private int progress;
     private List<Task> tasks;
 
     /******** 用于user类初始化时检测密码是否正确（后可用于校验登录账户） ********/
@@ -37,6 +38,7 @@ public class User {
                 this.email = matchedUsers.getString("email");
                 this.task_list = matchedUsers.getString("task_list");
                 this.tasks = initializeTasksFromFile();
+                this.progress=18;
                 this.flag = 1;
             }else {
                 this.flag = 0;
@@ -113,6 +115,10 @@ public class User {
             e.printStackTrace();
         }
         return my_task;
+    }
+
+    public int getProgress() {
+        return progress;
     }
 }
 

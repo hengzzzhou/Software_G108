@@ -3,6 +3,7 @@ package Model;
 import View.Main_page;
 
 import javax.swing.*;
+import Class.User;
 
 public class Main_page_m {
     private Main_page main_page;

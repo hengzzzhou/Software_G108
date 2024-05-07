@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Control {
-    private User user;
     // Register all the components
     private BasicFrame basicFrame;
     private Welcome welcome;
@@ -354,7 +353,7 @@ public class Control {
         this.user_account = this.login_m.check();
         if(this.user_account.flag != 0){
             this.login_flag = 1;
-            this.main_page_m.init(this.basicFrame);
+            this.main_page_m.init(this.basicFrame, this.user_account);
         }
     }
 
@@ -363,7 +362,7 @@ public class Control {
     }
 
     private void returnMainMouseClicked(MouseEvent e){
-        this.main_page_m.init(this.basicFrame,this.user);
+        this.main_page_m.init(this.basicFrame,this.user_account);
     }
 
     private void changePasswordMouseClicked(MouseEvent e){
