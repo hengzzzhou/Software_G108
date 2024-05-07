@@ -1,7 +1,4 @@
-import View.Login;
-import View.Settings;
-import View.Tutorial;
-import View.Main_page;
+import View.*;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 
 import javax.swing.*;
@@ -15,13 +12,15 @@ public class Test1 {
         Main_page page=new Main_page();
         Settings settings = new Settings();
         JFrame frame= new JFrame();
+        IDPasswordManagement idPasswordManagement = new IDPasswordManagement();
+        ContactUs contactUs = new ContactUs();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // 设置主界面大小及可见性
-        frame.setSize(1000, 600);
+        frame.setSize(1200, 900);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().add(settings);
+        frame.getContentPane().add(page);
         frame.repaint();
         frame.revalidate();
         frame.setVisible(true);

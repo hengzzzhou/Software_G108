@@ -1,0 +1,103 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 7
+			"$rowCount": 6
+			"sameSizeHorizontally": true
+			"sameSizeVertically": true
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, comp button1:::p:44:p, space ::11:x}}"
+				"$verticalGroup": "par l {seq l {comp button1:::p::p, space :0:45:x}}"
+			} ) {
+				name: "panel1"
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "R"
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"anchor": 9
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Contact Us"
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+				"foreground": new java.awt.Color( 239, 239, 239, 255 )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 3
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:25:x}"
+				"$verticalGroup": "par l {space :0:56:x}"
+			} ) {
+				name: "panel3"
+				"opaque": false
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 4
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:30:x}"
+				"$verticalGroup": "par l {space :0:72:x}"
+			} ) {
+				name: "panel2"
+				"opaque": false
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 6
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"text": "test"
+				"columns": 6
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 1
+				"preferredSize": new java.awt.Dimension( 10, 10 )
+				"colSpan": 5
+				"rowSpan": 4
+				"fill": 3
+				"anchor": 1
+				"indent": -1
+				"useParentLayout": false
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space :::x, comp button2:::p::p, space :::p}}"
+				"$verticalGroup": "par l {seq l {space :p:22:p, comp button2:::p::p, space ::22:x}}"
+			} ) {
+				name: "panel4"
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "Reset"
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 5
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "Submit"
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 5
+				"row": 5
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:12:x}"
+				"$verticalGroup": "par l {space :0:45:x}"
+			} ) {
+				name: "panel5"
+				"opaque": false
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 6
+				"row": 5
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 880, 440 )
+		} )
+	}
+}

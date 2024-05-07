@@ -327,4 +327,16 @@ public class Settings extends JPanel {
     public JButton getButton2() {
         return button2;
     }
+
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public JButton getButton5() {
+        return button5;
+    }
+
+    public JButton getButton6() {
+        return button6;
+    }
 }

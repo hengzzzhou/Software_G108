@@ -1,0 +1,31 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {comp scrollBar1::t::1200:x, seq t {space :p:27:p, comp button1:::p::p, space :114:1095:x}}"
+				"$verticalGroup": "par l {seq l {space :p:29:p, comp button1:::p::p, space :p:77:p, comp scrollBar1:::p:733:p, space ::23:x}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 1200, 900 )
+				add( new FormComponent( "javax.swing.JScrollBar" ) {
+					name: "scrollBar1"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "R"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 20, 10 )
+			"size": new java.awt.Dimension( 1200, 905 )
+		} )
+	}
+}
