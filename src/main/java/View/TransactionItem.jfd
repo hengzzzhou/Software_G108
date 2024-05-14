@@ -1,0 +1,35 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {comp label1:::p::p, space ::237:x, comp label2:::p::p, space :p:169:p, comp button1:::p::p, space :p:27:p, comp label3:::p:66:p, space :p:15:p}}"
+			"$verticalGroup": "par l {seq l {par b {comp label1::b:p::p, comp label2::b:p::p, comp button1::b:p::p, comp label3::b:p:34:p}, space ::266:x}}"
+		} ) {
+			name: "this"
+			"maximumSize": new java.awt.Dimension( 780, 100 )
+			"preferredSize": new java.awt.Dimension( 780, 100 )
+			"minimumSize": new java.awt.Dimension( 780, 100 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "2024.3.1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Withdrawal"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Check"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "-$100"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 710, 300 )
+		} )
+	}
+}

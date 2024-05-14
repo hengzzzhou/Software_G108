@@ -4,11 +4,9 @@
 
 package View;
 
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
+import com.intellij.uiDesigner.core.*;
 
 /**
  * @author 20386
@@ -112,9 +110,5 @@ public class Deposit extends JPanel {
         this.repaint();
         ImageIcon image = new ImageIcon("src/main/imgs/img_9.png");
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
-    }
-
-    public JButton getButton3() {
-        return button3;
     }
 }

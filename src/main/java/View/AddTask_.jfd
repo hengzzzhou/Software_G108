@@ -1,0 +1,60 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 1200, 900 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space :p:28:p, comp button1:::p:171:p, space ::1001:x}, seq {par l {seq t {space :0:233:x, comp textField4:::p:200:p, space :p:224:p}, seq {par l {seq {space :p:70:p, par l {comp textField1::l:p:372:p, comp textField3::l:p:372:p, comp textField2::l:p:372:p}}, seq l {space :p:159:p, comp button2:::p:158:p}}, space ::215:x}}, par l {seq {comp textField5:::p:424:p, space :p:119:p}, seq t {comp button3:::p:158:p, space :p:241:p}}}}"
+				"$verticalGroup": "par l {seq l {space :p:33:p, comp button1:::p:52:p, space :p:90:p, comp textField1:::p:54:p, space ::42:x, par l {seq t {comp textField2:::p:54:p, space :p:117:p, comp textField3:::p:54:p, space :p:67:p, comp textField4:::p:54:p, space :p:57:p, comp button2:::p:62:p, space :p:63:p}, seq t {comp textField5:::p:429:p, space :p:87:p, comp button3:::p:62:p, space :p:51:p}}}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 1200, 900 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField1"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+					"opaque": false
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField2"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+					"opaque": false
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField3"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+					"opaque": false
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField4"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+					"opaque": false
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField5"
+					"opaque": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"rolloverEnabled": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"rolloverEnabled": false
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1200, 900 )
+		} )
+	}
+}
