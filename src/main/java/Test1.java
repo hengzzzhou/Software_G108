@@ -24,7 +24,7 @@ public class Test1 {
         frame.setSize(1200, 900);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().add(taskList);
+        frame.getContentPane().add(deposit);
         frame.repaint();
         frame.revalidate();
         frame.setVisible(true);

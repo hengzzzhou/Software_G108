@@ -111,4 +111,8 @@ public class Deposit extends JPanel {
         ImageIcon image = new ImageIcon("src/main/imgs/img_9.png");
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
     }
+
+    public JButton getButton3() {
+        return button3;
+    }
 }
