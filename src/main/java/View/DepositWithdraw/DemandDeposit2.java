@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Mon May 13 22:04:35 CST 2024
  */
 
-package View;
+package View.DepositWithdraw;
 
 import java.awt.*;
 import javax.swing.*;
@@ -114,4 +114,12 @@ public class DemandDeposit2 extends JPanel {
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
     }
 
+    public JButton getReButton() {
+        return button1;
+    }
+    public JButton getConfirmButton(){return button3;}
+    public JButton getCancelButton(){return button2;}
+    public JTextField getTextField1() {
+        return textField1;
+    }
 }

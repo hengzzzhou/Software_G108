@@ -6,7 +6,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONObject;
 
@@ -18,6 +24,18 @@ public class User {
     private String task_list;
     private int progress;
     private List<Task> tasks;
+    private String currentTime;
+
+    /******** 以下内容为三个账户有关信息 ********/
+    private double charge;
+    private double timeDeposit;
+    private double demandDeposit;
+    private double timeRate;
+    private double total;
+    private String depositTime;
+
+    /******** 以下内容为log有关信息 ********/
+    private List<String> logList;  // list的每一项为(日期|事项|金额)，初始化可对txt文件进行按行读取，此处未实现
 
     /******** 用于user类初始化时检测密码是否正确（后可用于校验登录账户） ********/
     public int flag;
@@ -29,7 +47,7 @@ public class User {
     }
     public User(String ID, String password) throws JSONException, IOException {
 
-        File file=new File("src/main/java/Accounts.jsonl");
+        File file=new File("src/main/java/Class/Accounts.jsonl");
         JSONObject matchedUsers = findUsersByUserName(file, ID);
 
         if(matchedUsers != null){
@@ -40,6 +58,16 @@ public class User {
                 this.tasks = initializeTasksFromFile();
                 this.progress=18;
                 this.flag = 1;
+
+                // 以下内容初始化有关账户的信息
+                this.logList = new ArrayList<>();
+                this.charge = matchedUsers.getDouble("charge");
+                this.depositTime = matchedUsers.getString("depositTime");
+                this.timeDeposit = matchedUsers.getDouble("timeDeposit");
+                this.timeRate = matchedUsers.getDouble("timeRate");
+                this.update_timeAndDeposit();
+                this.demandDeposit = matchedUsers.getDouble("demandDeposit");
+                this.total = this.charge + this.timeDeposit + this.demandDeposit;
             }else {
                 this.flag = 0;
             }
@@ -47,10 +75,49 @@ public class User {
     }
 
     // getter 和 setter 方法
+
+    // 以下部分为三个账号的get与set方法
+    public double getTotal() {
+        return total;
+    }
+    public double getCharge() {
+        return charge;
+    }
+    public void setCharge(double charge){
+        this.charge = charge;
+        this.total = charge + timeDeposit + demandDeposit;
+    }
+    public double getTimeDeposit() {
+        return timeDeposit;
+    }
+    public void setTimeDeposit(double timeDeposit){
+        this.timeDeposit = timeDeposit;
+        this.total = charge + timeDeposit + demandDeposit;
+    }
+    public double getDemandDeposit() {
+        return demandDeposit;
+    }
+    public void setDemandDeposit(double demandDeposit){
+        this.demandDeposit = demandDeposit;
+        this.total = charge + timeDeposit + demandDeposit;
+    }
+    public String getDepositTime() {
+        return depositTime;
+    }
+    public void setDepositTime(String depositTime) {
+        this.depositTime = depositTime;
+    }
+
+    // 以下为有关log操作的方法 (可添加按条目删减等方法)
+    public List<String> getLogList() {
+        return logList;
+    }
+    public void setLogList(List<String> logList){ this.logList = logList; }
+
+    // 以下为一些基础操作
     public String getID() {
         return ID;
     }
-
     public void setID(String username) {
         this.ID = username;
     }
@@ -58,7 +125,6 @@ public class User {
     public String getTask_list() {
         return task_list;
     }
-
     public void setTask_list(String task_list) {
         this.task_list = task_list;
     }
@@ -79,6 +145,30 @@ public class User {
         this.password = passwordHash;
     }
 
+    private void update_timeAndDeposit(){
+        // 读取上次日期为数值
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
+        LocalDate date = LocalDate.parse(this.depositTime, formatter);
+        int year_pas = date.getYear();
+        int month_pas = date.getMonthValue();
+        int day_pas = date.getDayOfMonth();
+
+        // 获取系统当前日期
+        Calendar cal = Calendar.getInstance();
+        int year_cur = cal.get(Calendar.YEAR);
+        int month_cur = cal.get(Calendar.MONTH) + 1; // Calendar.MONTH是从0开始的
+        int day_cur = cal.get(Calendar.DAY_OF_MONTH);
+
+        // 计算更新后的定期与活期存款 (可进一步完善逻辑)
+        this.timeDeposit = this.timeDeposit + this.timeDeposit * (month_cur - month_pas) * this.timeRate;
+        double demandRate = 0.02;
+        this.demandDeposit = this.demandDeposit + this.demandDeposit * (month_cur - month_pas) * demandRate;
+
+        // 格式化信息为所需字符串，设置当前日期
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        this.currentTime = dateFormat.format(cal.getTime());
+    }
+
     // 获取jsonl中具体某一条内容的值
     // 查找jsonl文件中指定username的用户信息
     public static JSONObject findUsersByUserName(File jsonlFile, String targetUsername) throws IOException {
@@ -96,7 +186,7 @@ public class User {
 
     public List<Task> initializeTasksFromFile() {
         Map<String, Task> taskMap = new HashMap<>();
-        File file=new File("src/main/java/Task.jsonl");
+        File file=new File("src/main/java/Class/Task.jsonl");
         List<Task> my_task = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {

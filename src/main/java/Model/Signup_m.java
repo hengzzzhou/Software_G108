@@ -6,12 +6,15 @@ import org.json.JSONObject;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import Class.*;
 
 public class Signup_m {
 
     private Signup signup;
-    private File file=new File("src/main/java/Accounts.jsonl");
+    private File file=new File("src/main/java/Class/Accounts.jsonl");
 
     public Signup_m(Signup signup){
         this.signup=signup;
@@ -23,7 +26,7 @@ public class Signup_m {
             return false;
         }else{
             String id=this.signup.getTextField1().getText();
-            File file =new File("src/main/java/Accounts.jsonl");
+            File file =new File("src/main/java/Class/Accounts.jsonl");
             try (BufferedReader reader = new BufferedReader(new FileReader(file))){
                 String line = null;
                 while((line=reader.readLine())!=null){
@@ -58,10 +61,23 @@ public class Signup_m {
     /****** This method registers the user, 每次改变user中的类别信息，该方法均需添加有关的条目 ******/
     public void register(){
         JSONObject jsonObject=new JSONObject();
+
+        // 初始化基本信息
         jsonObject.put("ID",this.signup.getTextField1().getText());
         jsonObject.put("task_list","");
         jsonObject.put("email","");
         jsonObject.put("Password",new String (this.signup.getPasswordField1().getPassword()));
+        // 以下内容初始化有关账户的信息
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String currentTime = dateFormat.format(cal.getTime());
+
+        jsonObject.put("charge", 0);
+        jsonObject.put("timeDeposit", 0);
+        jsonObject.put("timeRate", 0);
+        jsonObject.put("demandDeposit", 0);
+        jsonObject.put("depositTime", currentTime);
+
         try{
             FileWriter fileWriter=new FileWriter(this.file,true);
             PrintWriter out=new PrintWriter(fileWriter);
