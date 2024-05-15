@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Mon May 06 20:12:28 CST 2024
  */
 
-package View;
+package View.DepositWithdraw;
 
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
@@ -114,7 +114,10 @@ public class WithDrawal extends JPanel {
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
     }
 
-    public JButton getButton3() {
+    public JButton getReButton() {
         return button3;
     }
+    public JButton getConfirmButton(){return button2;}
+    public JButton getCancelButton(){return button1;}
+    public JTextField getTextField1(){return textField1;}
 }

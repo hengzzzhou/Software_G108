@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Mon May 13 21:18:18 CST 2024
  */
 
-package View;
+package View.DepositWithdraw;
 
 import java.awt.*;
 import javax.swing.*;
@@ -133,4 +133,12 @@ public class TimeDeposit2 extends JPanel {
     private JButton button2;
     private JButton button3;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+    public JButton getReButton() {
+        return button1;
+    }
+    public JButton getConfirmButton(){return button3;}
+    public JButton getCancelButton(){return button2;}
+    public JTextField getTextField1() {
+        return textField1;
+    }
 }

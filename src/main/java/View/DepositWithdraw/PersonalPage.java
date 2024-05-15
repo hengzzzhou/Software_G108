@@ -1,3 +1,5 @@
+package View.DepositWithdraw;
+
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
@@ -18,7 +20,7 @@ public class PersonalPage extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        ResourceBundle bundle = ResourceBundle.getBundle("form");
+        // ResourceBundle bundle = ResourceBundle.getBundle("form");
         panel1 = new JPanel();
         button1 = new JButton();
         button2 = new JButton();
@@ -44,8 +46,21 @@ public class PersonalPage extends JPanel {
             panel1.setOpaque(false);
 
             //---- button1 ----
-            button1.setText(bundle.getString("PersonalPage.button1.text"));
+            button1.setText("R");
             button1.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 30));
+
+            // 设置有关界面跳转的信息
+            button6.setText("Withdraw");
+            button6.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+            button7.setText("Deposit");
+            button7.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+            button8.setText("Deposit");
+            button8.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+            button9.setText("Withdraw");
+            button9.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+            button10.setText("Withdraw");
+            button10.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 12));
+
 
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
@@ -165,4 +180,25 @@ public class PersonalPage extends JPanel {
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
     }
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+
+    // 在此处设置按钮的返回函数
+    public JButton getReButton(){return button1; }
+    public JButton getTDButton() {
+        return button7;
+    }
+    public JButton getTWButton() {
+        return button6;
+    }
+    public JButton getDDButton() {
+        return button8;
+    }
+    public JButton getDWButton() {
+        return button9;
+    }
+    public JButton getCWButton() {
+        return button10;
+    }
+    public JTextField getChTextField(){return textField3;}
+    public JTextField getTiTextField(){return textField1;}
+    public JTextField getDeTextField(){return textField2;}
 }

@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Mon May 13 20:41:52 CST 2024
  */
 
-package View;
+package View.DepositWithdraw;
 
 import java.awt.*;
 import javax.swing.*;
@@ -146,5 +146,13 @@ public class TimeDeposit extends JPanel {
         this.repaint();
         ImageIcon image = new ImageIcon("src/main/imgs/TimeDeposit1.png");
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
+    }
+    public JButton getReButton() {
+        return button1;
+    }
+    public JButton getConfirmButton(){return button3;}
+    public JButton getCancelButton(){return button2;}
+    public JTextField getTextField1() {
+        return textField1;
     }
 }

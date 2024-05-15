@@ -14,6 +14,12 @@ public class Main_page_m {
 
     public void init(JFrame welcome, User user){
         welcome.getContentPane().removeAll();
+
+        // 此处设置账号的总资产
+        String tolMon = "<html>$";
+        tolMon = tolMon + String.format("%.2f", user.getTotal()) + "</html>";
+        main_page.getLabelTolMoney().setText(tolMon);
+
         welcome.getContentPane().add(this.main_page);
         welcome.repaint();
         welcome.revalidate();

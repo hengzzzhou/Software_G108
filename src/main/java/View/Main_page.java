@@ -230,7 +230,9 @@ public class Main_page extends JPanel {
         return this.buttonC;
     }
 
-    public JButton getButton2() {
+    public JButton getHomeButton() {
         return this.button2;
     }
+
+    public JLabel getLabelTolMoney() {return this.label6; }
 }
