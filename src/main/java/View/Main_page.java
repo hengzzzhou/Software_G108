@@ -132,7 +132,7 @@ public class Main_page extends JPanel {
         this.progressBar1.setPreferredSize(new Dimension(176, 12));
         this.progressBar1.setMaximumSize(new Dimension(32767, 12));
         this.progressBar1.setStringPainted(true);
-        this.label7.setText("goal progress");
+        this.label7.setText("Goal progress");
         this.label7.setFont(new Font("Eras Bold ITC", 1, 22));
         this.label7.setForeground(new Color(15724527));
         this.button5.setText("Edit");
@@ -235,4 +235,6 @@ public class Main_page extends JPanel {
     }
 
     public JLabel getLabelTolMoney() {return this.label6; }
+    public JButton getGoalButton() {return this.button5; }
+
 }

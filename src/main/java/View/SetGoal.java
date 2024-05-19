@@ -11,8 +11,8 @@ import com.intellij.uiDesigner.core.*;
 /**
  * @author 20386
  */
-public class Setgoal extends JPanel {
-    public Setgoal() {
+public class SetGoal extends JPanel {
+    public SetGoal() {
         initComponents();
     }
 
@@ -90,4 +90,14 @@ public class Setgoal extends JPanel {
     private JButton button1;
     private JButton button2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+    public JButton getButtonReturn(){
+        return this.button2;
+    }
+
+    public JButton getButtonConfirm(){
+        return this.button1;
+    }
+    public JTextField getTextField1() {
+        return textField1;
+    }
 }

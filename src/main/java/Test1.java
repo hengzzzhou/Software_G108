@@ -36,7 +36,7 @@ public class Test1 {
         frame.setLocationRelativeTo(null);
 
         // 在此处将Jlabel添加到fram中
-        frame.getContentPane().add(ddp1);
+        frame.getContentPane().add(pg);
 
         frame.repaint();
         frame.revalidate();
