@@ -16,9 +16,7 @@ public class Main_page_m {
         welcome.getContentPane().removeAll();
 
         // 此处设置账号的总资产
-        String tolMon = "<html>$";
-        tolMon = tolMon + String.format("%.2f", user.getTotal()) + "</html>";
-        main_page.getLabelTolMoney().setText(tolMon);
+        main_page.getTotalAssets().setText("$"+user.getTotal());
         main_page.getGoalButton().setText("My Goal: "+ user.getProgress());
         welcome.getContentPane().add(this.main_page);
         welcome.repaint();

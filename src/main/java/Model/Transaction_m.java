@@ -14,8 +14,8 @@ public class Transaction_m {
     private User user;
     private Timer timer;
 
-    public Transaction_m() {
-        this.transaction = new Transaction();
+    public Transaction_m(Transaction transaction) {
+        this.transaction = transaction;
     }
 
     public void init(JFrame welcome, User user) {

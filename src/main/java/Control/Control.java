@@ -124,7 +124,7 @@ public class Control {
 
         // 记录
         this.transaction = new Transaction();
-        this.transaction_m = new Transaction_m();
+        this.transaction_m = new Transaction_m(transaction);
 
         // Initialize the basic frame and welcome page
         this.basicFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -223,7 +223,7 @@ public class Control {
     }
 
     private void eventRegistration() {
-        this.transaction_m.transaction.getReButton().addMouseListener(new MouseAdapter() {
+        this.transaction.getReButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Return button clicked");

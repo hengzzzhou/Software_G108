@@ -32,7 +32,7 @@ public class Main_page extends JPanel {
     private JPanel panel10;
     private JButton button6;
     private JPanel panel13;
-    private JLabel label6;
+    //private JLabel label6;
     private JButton button1;
     private JButton button2;
     private JButton button3;
@@ -64,7 +64,7 @@ public class Main_page extends JPanel {
         this.panel10 = new JPanel();
         this.button6 = new JButton();
         this.panel13 = new JPanel();
-        this.label6 = new JLabel();
+        //this.label6 = new JLabel();
         this.button1 = new JButton();
         this.button2 = new JButton();
         this.button3 = new JButton();
@@ -145,7 +145,7 @@ public class Main_page extends JPanel {
         panel13Layout.setVerticalGroup(panel13Layout.createParallelGroup().addGroup(panel13Layout.createSequentialGroup().addContainerGap(-1, 32767).addComponent(this.progressBar1, -2, 12, -2).addPreferredGap(ComponentPlacement.UNRELATED).addGroup(panel13Layout.createParallelGroup(Alignment.BASELINE).addComponent(this.label7, -2, 32, -2).addComponent(this.button5, -1, -1, 32767)).addContainerGap()));
         this.add(this.panel9, new GridConstraints(2, 0, 1, 4, 0, 0, 3, 3, (Dimension)null, (Dimension)null, (Dimension)null));
         this.panel10.setOpaque(false);
-        this.label8.setText("Total Assests:");
+        this.label8.setText("Total Assets:");
         this.label8.setFont(new Font("Eras Bold ITC", 1, 48));
         this.label8.setForeground(new Color(15724527));
         this.label8.setBackground(new Color(1862270720, true));
@@ -157,13 +157,8 @@ public class Main_page extends JPanel {
         panel13Layout.setVerticalGroup(panel13Layout.createParallelGroup().addGroup(panel13Layout.createSequentialGroup().addContainerGap().addComponent(this.label8, -2, 42, -2).addContainerGap(41, 32767)));
         this.add(this.panel10, new GridConstraints(3, 0, 1, 1, 0, 0, 3, 3, (Dimension)null, (Dimension)null, (Dimension)null));
         this.panel13.setOpaque(false);
-        this.label6.setText("<html>$1000000</html>");
-        this.label6.setFont(new Font("Microsoft YaHei UI", 5, 48));
-        this.label6.setForeground(new Color(15724527));
         panel13Layout = new GroupLayout(this.panel13);
         this.panel13.setLayout(panel13Layout);
-        panel13Layout.setHorizontalGroup(panel13Layout.createParallelGroup().addGroup(panel13Layout.createSequentialGroup().addContainerGap().addComponent(this.label6, -2, -1, -2).addContainerGap(58, 32767)));
-        panel13Layout.setVerticalGroup(panel13Layout.createParallelGroup().addGroup(panel13Layout.createSequentialGroup().addContainerGap().addComponent(this.label6, -2, -1, -2).addContainerGap(64, 32767)));
         this.add(this.panel13, new GridConstraints(3, 1, 1, 1, 0, 0, 3, 3, (Dimension)null, (Dimension)null, (Dimension)null));
         this.button1.setText("shop");
         this.button1.setFont(new Font("Eras Bold ITC", 1, 18));
@@ -234,7 +229,9 @@ public class Main_page extends JPanel {
         return this.button2;
     }
 
-    public JLabel getLabelTolMoney() {return this.label6; }
+    //public JLabel getLabelTolMoney() {return this.label6; }
     public JButton getGoalButton() {return this.button5; }
+
+    public JLabel getTotalAssets() {return this.label8; }
 
 }
