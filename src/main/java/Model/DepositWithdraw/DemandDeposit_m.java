@@ -21,24 +21,44 @@ public class DemandDeposit_m {
     }
     public User confirmButton(User user){
         double value = Double.parseDouble(demandDeposit.getTextField1().getText());
+        int time = (int)Double.parseDouble(demandDeposit.getTextField1().getText());
         double accVal = user.getDemandDeposit();
-        // 此处对于输入进行运算 (以下内容须在不同页面修改加减号)
-        accVal = accVal + value;
+        double ChaVal = user.getCharge();
+        if (value <= ChaVal){
+            // 此处对于输入进行运算 (以下内容须在不同页面修改加减号)
+            accVal = accVal + value;
+            ChaVal = ChaVal - value;
 
-        // 更新user金额
-        user.setDemandDeposit(accVal);
+            // 更新user金额
+            user.setDemandDeposit(accVal);
+            user.setCharge(ChaVal);
 
-        // 更新user的log
-        String log = "";
-        List<String> logList = user.getLogList();
-        String timeStamp = user.getDepositTime();
-        log = log + timeStamp + "|" + "deposit" + "|" + String.format("%.2f", value);
-        logList.add(log);
-        user.setLogList(logList);
+            if (time != 0){
+                user.setTimeRate(get_time_rate(time));
+            }
+
+            // 更新user的log
+            String log = "";
+            List<String> logList = user.getLogList();
+            String timeStamp = user.getDepositTime();
+            log = log + timeStamp + "|" + "deposit" + "|" + String.format("%.2f", value);
+            logList.add(log);
+            user.setLogList(logList);
+        }
         demandDeposit.getTextField1().setText("");
         return user;
     }
     public void cancelButton(){
         demandDeposit.getTextField1().setText("");
+    }
+
+    private double get_time_rate(int month){
+        if (month < 6){
+            return 0.04;
+        } else if (month < 12) {
+            return 0.05;
+        } else {
+            return 0.06;
+        }
     }
 }
