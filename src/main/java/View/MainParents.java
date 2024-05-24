@@ -265,4 +265,8 @@ public class MainParents extends JPanel {
     public JButton getButton2() {
         return button2;
     }
+
+    public JButton getTransactionRecordButton() {
+        return button4;
+    }
 }

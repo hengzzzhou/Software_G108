@@ -25,7 +25,7 @@ public class Parent extends User{
             if (Objects.equals(matchedUsers.getString("Password"), password)) {
                 this.ID = ID;
                 // 以下内容初始化有关账户的信息
-                this.logList = new ArrayList<>();
+                this.logList = loadLogListFromFile();
                 this.tasks = new ArrayList<>();
             } else {
                 this.flag = 0;

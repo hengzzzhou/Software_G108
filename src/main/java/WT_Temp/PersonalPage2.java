@@ -212,7 +212,31 @@ public class PersonalPage2 extends JPanel {
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         this.repaint();
-        ImageIcon image =new ImageIcon("src/main/imgs/PersonalPage.png");
+        ImageIcon image =new ImageIcon("src/main/imgs/0cfec932eee769019b18e6cce2a037a.png");
         g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
+    }
+
+    public JButton getReButton(){return button1; }
+    public JButton getTDButton() {
+        return button9;
+    }
+    public JButton getTWButton() {
+        return button7;
+    }
+    public JButton getDDButton() {
+        return button11;
+    }
+
+    public JButton getDWButton() {
+        return button12;
+    }
+    public JButton getCWButton() {
+        return button13;
+    }
+    public JTextField getChTextField(){return textField4;}
+    public JTextField getTiTextField(){return textField1;}
+    public JTextField getDeTextField(){return textField2;}
+    public JButton getTransactionButton() {
+        return button5;
     }
 }

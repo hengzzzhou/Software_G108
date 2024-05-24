@@ -122,7 +122,7 @@ public class User {
 
     }
 
-    private void saveLogListToFile(List<String> logList) {
+    protected void saveLogListToFile(List<String> logList) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/Class/LOG_FILE"))) {
             for (String log : logList) {
                 writer.write(log);
@@ -133,7 +133,7 @@ public class User {
         }
     }
 
-    private List<String> loadLogListFromFile() {
+    protected List<String> loadLogListFromFile() {
         List<String> logList = new ArrayList<>();
         File file = new File("src/main/java/Class/LOG_FILE");
         if (file.exists()) {
