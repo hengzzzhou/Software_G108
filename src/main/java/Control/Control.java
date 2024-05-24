@@ -218,7 +218,7 @@ public class Control {
                                 lines.set(i, jsonObject.toString());
 
                                 // Save logList to file
-                                user_account.setLogList(user_account.getLogList());
+                                child_account.setLogList(child_account.getLogList());
 
                                 lines.set(i, jsonObject.toString());
                             }
@@ -815,7 +815,7 @@ public class Control {
     }
 
     private void transactionPageMouseClicked(MouseEvent e){
-        this.transaction_m.init(this.basicFrame, this.user_account);
+        this.transaction_m.init(this.basicFrame, this.child_account);
     }
 
     // 以下为5个界面的返回逻辑跳转
@@ -907,7 +907,7 @@ public class Control {
     }
 
     private void confirmGoal(MouseEvent e) {
-        this.user_account = this.setGoal_m.confirmButton(this.user_account);
+        this.child_account = this.setGoal_m.confirmButton(this.child_account);
     }
 //    private void withDrawalMouseClicked(MouseEvent e){
 //        this.withdrawal_m.init(this.basicFrame);

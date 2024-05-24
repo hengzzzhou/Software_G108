@@ -5,7 +5,7 @@ import View.Tutorial;
 
 import javax.swing.*;
 import java.util.List;
-import Class.User;
+import Class.*;
 
 
 import View.SetGoal;
@@ -26,7 +26,7 @@ public class SetGoal_m {
         dialog.setVisible(true);
     }
 
-    public User confirmButton(User user) {
+    public Child confirmButton(Child user) {
         int value = Integer.parseInt(setGoal.getTextField1().getText());
         user.setProgress(value);
         return user;

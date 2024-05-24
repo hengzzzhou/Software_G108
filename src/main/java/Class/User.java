@@ -253,7 +253,7 @@ public class User {
             e.printStackTrace();
         }
     }
-}
+
 
     public void setProgress(int progress) {
         this.progress = progress;
