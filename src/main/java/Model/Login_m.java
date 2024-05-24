@@ -1,6 +1,7 @@
 package Model;
 
 import View.Login;
+import org.json.JSONException;
 import org.json.JSONObject;
 import Class.*;
 
@@ -17,20 +18,39 @@ public class Login_m {
     }
 
     // This method checks if the ID and password are correct
-    public User check() throws IOException {
+    public Child check() throws IOException , JSONException {
 
-        User user_account = new User();
+        Child user_account = new Child();
         if(this.login.getTextField1().getText()!=null && this.login.getPasswordField1().getPassword()!=null){
             String id=this.login.getTextField1().getText();
             char[] password=this.login.getPasswordField1().getPassword();
             String pass = String.valueOf(password);
-            user_account = new User(id, pass);
+            user_account = new Child(id, pass);
+        }
+        return user_account;
+    }
+    public Parent checkParent() throws IOException , JSONException {
+
+        Parent user_account=null;
+        if(this.login.getTextField1().getText()!=null && this.login.getPasswordField1().getPassword()!=null){
+            String id=this.login.getTextField1().getText();
+            char[] password=this.login.getPasswordField1().getPassword();
+            String pass = String.valueOf(password);
+            user_account = new Parent(id, pass);
         }
         return user_account;
     }
 
     public void init(JFrame welcome){
         welcome.getContentPane().removeAll();
+        welcome.getContentPane().add(this.login);
+        welcome.repaint();
+        welcome.revalidate();
+    }
+    public void initParent(JFrame welcome){
+        welcome.getContentPane().removeAll();
+        this.login.getButton3().setVisible(false);
+        this.login.getLabel3().setText("Parent Login");
         welcome.getContentPane().add(this.login);
         welcome.repaint();
         welcome.revalidate();

@@ -1,5 +1,6 @@
 package Class;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -18,16 +19,16 @@ import org.json.JSONObject;
 
 public class User {
     // 定义User类的属性
-    private String ID;
+    protected String ID;
     private String email;
-    private String password;
-    private String task_list;
+    protected String password;
+    protected String task_list;
     private int progress;
-    private List<Task> tasks;
+    protected ArrayList<Task> tasks;
     private String currentTime;
 
     /******** 以下内容为三个账户有关信息 ********/
-    private double charge;
+    protected double charge;
     private double timeDeposit;
     private double demandDeposit;
     private double timeRate;
@@ -35,7 +36,7 @@ public class User {
     private String depositTime;
 
     /******** 以下内容为log有关信息 ********/
-    private List<String> logList;  // list的每一项为(日期|事项|金额)，初始化可对txt文件进行按行读取，此处未实现
+    protected List<String> logList;  // list的每一项为(日期|事项|金额)，初始化可对txt文件进行按行读取，此处未实现
 
     /******** 用于user类初始化时检测密码是否正确（后可用于校验登录账户） ********/
     public int flag;
@@ -44,6 +45,12 @@ public class User {
     /******* 构造方法，用于从JSONObject初始化User对象(第一个方法用于初始化) *******/
     public User(){
         this.flag = 0;
+        this.tasks = new ArrayList<>();
+    }
+    public User(String ID){
+        this.ID = ID;
+        this.flag = 0;
+        this.tasks = new ArrayList<>();
     }
     public User(String ID, String password) throws JSONException, IOException {
 
@@ -55,9 +62,10 @@ public class User {
                 this.ID = ID;
                 this.email = matchedUsers.getString("email");
                 this.task_list = matchedUsers.getString("task_list");
-                this.tasks = initializeTasksFromFile();
+                this.tasks = null;
                 this.progress=18;
                 this.flag = 1;
+
 
                 // 以下内容初始化有关账户的信息
                 this.logList = new ArrayList<>();
@@ -184,31 +192,40 @@ public class User {
         }
     }
 
-    public List<Task> initializeTasksFromFile() {
-        Map<String, Task> taskMap = new HashMap<>();
-        File file=new File("src/main/java/Class/Task.jsonl");
-        List<Task> my_task = new ArrayList<>();
 
+
+    public int getProgress() {
+        return progress;
+    }
+    public void addTask(Task task){
+        this.tasks.add(task);
+    }
+
+    public ArrayList<Task> getTasks() {
+        return tasks;
+    }
+
+    public void loadTaskList(){
+        File file=new File("src/main/java/Class/TaskList.jsonl");
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 JSONObject taskJson = new JSONObject(line);
-                String fin = "0";
-                if(Objects.equals(taskJson.getString("fin"), fin)){
-                    Task tmp = new Task(taskJson.getString("task_ID"), taskJson.getString("target"), taskJson.getString("date"));
-                    my_task.add(tmp);
+                if(taskJson.getString("ID").equals(this.ID)){
+                    JSONArray jsonArray = taskJson.getJSONArray("Tasks");
+                    for(int i = 0; i < taskJson.getJSONArray("Tasks").length(); i++){
+                        JSONObject taskJsonItem = jsonArray.getJSONObject(i);
+                        Task tmp = new Task(taskJsonItem.getString("taskID"), taskJsonItem.getString("taskName"), taskJsonItem.getInt("taskReward"), taskJsonItem.getInt("taskPriority"), taskJsonItem.getString("taskDescription"), taskJsonItem.getString("taskDate"), taskJsonItem.getString("taskStatus"));
+                        this.tasks.add(tmp);
+                    }
+                    break;
+                }else{
+                    this.tasks = new ArrayList<>();
                 }
             }
-            // 将map中的所有Task对象添加到tasks列表中（这里假设你想把所有的Task都添加进去）
-
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
-        return my_task;
-    }
-
-    public int getProgress() {
-        return progress;
     }
 }
 

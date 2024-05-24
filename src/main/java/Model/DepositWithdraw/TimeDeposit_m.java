@@ -6,6 +6,7 @@ import View.DepositWithdraw.TimeDeposit;
 import javax.swing.*;
 import java.util.List;
 import Class.User;
+import Class.Child;
 
 public class TimeDeposit_m {
     TimeDeposit timeDeposit = new TimeDeposit();
@@ -20,7 +21,7 @@ public class TimeDeposit_m {
         welcome.repaint();
         welcome.revalidate();
     }
-    public User confirmButton(User user){
+    public Child confirmButton(Child user){
         double value = Double.parseDouble(timeDeposit.getTextField1().getText());
         double accVal = user.getTimeDeposit();
         // 此处对于输入进行运算 (以下内容须在不同页面修改加减号)

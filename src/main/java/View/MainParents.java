@@ -43,6 +43,8 @@ public class MainParents extends JPanel {
             //---- button1 ----
             button1.setText("R");
             button1.setPreferredSize(new Dimension(35, 35));
+            button1.setBackground(new Color(0xd8ffcc33, true));
+            button1.setFont(new Font("Eras Bold ITC", Font.BOLD, 12));
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
@@ -122,6 +124,7 @@ public class MainParents extends JPanel {
             //---- button2 ----
             button2.setText("GO");
             button2.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
+            button2.setBackground(new Color(0x0099ff));
 
             //---- label2 ----
             label2.setText("Task");
@@ -136,18 +139,21 @@ public class MainParents extends JPanel {
             //---- button3 ----
             button3.setText("GO");
             button3.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
+            button3.setBackground(new Color(0x0099ff));
 
             //---- button4 ----
             button4.setText("GO");
             button4.setFont(new Font("Eras Bold ITC", Font.BOLD, 14));
+            button4.setBackground(new Color(0x0099ff));
 
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
             panel1Layout.setHorizontalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(label2)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
                         .addComponent(button2))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(label1)
@@ -161,18 +167,18 @@ public class MainParents extends JPanel {
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                        .addContainerGap()
+                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(button2)
+                            .addComponent(label2))
+                        .addGroup(panel1Layout.createParallelGroup()
                             .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(label2)
-                                .addGap(145, 145, 145)
-                                .addComponent(label3))
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(button2)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(button3)))
-                        .addGap(107, 176, Short.MAX_VALUE)
+                                .addComponent(button3))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGap(154, 154, 154)
+                                .addComponent(label3)))
+                        .addGap(107, 174, Short.MAX_VALUE)
                         .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(label1)
                             .addComponent(button4))
@@ -250,5 +256,13 @@ public class MainParents extends JPanel {
         this.repaint();
         ImageIcon image =new ImageIcon("src/main/imgs/welcome_dark.png");
         g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
+    }
+
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public JButton getButton2() {
+        return button2;
     }
 }

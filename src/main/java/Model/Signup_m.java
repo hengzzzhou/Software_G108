@@ -64,9 +64,11 @@ public class Signup_m {
 
         // 初始化基本信息
         jsonObject.put("ID",this.signup.getTextField1().getText());
+        jsonObject.put("ParentID",this.signup.getParentID().getText());
         jsonObject.put("task_list","");
         jsonObject.put("email","");
         jsonObject.put("Password",new String (this.signup.getPasswordField1().getPassword()));
+        jsonObject.put("parentID",this.signup.getParentID().getText());
         // 以下内容初始化有关账户的信息
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

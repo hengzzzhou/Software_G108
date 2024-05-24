@@ -171,4 +171,27 @@ public class AddTask extends JPanel {
         ImageIcon image = new ImageIcon("src/main/imgs/AddTask.png");
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
     }
+    public JTextField getItemField() {
+        return textField1;
+    }
+    public JTextField getRewardField() {
+        return textField2;
+    }
+    public JTextField getPriorityField() {
+        return textField4;
+    }
+    public JTextField getDescriptionField() {
+        return textField5;
+    }
+    public JTextField getDateField() {
+        return textField3;
+    }
+
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public JButton getButton2() {
+        return button2;
+    }
 }

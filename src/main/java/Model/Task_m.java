@@ -1,14 +1,14 @@
 package Model;
 
-import View.Task;
+import View.TaskView;
 
 import javax.swing.*;
 
 public class Task_m {
 
-    private Task task;
+    private TaskView task;
 
-    public Task_m(Task task) {
+    public Task_m(TaskView task) {
         this.task = task;
     }
 

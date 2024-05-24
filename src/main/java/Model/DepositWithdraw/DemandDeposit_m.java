@@ -5,6 +5,7 @@ import View.DepositWithdraw.DemandDeposit;
 import javax.swing.*;
 import java.util.List;
 import Class.User;
+import Class.Child;
 
 public class DemandDeposit_m {
     DemandDeposit demandDeposit = new DemandDeposit();
@@ -19,7 +20,7 @@ public class DemandDeposit_m {
         welcome.repaint();
         welcome.revalidate();
     }
-    public User confirmButton(User user){
+    public Child confirmButton(Child user){
         double value = Double.parseDouble(demandDeposit.getTextField1().getText());
         double accVal = user.getDemandDeposit();
         // 此处对于输入进行运算 (以下内容须在不同页面修改加减号)

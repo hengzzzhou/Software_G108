@@ -5,7 +5,8 @@ import Model.DepositWithdraw.*;
 import View.*;
 import Class.*;
 import View.DepositWithdraw.*;
-import View.Task;
+import View.TaskView;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.swing.*;
@@ -34,7 +35,8 @@ public class Control {
     private Tutorial_m tutorial_m;
     private Settings settings;
     private Settings_m settings_m;
-    private User user_account;
+    private Child child_account;
+    private Parent parent_account;
     private int login_flag = 0;
     private ContactUs contactUs;
     private ContactUs_m contactUs_m;
@@ -48,8 +50,15 @@ public class Control {
     private ShoppingTrolley_m shoppingTrolley_m;
     private PurchaseRecord purchaseRecord;
     private PurchaseRecord_m purchaseRecord_m;
-    private Task task;
-    private Task_m task_m;
+    private TaskView taskView;
+    private Task_m taskView_m;
+
+    private SignupParent signupParent;
+    private SignupParent_m signupParent_m;
+    private TaskListChild taskListChild;
+    private TaskListChild_m taskListChild_m;
+    private Login loginParent;
+    private Login_m loginParent_m;
 
     // 以下内容对于存取款部分进行了声明
     private PersonalPage personalPage;
@@ -65,6 +74,13 @@ public class Control {
     private TimeDeposit_m timeDeposit_m;
     private TimeDeposit2 timeDeposit2;
     private TimeDeposit2_m timeDeposit2_m;
+    private MainParents mainParents;
+    private MainParents_m mainParents_m;
+    private TaskList taskList;
+    private TaskList_m taskList_m;
+    private AddTask addTask;
+    private AddTask_m addTask_m;
+
 
     public void init(){
         /* initialize all the components */
@@ -99,8 +115,21 @@ public class Control {
         this.shoppingTrolley_m=new ShoppingTrolley_m(this.shoppingTrolley);
         this.purchaseRecord=new PurchaseRecord();
         this.purchaseRecord_m=new PurchaseRecord_m(this.purchaseRecord);
-        this.task=new Task();
-        this.task_m=new Task_m(this.task);
+        this.taskView=new TaskView();
+        this.taskView_m=new Task_m(this.taskView);
+        this.mainParents=new MainParents();
+        this.mainParents_m=new MainParents_m(this.mainParents);
+        this.taskList=new TaskList();
+        this.taskList_m=new TaskList_m(this.taskList, this.basicFrame);
+        this.addTask=new AddTask();
+        this.addTask_m=new AddTask_m(this.addTask);
+        this.signupParent = new SignupParent();
+        this.signupParent_m = new SignupParent_m(this.signupParent);
+        this.taskListChild = new TaskListChild();
+        this.taskListChild_m = new TaskListChild_m(this.taskListChild, this.basicFrame);
+        this.loginParent = new Login();
+        this.loginParent_m = new Login_m(this.loginParent);
+
 
         // 以下部分对于存取款界面进行了初始化
         this.personalPage=new PersonalPage();
@@ -150,20 +179,22 @@ public class Control {
                         for (int i = 0; i < lines.size(); i++){
                             JSONObject jsonObject = new JSONObject(lines.get(i));
                             /*** 该处需要在jsonl修改时进行修改 ***/
-                            if (jsonObject.getString("ID").equals(user_account.getID())) {
+                            if (jsonObject.getString("ID").equals(child_account.getID())) {
                                 jsonObject.put("task_list", "123");
-                                jsonObject.put("email", user_account.getEmail());
+                                jsonObject.put("email", child_account.getEmail());
+                                jsonObject.put("ParentID", child_account.getParentID());
+                                System.out.println(child_account.getParentID());
 
                                 // 以下内容更新了账户的信息
-                                jsonObject.put("charge", user_account.getCharge());
-                                jsonObject.put("timeDeposit", user_account.getTimeDeposit());
-                                jsonObject.put("demandDeposit", user_account.getDemandDeposit());
-                                jsonObject.put("depositTime", user_account.getDepositTime());
+                                jsonObject.put("charge", child_account.getCharge());
+                                jsonObject.put("timeDeposit", child_account.getTimeDeposit());
+                                jsonObject.put("demandDeposit", child_account.getDemandDeposit());
+                                jsonObject.put("depositTime", child_account.getDepositTime());
 
                                 // 以下内容存储了log文件
                                 String logPath = "src/main/java/Class/log.txt";
                                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(logPath))) {
-                                    for (String log : user_account.getLogList()) {
+                                    for (String log : child_account.getLogList()) {
                                         // 写入当前log并添加换行符
                                         writer.write(log);
                                         writer.newLine(); // 添加换行
@@ -192,6 +223,11 @@ public class Control {
                     }
                     file.delete();
                     tempFile.renameTo(file);
+                    child_account.dumpTaskList();
+                }
+                if(parent_account != null){
+                    parent_account.dumpTaskList();
+
                 }
             }
             @Override
@@ -513,7 +549,7 @@ public class Control {
                 taskMouseClicked(e);
             }
         });
-        this.task.getButton2().addMouseListener(new MouseAdapter() {
+        this.taskView.getButton2().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 returnMainMouseClicked(e);
@@ -531,23 +567,162 @@ public class Control {
                 taskMouseClicked(e);
             }
         });
+
+        this.login.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                parentLoginMouseClicked(e);
+            }
+        });
+        this.mainParents.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Wel2LoginButtonMouseClicked(e);
+            }
+        });
+        this.mainParents.getButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                TaskListMouseClicked(e);
+            }
+        });
+        this.taskList.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnMainParentsMouseClicked(e);
+            }
+        });
+
+        this.taskList.getButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                addTasksMouseClicked(e);
+            }
+        });
+        this.addTask.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                TaskListMouseClicked(e);
+            }
+        });
+        this.addTask.getButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                PublishTaskMouseClicked(e);
+            }
+        });
+        this.taskList_m.getAddTask().getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                TaskListMouseClicked(e);
+            }
+        });
+
+        this.signup.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                SignupParentMouseClicked(e);
+            }
+        });
+        this.signupParent.getButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnWelMouseClicked(e);
+            }
+        });
+        this.taskListChild.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnMainMouseClicked(e);
+            }
+        });
+        this.taskListChild_m.getAddTask().getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                taskMouseClicked(e);
+            }
+        });
+
+        this.loginParent.getButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnWelMouseClicked(e);
+            }
+        });
+        this.loginParent.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                mainParentsMouseClicked(e);
+            }
+        });
+        this.signupParent.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                registerParentsMouseClicked(e);
+            }
+        });
+    }
+
+    private void registerParentsMouseClicked(MouseEvent e) {
+        this.signupParent_m.registerParent();
+        this.returnWelMouseClicked(e);
+    }
+
+    private void parentLoginMouseClicked(MouseEvent e) {
+        loginParent_m.initParent(this.basicFrame);
+    }
+
+    private void SignupParentMouseClicked(MouseEvent e) {
+        this.signupParent_m.init(this.basicFrame);
+    }
+
+    private void returnMainParentsMouseClicked(MouseEvent e) {
+        this.mainParents_m.init(this.basicFrame);
+    }
+
+    private void PublishTaskMouseClicked(MouseEvent e) {
+        int len = this.parent_account.getTasks().size()+1;
+        Task task = this.addTask_m.setTask(String.valueOf(len));
+        this.parent_account.addTask(task);
+        this.taskList_m.showTasks(this.parent_account.getTasks());
+        this.taskList_m.init(this.basicFrame);
+        this.addTask_m.clearFields();
+    }
+
+    private void addTasksMouseClicked(MouseEvent e) {
+        this.addTask_m.init(this.basicFrame);
+    }
+
+    private void TaskListMouseClicked(MouseEvent e) {
+        this.taskList_m.showTasks(this.parent_account.getTasks());
+        this.taskList_m.init(this.basicFrame);
+    }
+
+    private void mainParentsMouseClicked(MouseEvent e) {
+        try {
+            this.parent_account = this.loginParent_m.checkParent();
+            this.parent_account.loadTaskList();
+            this.mainParents_m.init(this.basicFrame);
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
     }
 
     // 以下内容为与存取钱commit
     private void chargeWithdrawCommitMouseClicked(MouseEvent e) {
-        this.user_account = this.chargeWithdraw_m.confirmButton(this.user_account);
+        this.child_account = this.chargeWithdraw_m.confirmButton(this.child_account);
     }
     private void demandDepositCommitMouseClicked(MouseEvent e) {
-        this.user_account = this.demandDeposit_m.confirmButton(this.user_account);
+        this.child_account = this.demandDeposit_m.confirmButton(this.child_account);
     }
     private void demandDeposit2CommitMouseClicked(MouseEvent e) {
-        this.user_account = this.demandDeposit2_m.confirmButton(this.user_account);
+        this.child_account = this.demandDeposit2_m.confirmButton(this.child_account);
     }
     private void timeDepositCommitMouseClicked(MouseEvent e) {
-        this.user_account = this.timeDeposit_m.confirmButton(this.user_account);
+        this.child_account = this.timeDeposit_m.confirmButton(this.child_account);
     }
     private void timeDeposit2CommitMouseClicked(MouseEvent e) {
-        this.user_account = this.timeDeposit2_m.confirmButton(this.user_account);
+        this.child_account = this.timeDeposit2_m.confirmButton(this.child_account);
     }
 
     // 以下内容为与存取钱cancel
@@ -569,10 +744,10 @@ public class Control {
 
     // homePage
     private void homeMouseClicked(MouseEvent e){
-        this.personalPage_m.init(this.basicFrame, this.user_account);
+        this.personalPage_m.init(this.basicFrame, this.child_account);
     }
     private void RehomeMouseClicked(MouseEvent e){
-        this.main_page_m.init(this.basicFrame, this.user_account);
+        this.main_page_m.init(this.basicFrame, this.child_account);
     }
 
     // 以下为向五个界面的跳转逻辑
@@ -592,7 +767,7 @@ public class Control {
 
     // 以下为5个界面的返回逻辑跳转
     private void pageReMouseClicked(MouseEvent e){
-        this.personalPage_m.init(this.basicFrame, this.user_account);
+        this.personalPage_m.init(this.basicFrame, this.child_account);
     }
 
 
@@ -633,10 +808,11 @@ public class Control {
     }
 
     private void LoginMouseClicked(MouseEvent e) throws IOException {
-        this.user_account = this.login_m.check();
-        if(this.user_account.flag != 0){
+        this.child_account = this.login_m.check();
+        this.child_account.loadTaskList();//bug
+        if(this.child_account.flag != 0){
             this.login_flag = 1;
-            this.main_page_m.init(this.basicFrame, this.user_account);
+            this.main_page_m.init(this.basicFrame, this.child_account);
         }
     }
 
@@ -646,7 +822,7 @@ public class Control {
     }
 
     private void returnMainMouseClicked(MouseEvent e){
-        this.main_page_m.init(this.basicFrame,this.user_account);
+        this.main_page_m.init(this.basicFrame,this.child_account);
     }
 
     private void changePasswordMouseClicked(MouseEvent e){
@@ -673,7 +849,8 @@ public class Control {
         this.purchaseRecord_m.init(this.basicFrame);
     }
     private void taskMouseClicked(MouseEvent e){
-        this.task_m.init(this.basicFrame);
+        this.taskListChild_m.showTasks(this.child_account.getTasks());
+        this.taskListChild_m.init(this.basicFrame);
     }
 
 //    private void withDrawalMouseClicked(MouseEvent e){

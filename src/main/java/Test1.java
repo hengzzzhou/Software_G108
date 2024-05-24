@@ -28,6 +28,7 @@ public class Test1 {
         DemandDeposit2 ddp2 = new DemandDeposit2();
         TimeDeposit tdp1 = new TimeDeposit();
         TimeDeposit2 tdp2 = new TimeDeposit2();
+        AddTask addTask = new AddTask();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // 设置主界面大小及可见性
@@ -36,7 +37,7 @@ public class Test1 {
         frame.setLocationRelativeTo(null);
 
         // 在此处将Jlabel添加到fram中
-        frame.getContentPane().add(ddp1);
+        frame.getContentPane().add(mainParents);
 
         frame.repaint();
         frame.revalidate();

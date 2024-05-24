@@ -13,8 +13,8 @@ import com.intellij.uiDesigner.core.*;
 /**
  * @author captainbluebeard
  */
-public class Task extends JPanel {
-    public Task() {
+public class TaskView extends JPanel {
+    public TaskView() {
         initComponents();
     }
 
@@ -121,7 +121,7 @@ public class Task extends JPanel {
             null, null, null));
 
         //---- label3 ----
-        label3.setText("Task completion progress on 2024.05.06");
+        label3.setText("TaskView completion progress on 2024.05.06");
         label3.setFont(label3.getFont().deriveFont(label3.getFont().getStyle() | Font.BOLD, label3.getFont().getSize() + 1f));
         add(label3, new GridConstraints(1, 2, 1, 4,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
@@ -595,7 +595,7 @@ public class Task extends JPanel {
             null, null, null));
 
         //---- button4 ----
-        button4.setText("New Task");
+        button4.setText("New TaskView");
         add(button4, new GridConstraints(13, 3, 1, 3,
             GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,

@@ -5,6 +5,7 @@ import Class.User;
 
 import javax.swing.*;
 import java.util.List;
+import Class.Child;
 
 public class DemandDeposit2_m {
     DemandDeposit2 demandDeposit2 = new DemandDeposit2();
@@ -20,7 +21,7 @@ public class DemandDeposit2_m {
         welcome.revalidate();
     }
 
-    public User confirmButton(User user){
+    public Child confirmButton(Child user){
         double value = Double.parseDouble(demandDeposit2.getTextField1().getText());
         double accVal = user.getDemandDeposit();
         // 此处对于输入进行运算 (以下内容须在不同页面修改加减号)

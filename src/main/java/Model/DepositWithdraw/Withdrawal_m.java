@@ -5,6 +5,7 @@ import View.DepositWithdraw.WithDrawal;
 import javax.swing.*;
 import java.util.List;
 import Class.User;
+import Class.Child;
 
 public class Withdrawal_m {
     WithDrawal withDrawal = new WithDrawal();
@@ -20,7 +21,7 @@ public class Withdrawal_m {
         welcome.revalidate();
     }
 
-    public User confirmButton(User user){
+    public Child confirmButton(Child user){
         double value = Double.parseDouble(withDrawal.getTextField1().getText());
         double accVal = user.getCharge();
         // 此处对于输入进行运算 (以下内容须在不同页面修改加减号)

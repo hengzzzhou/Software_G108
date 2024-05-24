@@ -4,28 +4,39 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {comp label1:::p::p, space ::207:x, comp label2:::p::p, space :p:159:p, comp button1:::p::p, space s:::p, comp button2:::p::p, space :p:22:p}}"
-			"$verticalGroup": "par l {seq l {par b {comp label1::b:p::p, comp button1::b:p::p, comp button2::b:p::p, comp label2::b:p::p}, space ::273:x}}"
+			"$horizontalGroup": "par l {seq l {comp label1:::p::p, space :p:108:p, comp label2:::p::p, space ::133:x, comp button3:::p::p, space s:::p, comp button1:::p::p, space s:::p, comp button2:::p::p, space :p:22:p}}"
+			"$verticalGroup": "par l {seq {par b {comp label1::b:p::p, comp button1::b:p::p, comp button2::b:p::p, comp button3::b:p::p, comp label2::b:p::p}, space ::276:x}}"
 		} ) {
 			name: "this"
 			"maximumSize": new java.awt.Dimension( 780, 100 )
 			"preferredSize": new java.awt.Dimension( 780, 100 )
 			"minimumSize": new java.awt.Dimension( 780, 100 )
+			"font": &Font0 new java.awt.Font( "Eras Bold ITC", 1, 12 )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
 				"text": "sweep the floor"
+				"font": #Font0
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "Completed"
+				"font": #Font0
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "Check"
+				"font": #Font0
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"
 				"text": "Delete"
+				"font": #Font0
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "Done"
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+				"visible": false
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
