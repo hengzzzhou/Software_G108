@@ -1,0 +1,54 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 1200, 900 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space :p:22:p, comp button1:::p:105:p, space ::1073:x}, seq t {space ::92:x, par l {seq t {comp label2:::p:332:p, space :p:234:p}, seq t {comp textField1:::p:482:p, space :p:74:p}}, par l {seq {comp label3:::p::p, space :p:225:p}, seq t {comp textField2:::p:482:p, space :p:51:p}}}, seq l {space :p:124:p, comp button2:::p:261:p, space ::403:x, comp button3:::p:261:p, space :p:151:p}}"
+				"$verticalGroup": "par l {seq t {par t {seq {space ::718:x, comp button3:::p:60:p}, seq {space :p:31:p, comp button1:::p:40:p, space :p:62:p, par b {comp label3::b:p::p, comp label2::b:p:42:p}, space :p:23:p, par b {comp textField1::b:p:46:p, comp textField2::b:p:46:p}, space ::474:x, comp button2:::p:60:p}}, space :p:122:p}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 1200, 900 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "R"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 36 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Deposit Amount:"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 30 )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Deposit Rate Ceilings:"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 30 )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField2"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"opaque": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"opaque": false
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1200, 900 )
+		} )
+	}
+}

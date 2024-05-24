@@ -1,0 +1,189 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 3
+			"$rowCount": 4
+		} ) {
+			name: "this"
+			"opaque": false
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space ::18:x, comp button1:::p::p, space :::p}}"
+				"$verticalGroup": "par l {seq t {space ::38:x, comp button1:::p::p, space :p:35:p}}"
+			} ) {
+				name: "panel1"
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "R"
+					"preferredSize": new java.awt.Dimension( 35, 35 )
+					"maximumSize": new java.awt.Dimension( 76, 35 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 12 )
+					"background": new java.awt.Color( 255, 204, 0, 193 )
+					"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"anchor": 9
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:32:p, comp label6:::p:111:p, space ::47:x}}"
+				"$verticalGroup": "par l {seq l {space :p:23:p, comp label6:::p:43:p, space ::39:x}}"
+			} ) {
+				name: "panel7"
+				"preferredSize": new java.awt.Dimension( 190, 105 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": "HOME"
+					"horizontalAlignment": 0
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"anchor": 1
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:100:x}"
+				"$verticalGroup": "par l {space :0:100:x}"
+			} ) {
+				name: "panel2"
+				"opaque": false
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 2
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space :0:22:x, comp label1:::p:178:p}}"
+				"$verticalGroup": "par l {comp label1::l::118:x}"
+			} ) {
+				name: "panel5"
+				"preferredSize": new java.awt.Dimension( 200, 200 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "text"
+					"opaque": true
+					"preferredSize": new java.awt.Dimension( 200, 200 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 1
+				"anchor": 1
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, comp button6:::p:175:p, space :p:47:p, comp button7:::p:155:p, space :p:49:p, comp button8:::p:87:p, space ::57:x}}"
+				"$verticalGroup": "par l {seq {space :::p, par l {par b {comp button6::b:p:68:p, comp button7::b:p:68:p}, comp button8::l:p:68:p}, space ::26:x}}"
+			} ) {
+				name: "panel6"
+				"preferredSize": new java.awt.Dimension( 600, 100 )
+				"minimumSize": new java.awt.Dimension( 415, 78 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button6"
+					"text": "<html><div align=\"center\">Loan<br>Administration<div></html>"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 16 )
+					"background": new java.awt.Color( 255, 204, 0, 159 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button7"
+					"text": "<html><div align=\"center\">Bank Card<br>Management<div></html>"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 16 )
+					"background": new java.awt.Color( 255, 204, 51, 183 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button8"
+					"text": "Bill"
+					"background": new java.awt.Color( 255, 204, 0, 168 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 16 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 1
+				"colSpan": 2
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space :::x, comp button2:::p::p, space :p:20:p}, seq {space :::p, par l {comp button3::l:p:213:p, comp button4::l:p:213:p, comp button5::l:p:213:p}, space :::x}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp button2:::p:39:p, space :p:30:p, comp button3:::p::p, space :p:34:p, comp button4:::p:37:p, space ::35:x, comp button5:::p:38:p, space :p:19:p}}"
+			} ) {
+				name: "panel3"
+				"preferredSize": new java.awt.Dimension( 200, 270 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "Change the avatar"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 18 )
+					"background": new java.awt.Color( 0, 153, 255, 255 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"text": "Deposit"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 18 )
+					"background": new java.awt.Color( 0, 153, 255, 255 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button4"
+					"text": "Withdrawal"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 18 )
+					"background": new java.awt.Color( 51, 153, 255, 255 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button5"
+					"text": "Invite friends"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 18 )
+					"background": new java.awt.Color( 0, 153, 255, 255 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"row": 3
+				"anchor": 1
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:19:p, par l {seq {par t {comp label2::l:::x, comp label4::l:::x}, space :p:135:p}, seq {par t {comp label5::l:::x, comp label3:::::x}, space :::p}}}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp label2:::p:30:p, space ::22:x, comp label3:::p:40:p, space s:::p, comp label4:::p:23:p, space s:::p, comp label5:::p:43:p}}"
+			} ) {
+				name: "panel4"
+				"preferredSize": new java.awt.Dimension( 400, 200 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "My Assets"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "$100"
+					"opaque": true
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "Monthly Income & Expenditure"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "+10 / -5"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 24 )
+					"opaque": true
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 3
+				"colSpan": 2
+				"anchor": 9
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 825, 545 )
+		} )
+	}
+}

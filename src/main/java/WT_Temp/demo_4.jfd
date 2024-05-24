@@ -1,0 +1,67 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 1200, 900 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, comp panel2:::p::p, par l {seq {par l {seq {space :p:89:p, comp label2:::p:203:p}, seq l {space :p:91:p, comp label3:::p:251:p}}, space ::252:x}, seq t {space ::75:x, par l {seq t {par l {comp textField2:::p:456:p, comp textField1:::p:456:p}, space :p:63:p}, seq t {comp button3:::p:173:p, space :p:196:p}, seq t {comp label4:::p:446:p, space :p:44:p}}}}}}"
+				"$verticalGroup": "par l {seq {par l {seq {space :::p, comp panel2:::p::p}, seq l {space :p:158:p, comp label2:::p:71:p, space :::p, comp textField1:::p:57:p, space s:::p, comp label3:::p:56:p, space :::p, comp textField2:::p:57:p, space :p:49:p, comp button3:::p:61:p, space :p:87:p, comp label4:::p:150:p}}, space :::x}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 1200, 900 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {par l {seq l {space :p:62:p, comp button1:::p:138:p}, seq l {space :p:38:p, comp button2:::p::p}}, space ::400:x}}"
+					"$verticalGroup": "par l {seq t {space :p:31:p, comp button2:::p::p, space ::667:x, comp button1:::p:49:p, space :p:115:p}}"
+				} ) {
+					name: "panel2"
+					"preferredSize": new java.awt.Dimension( 600, 900 )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button1"
+						"text": "Delete"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button2"
+						"text": "R"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Saving Amount "
+					"font": new java.awt.Font( "Microsoft YaHei UI", 1, 24 )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Donation Amount"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 1, 24 )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField2"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"text": "Confirm"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "<html>Donation cards allow children to save money and donate it to charities such as the International Red Cross.</html>"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1200, 905 )
+		} )
+	}
+}
