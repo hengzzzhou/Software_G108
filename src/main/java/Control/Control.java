@@ -360,6 +360,7 @@ public class Control {
             @Override
             public void mouseClicked(MouseEvent e) {
                 confirmGoal(e);
+                RehomeMouseClicked(e);
             }
         });
         // 在此处从5个界面返回
