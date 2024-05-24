@@ -3,10 +3,8 @@ package Class;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Calendar;
@@ -14,8 +12,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.json.JSONObject;
 
 public class User {
     // 定义User类的属性
@@ -41,7 +37,6 @@ public class User {
     /******** 用于user类初始化时检测密码是否正确（后可用于校验登录账户） ********/
     public int flag;
 
-
     /******* 构造方法，用于从JSONObject初始化User对象(第一个方法用于初始化) *******/
     public User(){
         this.flag = 0;
@@ -52,23 +47,24 @@ public class User {
         this.flag = 0;
         this.tasks = new ArrayList<>();
     }
+
     public User(String ID, String password) throws JSONException, IOException {
 
-        File file=new File("src/main/java/Class/Accounts.jsonl");
+        File file = new File("src/main/java/Class/Accounts.jsonl");
         JSONObject matchedUsers = findUsersByUserName(file, ID);
 
-        if(matchedUsers != null){
-            if(Objects.equals(matchedUsers.getString("Password"), password)){
+        if (matchedUsers != null) {
+            if (Objects.equals(matchedUsers.getString("Password"), password)) {
                 this.ID = ID;
                 this.email = matchedUsers.getString("email");
                 this.task_list = matchedUsers.getString("task_list");
                 this.tasks = null;
-                this.progress=18;
+                this.progress = readProgressFromFile(); // 读取进度
                 this.flag = 1;
 
 
                 // 以下内容初始化有关账户的信息
-                this.logList = new ArrayList<>();
+                this.logList = loadLogListFromFile();
                 this.charge = matchedUsers.getDouble("charge");
                 this.depositTime = matchedUsers.getString("depositTime");
                 this.timeDeposit = matchedUsers.getDouble("timeDeposit");
@@ -76,7 +72,7 @@ public class User {
                 this.update_timeAndDeposit();
                 this.demandDeposit = matchedUsers.getDouble("demandDeposit");
                 this.total = this.charge + this.timeDeposit + this.demandDeposit;
-            }else {
+            } else {
                 this.flag = 0;
             }
         }
@@ -120,7 +116,38 @@ public class User {
     public List<String> getLogList() {
         return logList;
     }
-    public void setLogList(List<String> logList){ this.logList = logList; }
+    public void setLogList(List<String> logList){
+        this.logList = logList;
+        saveLogListToFile(logList);
+
+    }
+
+    private void saveLogListToFile(List<String> logList) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/Class/LOG_FILE"))) {
+            for (String log : logList) {
+                writer.write(log);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private List<String> loadLogListFromFile() {
+        List<String> logList = new ArrayList<>();
+        File file = new File("src/main/java/Class/LOG_FILE");
+        if (file.exists()) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    logList.add(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return logList;
+    }
 
     // 以下为一些基础操作
     public String getID() {
@@ -193,7 +220,6 @@ public class User {
     }
 
 
-
     public int getProgress() {
         return progress;
     }
@@ -229,3 +255,34 @@ public class User {
     }
 }
 
+    public void setProgress(int progress) {
+        this.progress = progress;
+        saveProgressToFile(progress); // 保存进度
+    }
+
+    // 读取进度
+    private int readProgressFromFile() {
+        File file = new File("src/main/java/Class/progress.txt");
+        if (file.exists()) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                String line = reader.readLine();
+                if (line != null) {
+                    return Integer.parseInt(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0; // 默认进度为0
+    }
+
+    // 保存进度
+    private void saveProgressToFile(int progress) {
+        File file = new File("src/main/java/Class/progress.txt");
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(String.valueOf(progress));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

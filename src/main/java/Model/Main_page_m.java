@@ -16,17 +16,16 @@ public class Main_page_m {
         welcome.getContentPane().removeAll();
 
         // 此处设置账号的总资产
-        String tolMon = "<html>$";
-        tolMon = tolMon + String.format("%.2f", user.getTotal()) + "</html>";
-        main_page.getLabelTolMoney().setText(tolMon);
-
+        main_page.getTotalAssets().setText("$"+user.getTotal());
+        main_page.getGoalButton().setText("My Goal: "+ user.getProgress());
         welcome.getContentPane().add(this.main_page);
         welcome.repaint();
         welcome.revalidate();
-        this.setProgressBarValue(user.getProgress());
+        this.setProgressBarValue(user,user.getProgress());
     }
 
-    public void setProgressBarValue(int value) {
-        this.main_page.getProgressBar1().setValue(value);
+    public void setProgressBarValue(User user,int value) {
+        double now = user.getTotal();
+        this.main_page.getProgressBar1().setValue((int)(now/value*100));
     }
 }

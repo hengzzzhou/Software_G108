@@ -42,8 +42,6 @@ public class Control {
     private ContactUs_m contactUs_m;
     private IDPasswordManagement idPasswordManagement;
     private IDPasswordManagement_m idPasswordManagement_m;
-    private Target target;
-    private Target_m target_m;
     private Shop shop;
     private Shop_m shop_m;
     private ShoppingTrolley shoppingTrolley;
@@ -82,6 +80,14 @@ public class Control {
     private AddTask_m addTask_m;
 
 
+    // transaction
+    private Transaction transaction;
+    private Transaction_m transaction_m;
+
+    // goal
+    private SetGoal setGoal;
+    private SetGoal_m setGoal_m;
+
     public void init(){
         /* initialize all the components */
         this.basicFrame = new BasicFrame();
@@ -107,8 +113,8 @@ public class Control {
         this.contactUs_m=new ContactUs_m(this.contactUs);
         this.idPasswordManagement=new IDPasswordManagement();
         this.idPasswordManagement_m=new IDPasswordManagement_m(this.idPasswordManagement);
-        this.target=new Target();
-        this.target_m=new Target_m(this.target);
+        this.setGoal = new SetGoal();
+        this.setGoal_m = new SetGoal_m(this.setGoal);
         this.shop=new Shop();
         this.shop_m=new Shop_m(this.shop);
         this.shoppingTrolley=new ShoppingTrolley();
@@ -132,27 +138,31 @@ public class Control {
 
 
         // 以下部分对于存取款界面进行了初始化
-        this.personalPage=new PersonalPage();
-        this.personalPage_m=new PersonalPage_m(this.personalPage);
-        this.chargeWithdraw=new WithDrawal();
-        this.chargeWithdraw_m=new Withdrawal_m(this.chargeWithdraw);
-        this.demandDeposit=new DemandDeposit();
-        this.demandDeposit_m=new DemandDeposit_m(this.demandDeposit);
-        this.demandDeposit2=new DemandDeposit2();
-        this.demandDeposit2_m=new DemandDeposit2_m(this.demandDeposit2);
-        this.timeDeposit=new TimeDeposit();
-        this.timeDeposit_m=new TimeDeposit_m(this.timeDeposit);
-        this.timeDeposit2=new TimeDeposit2();
-        this.timeDeposit2_m=new TimeDeposit2_m(this.timeDeposit2);
+        this.personalPage = new PersonalPage();
+        this.personalPage_m = new PersonalPage_m(this.personalPage);
+        this.chargeWithdraw = new WithDrawal();
+        this.chargeWithdraw_m = new Withdrawal_m(this.chargeWithdraw);
+        this.demandDeposit = new DemandDeposit();
+        this.demandDeposit_m = new DemandDeposit_m(this.demandDeposit);
+        this.demandDeposit2 = new DemandDeposit2();
+        this.demandDeposit2_m = new DemandDeposit2_m(this.demandDeposit2);
+        this.timeDeposit = new TimeDeposit();
+        this.timeDeposit_m = new TimeDeposit_m(this.timeDeposit);
+        this.timeDeposit2 = new TimeDeposit2();
+        this.timeDeposit2_m = new TimeDeposit2_m(this.timeDeposit2);
 
-        //Initialize the basic frame and welcome page
+        // 记录
+        this.transaction = new Transaction();
+        this.transaction_m = new Transaction_m(transaction);
+
+        // Initialize the basic frame and welcome page
         this.basicFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.basicFrame.setSize(1200, 900);
         this.basicFrame.setVisible(true);
         this.basicFrame.setLocationRelativeTo(null);
         this.welcome_m.refreshWelcome(this.basicFrame);
 
-        //Register all the events
+        // Register all the events
         this.eventRegistration();
     }
 
@@ -165,7 +175,7 @@ public class Control {
             public void windowOpened(WindowEvent e) {}
             @Override
             public void windowClosing(WindowEvent e) {
-                // 窗口关闭时的事件处理 --> 将user中信息重新存储到jsonl中\
+                // 窗口关闭时的事件处理 --> 将user中信息重新存储到jsonl中
                 if (login_flag != 0){
                     File file = new File("src/main/java/Class/Accounts.jsonl");
                     File tempFile = new File("src/main/java/Class/Accounts_temp.jsonl");
@@ -206,6 +216,11 @@ public class Control {
 
                                 // 保存信息
                                 lines.set(i, jsonObject.toString());
+
+                                // Save logList to file
+                                user_account.setLogList(user_account.getLogList());
+
+                                lines.set(i, jsonObject.toString());
                             }
                         }
                     } catch (IOException ex) {
@@ -244,6 +259,13 @@ public class Control {
     }
 
     private void eventRegistration() {
+        this.transaction.getReButton().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("Return button clicked");
+                pageReMouseClicked(e);
+            }
+        });
         // 以下内容为存取钱界面的confirm按钮
         this.chargeWithdraw.getConfirmButton().addMouseListener(new MouseAdapter() {
             @Override
@@ -353,13 +375,39 @@ public class Control {
             }
         });
 
+        // transaction -zh
+        this.personalPage.getTransactionButton().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transactionPageMouseClicked(e);
+            }
+        });
+
+
+        // goal -zh
+
+        this.setGoal.getButtonReturn().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                RehomeMouseClicked(e);
+            }
+        });
+        this.setGoal.getButtonConfirm().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                confirmGoal(e);
+                RehomeMouseClicked(e);
+            }
+        });
         // 在此处从5个界面返回
         this.chargeWithdraw.getReButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+
                 pageReMouseClicked(e);
             }
         });
+
         this.timeDeposit.getReButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -490,16 +538,17 @@ public class Control {
         this.main_page.getButton5().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                targetMouseClicked(e);
+                goalMouseClicked(e);
             }
         });
 
-        this.target.getButton2().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                returnMainMouseClicked(e);
-            }
-        });
+//        this.target.getButton2().addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                returnMainMouseClicked(e);
+//            }
+//        });
+
 
         this.main_page.getButton1().addMouseListener(new MouseAdapter() {
             @Override
@@ -765,6 +814,10 @@ public class Control {
         this.timeDeposit2_m.init(this.basicFrame);
     }
 
+    private void transactionPageMouseClicked(MouseEvent e){
+        this.transaction_m.init(this.basicFrame, this.user_account);
+    }
+
     // 以下为5个界面的返回逻辑跳转
     private void pageReMouseClicked(MouseEvent e){
         this.personalPage_m.init(this.basicFrame, this.child_account);
@@ -836,8 +889,8 @@ public class Control {
     private void contactUsMouseClicked(MouseEvent e){
         this.contactUs_m.init(this.basicFrame);
     }
-    private void targetMouseClicked(MouseEvent e){
-        this.target_m.init(this.basicFrame);
+    private void goalMouseClicked(MouseEvent e){
+        this.setGoal_m.init(this.basicFrame);
     }
     private void shopMouseClicked(MouseEvent e){
         this.shop_m.init(this.basicFrame);
@@ -853,6 +906,9 @@ public class Control {
         this.taskListChild_m.init(this.basicFrame);
     }
 
+    private void confirmGoal(MouseEvent e) {
+        this.user_account = this.setGoal_m.confirmButton(this.user_account);
+    }
 //    private void withDrawalMouseClicked(MouseEvent e){
 //        this.withdrawal_m.init(this.basicFrame);
 //    }

@@ -192,6 +192,7 @@ public class PersonalPage extends JPanel {
     public JButton getDDButton() {
         return button8;
     }
+
     public JButton getDWButton() {
         return button9;
     }
@@ -201,4 +202,8 @@ public class PersonalPage extends JPanel {
     public JTextField getChTextField(){return textField3;}
     public JTextField getTiTextField(){return textField1;}
     public JTextField getDeTextField(){return textField2;}
+    public JButton getTransactionButton() {
+        return button5;
+    }
+
 }

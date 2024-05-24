@@ -115,6 +115,7 @@ public class WithDrawal extends JPanel {
     }
 
     public JButton getReButton() {
+
         return button3;
     }
     public JButton getConfirmButton(){return button2;}
