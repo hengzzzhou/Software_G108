@@ -262,8 +262,8 @@ public class Control {
         this.transaction.getReButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("Return button clicked");
-                pageReMouseClicked(e);
+                if(parent_account!=null)parentReMouseClicked(e);
+                else pageReMouseClicked(e);
             }
         });
         // 以下内容为存取钱界面的confirm按钮
@@ -635,6 +635,12 @@ public class Control {
                 TaskListMouseClicked(e);
             }
         });
+        this.mainParents.getTransactionRecordButton().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transactionPageMouseClicked(e);
+            }
+        });
         this.taskList.getButton1().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -815,7 +821,9 @@ public class Control {
     }
 
     private void transactionPageMouseClicked(MouseEvent e){
-        this.transaction_m.init(this.basicFrame, this.child_account);
+        if(parent_account!=null){this.transaction_m.init(this.basicFrame, this.parent_account);}
+        else this.transaction_m.init(this.basicFrame, this.child_account);
+
     }
 
     // 以下为5个界面的返回逻辑跳转
@@ -823,6 +831,9 @@ public class Control {
         this.personalPage_m.init(this.basicFrame, this.child_account);
     }
 
+    private void parentReMouseClicked(MouseEvent e){
+        this.mainParents_m.init(this.basicFrame);
+    }
 
     // 以下为其他内容的事件绑定
     private void Wel2LoginButtonMouseClicked(MouseEvent e) {
