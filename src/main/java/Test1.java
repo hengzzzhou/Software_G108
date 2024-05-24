@@ -1,5 +1,6 @@
 import View.*;
 import View.DepositWithdraw.*;
+import WT_Temp.PersonalPage2;
 import WT_Temp.new_main_1;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 
@@ -23,7 +24,7 @@ public class Test1 {
         TaskList taskList = new TaskList();
 
         // 以下内容为存取款UI界面
-        PersonalPage pg = new PersonalPage();
+        PersonalPage2 pg = new PersonalPage2();
         Main_page mp = new Main_page();
         new_main_1 ddp1 = new new_main_1();
         DemandDeposit2 ddp2 = new DemandDeposit2();
@@ -37,7 +38,7 @@ public class Test1 {
         frame.setLocationRelativeTo(null);
 
         // 在此处将Jlabel添加到fram中
-        frame.getContentPane().add(mp);
+        frame.getContentPane().add(pg);
 
         frame.repaint();
         frame.revalidate();

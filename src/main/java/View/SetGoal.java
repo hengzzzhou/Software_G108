@@ -39,7 +39,7 @@ public class SetGoal extends JPanel {
             button1.setText("Confirm");
 
             //---- button2 ----
-            button2.setText("Return");
+            button2.setText("Refresh");
 
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
