@@ -47,7 +47,7 @@ public class TimeDeposit extends JPanel {
             label2.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 30));
             label2.setForeground(Color.WHITE);
             //---- label3 ----
-            label3.setText("Deposit Rate Ceilings:");
+            label3.setText("Deposit time(month):");
             label3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 30));
             label3.setForeground(Color.WHITE);
             //---- button2 ----
@@ -154,5 +154,8 @@ public class TimeDeposit extends JPanel {
     public JButton getCancelButton(){return button2;}
     public JTextField getTextField1() {
         return textField1;
+    }
+    public JTextField getTextTime() {
+        return textField2;
     }
 }

@@ -156,6 +156,12 @@ public class User {
     public void setID(String username) {
         this.ID = username;
     }
+    public Double getTimeRate() {
+        return timeRate;
+    }
+    public void setTimeRate(Double timeRate) {
+        this.timeRate = timeRate;
+    }
 
     public String getTask_list() {
         return task_list;
