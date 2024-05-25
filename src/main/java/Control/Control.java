@@ -719,8 +719,23 @@ public class Control {
     }
 
     private void registerParentsMouseClicked(MouseEvent e) {
-        this.signupParent_m.registerParent();
-        this.returnWelMouseClicked(e);
+        boolean flag = true;
+        if(!this.signupParent_m.checkID()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("ID Exists!");
+            this.signupParent_m.clear();
+        }
+        if(!this.signupParent_m.checkPassword()) {
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Two passwords are different!");
+            this.signupParent_m.clear();
+        }
+        if (flag) {
+            this.signupParent_m.registerParent();
+            this.returnWelMouseClicked(e);
+        }
     }
 
     private void parentLoginMouseClicked(MouseEvent e) {
@@ -756,8 +771,14 @@ public class Control {
     private void mainParentsMouseClicked(MouseEvent e) {
         try {
             this.parent_account = this.loginParent_m.checkParent();
-            this.parent_account.loadTaskList();
-            this.mainParents_m.init(this.basicFrame);
+            if(this.parent_account!=null) {
+                this.parent_account.loadTaskList();
+                this.mainParents_m.init(this.basicFrame);
+            }else{
+                this.welDial_m.init();
+                this.welDial_m.changeVal("ID or Password is wrong!");
+                this.loginParent_m.clear();
+            }
         }catch (IOException exception){
             exception.printStackTrace();
         }
@@ -855,29 +876,45 @@ public class Control {
     }
 
     private void registerMouseClicked(MouseEvent e){
-        if(this.signup_m.checkID()){
-            if(this.signup_m.checkPassword()) {
-                this.signup_m.register();
-                this.welcome_m.refreshWelcome(this.basicFrame);
-            }else{
-                this.welDial_m.init();
-                this.welDial_m.changeVal("Two passwords are different!");
-                this.signup_m.clear();
-            }
-        }else{
+        boolean flag = true;
+        if(!this.signup_m.checkID()){
+            flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("ID Exists!");
             this.signup_m.clear();
+        }
+        if(!this.signup_m.checkPassword()) {
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Two passwords are different!");
+            this.signup_m.clear();
+        }
+        if(!this.signup_m.checkParentID()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Parent ID does not exist!");
+            this.signup_m.clear();
+        }
+        if(flag){
+            this.signup_m.register();
+            this.welcome_m.refreshWelcome(this.basicFrame);
         }
     }
 
     private void LoginMouseClicked(MouseEvent e) throws IOException {
         this.child_account = this.login_m.check();
-        this.child_account.loadTaskList();//bug
-        if(this.child_account.flag != 0){
-            this.login_flag = 1;
-            this.main_page_m.init(this.basicFrame, this.child_account);
+        if(this.child_account!=null){
+            this.child_account.loadTaskList();//bug
+            if(this.child_account.flag != 0){
+                this.login_flag = 1;
+                this.main_page_m.init(this.basicFrame, this.child_account);
+            }
+        }else{
+            this.welDial_m.init();
+            this.welDial_m.changeVal("ID or Password is wrong!");
+            this.login_m.clear();
         }
+
     }
 
 

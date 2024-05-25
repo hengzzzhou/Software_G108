@@ -25,6 +25,12 @@ public class Login_m {
             String id=this.login.getTextField1().getText();
             char[] password=this.login.getPasswordField1().getPassword();
             String pass = String.valueOf(password);
+            if(User.findUsersByUserName(new File("src/main/java/Class/Accounts.jsonl"), id)==null){
+                return null;
+            }
+            if(!User.findUsersByUserName(new File("src/main/java/Class/Accounts.jsonl"), id).getString("Password").equals(pass)){
+                return null;
+            }
             user_account = new Child(id, pass);
         }
         return user_account;
@@ -36,6 +42,12 @@ public class Login_m {
             String id=this.login.getTextField1().getText();
             char[] password=this.login.getPasswordField1().getPassword();
             String pass = String.valueOf(password);
+            if(User.findUsersByUserName(new File("src/main/java/Class/ParentAccounts.jsonl"), id)==null){
+                return null;
+            }
+            if(!User.findUsersByUserName(new File("src/main/java/Class/ParentAccounts.jsonl"), id).getString("Password").equals(pass)){
+                return null;
+            }
             user_account = new Parent(id, pass);
         }
         return user_account;
@@ -54,5 +66,9 @@ public class Login_m {
         welcome.getContentPane().add(this.login);
         welcome.repaint();
         welcome.revalidate();
+    }
+    public void clear(){
+        this.login.getTextField1().setText("");
+        this.login.getPasswordField1().setText("");
     }
 }

@@ -58,6 +58,27 @@ public class Signup_m {
         }
     }
 
+    public boolean checkParentID(){
+        if(this.signup.getParentID().getText()==null){
+            return false;
+        }else{
+            String parentID=this.signup.getParentID().getText();
+            File file =new File("src/main/java/Class/Accounts.jsonl");
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))){
+                String line = null;
+                while((line=reader.readLine())!=null){
+                    JSONObject jsonObject= new JSONObject(line);
+                    if(parentID.equals(jsonObject.get("ID"))){
+                        return true;
+                    }
+                }
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            return false;
+        }
+    }
+
     /****** This method registers the user, 每次改变user中的类别信息，该方法均需添加有关的条目 ******/
     public void register(){
         JSONObject jsonObject=new JSONObject();
@@ -97,6 +118,7 @@ public class Signup_m {
         this.signup.getTextField1().setText("");
         this.signup.getPasswordField1().setText("");
         this.signup.getPasswordField2().setText("");
+        this.signup.getParentID().setText("");
     }
 
     public void init(JFrame welcome){

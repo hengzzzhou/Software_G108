@@ -242,8 +242,8 @@ public class PersonalPage extends JPanel {
 
     }
     public JTextField getChTextField(){return textField1;}
-    public JTextField getTiTextField(){return textField2;}
-    public JTextField getDeTextField(){return textField4;}
+    public JTextField getTiTextField(){return textField4;}
+    public JTextField getDeTextField(){return textField2;}
     public JButton getTransactionButton() {
         return button4;
     }

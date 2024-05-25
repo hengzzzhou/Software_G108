@@ -119,4 +119,10 @@ public class Transaction extends JPanel {
         System.out.println("transaction");
         return button1;
     }
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        this.repaint();
+        ImageIcon image =new ImageIcon("src/main/imgs/Setting.png");
+        g.drawImage(image.getImage(), 0,0,this.getWidth(),this.getHeight(),this);
+    }
 }
