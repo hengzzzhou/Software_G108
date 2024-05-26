@@ -18,7 +18,7 @@ public class MainParents extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         panel2 = new JPanel();
         button1 = new JButton();
         panel6 = new JPanel();
@@ -236,7 +236,7 @@ public class MainParents extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JPanel panel2;
     private JButton button1;
     private JPanel panel6;

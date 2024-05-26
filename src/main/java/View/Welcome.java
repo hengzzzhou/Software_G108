@@ -32,7 +32,7 @@ public class Welcome extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         panel2 = new JPanel();
         hSpacer4 = new JPanel(null);
         panel3 = new JPanel();
@@ -193,7 +193,7 @@ public class Welcome extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JPanel panel2;
     private JPanel hSpacer4;
     private JPanel panel3;

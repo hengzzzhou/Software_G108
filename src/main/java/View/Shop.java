@@ -23,7 +23,7 @@ public class Shop extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         button3 = new JButton();
         Spacer vSpacer1 = new Spacer();
         Spacer hSpacer1 = new Spacer();
@@ -80,7 +80,7 @@ public class Shop extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JButton button3;
     private JButton button1;
     private JButton button2;

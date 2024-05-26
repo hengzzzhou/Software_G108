@@ -20,7 +20,7 @@ public class WithDrawal extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         panel1 = new JPanel();
         textField1 = new JTextField();
         button1 = new JButton();
@@ -99,7 +99,7 @@ public class WithDrawal extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JPanel panel1;
     private JTextField textField1;
     private JButton button1;

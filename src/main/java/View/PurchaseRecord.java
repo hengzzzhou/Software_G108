@@ -23,7 +23,7 @@ public class PurchaseRecord extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         button3 = new JButton();
         Spacer hSpacer3 = new Spacer();
         Spacer hSpacer2 = new Spacer();
@@ -359,7 +359,7 @@ public class PurchaseRecord extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JButton button3;
     private JLabel label7;
     private JPanel panel1;

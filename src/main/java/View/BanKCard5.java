@@ -20,7 +20,7 @@ public class BanKCard5 extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         panel1 = new JPanel();
         panel2 = new JPanel();
         button1 = new JButton();
@@ -178,7 +178,7 @@ public class BanKCard5 extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JPanel panel1;
     private JPanel panel2;
     private JButton button1;

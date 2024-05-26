@@ -29,7 +29,7 @@ public class IDPasswordManagement extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         button2 = new JButton();
         vSpacer1 = new JPanel(null);
         label4 = new JLabel();
@@ -153,7 +153,7 @@ public class IDPasswordManagement extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JButton button2;
     private JPanel vSpacer1;
     private JLabel label4;

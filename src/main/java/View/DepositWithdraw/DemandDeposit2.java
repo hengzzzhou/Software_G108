@@ -18,7 +18,7 @@ public class DemandDeposit2 extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         panel1 = new JPanel();
         button1 = new JButton();
         textField1 = new JTextField();
@@ -99,7 +99,7 @@ public class DemandDeposit2 extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JPanel panel1;
     private JButton button1;
     private JTextField textField1;

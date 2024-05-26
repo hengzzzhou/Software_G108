@@ -26,7 +26,7 @@ public class Main_page2 extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         scrollPane1 = new JScrollPane();
         panel6 = new JPanel();
         panel8 = new JPanel();
@@ -275,7 +275,7 @@ public class Main_page2 extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JScrollPane scrollPane1;
     private JPanel panel6;
     private JPanel panel8;

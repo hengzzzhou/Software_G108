@@ -28,7 +28,7 @@ public class Target extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         Spacer vSpacer1 = new Spacer();
         button2 = new JButton();
         label4 = new JLabel();
@@ -368,7 +368,7 @@ public class Target extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JButton button2;
     private JLabel label4;
     private JButton button4;

@@ -14,7 +14,7 @@ public class BankCard4 extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+        // Generated using JFormDesigner Open Source Project license - 
         panel1 = new TransparentPanel();
         scrollPane1 = new JScrollPane();
         buttonPanel = new TransparentPanel();
@@ -145,7 +145,7 @@ public class BankCard4 extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Open Source Project license - 淘宝星河飘雪
+    // Generated using JFormDesigner Open Source Project license - 
     private JPanel panel1;
     private JScrollPane scrollPane1;
     private TransparentPanel buttonPanel;
