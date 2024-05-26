@@ -1,7 +1,5 @@
 import View.*;
 import View.DepositWithdraw.*;
-import WT_Temp.PersonalPage2;
-import WT_Temp.new_main_1;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 
 import javax.swing.*;
@@ -24,9 +22,6 @@ public class Test1 {
         TaskList taskList = new TaskList();
 
         // 以下内容为存取款UI界面
-        PersonalPage2 pg = new PersonalPage2();
-        Main_page mp = new Main_page();
-        new_main_1 ddp1 = new new_main_1();
         DemandDeposit2 ddp2 = new DemandDeposit2();
         TimeDeposit tdp1 = new TimeDeposit();
         TimeDeposit2 tdp2 = new TimeDeposit2();
