@@ -27,9 +27,37 @@ public class SetGoal_m {
     }
 
     public Child confirmButton(Child user) {
+        if(!checkInput()){
+            return user;
+        }
         int value = Integer.parseInt(setGoal.getTextField1().getText());
-        user.setProgress(value);
+        if(checkValidGoal(user, value)){
+            user.setProgress(value);
+        }
         return user;
+    }
+
+    public boolean checkValidGoal(User user, int value){
+        boolean flag = true;
+        if(value<=0){
+            flag = false;
+            JOptionPane.showMessageDialog(null, "Please set a valid goal! You may not set a goal of 0 or less.");
+        }else if(value<=user.getTotal()){
+            flag = false;
+            JOptionPane.showMessageDialog(null, "You have already reached your goal!");
+        }
+        return flag;
+    }
+    public boolean checkInput(){
+        if(setGoal.getTextField1().getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter a valid number!");
+            return false;
+        }
+        if(setGoal.getTextField1().getText().matches("[0-9]+") == false){
+            JOptionPane.showMessageDialog(null, "Please enter a number!");
+            return false;
+        }
+        return true;
     }
 }
 

@@ -31,6 +31,7 @@ public class Test1 {
         TimeDeposit tdp1 = new TimeDeposit();
         TimeDeposit2 tdp2 = new TimeDeposit2();
         AddTask addTask = new AddTask();
+        TansferofMoney tom = new TansferofMoney();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // 设置主界面大小及可见性
@@ -39,7 +40,7 @@ public class Test1 {
         frame.setLocationRelativeTo(null);
 
         // 在此处将Jlabel添加到fram中
-        frame.getContentPane().add(pg);
+        frame.getContentPane().add(tom);
 
         frame.repaint();
         frame.revalidate();

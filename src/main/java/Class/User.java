@@ -82,6 +82,7 @@ public class User {
 
     // 以下部分为三个账号的get与set方法
     public double getTotal() {
+        this.total = charge + timeDeposit + demandDeposit;
         return total;
     }
     public double getCharge() {

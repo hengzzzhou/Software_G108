@@ -78,6 +78,8 @@ public class Control {
     private TaskList_m taskList_m;
     private AddTask addTask;
     private AddTask_m addTask_m;
+    private TansferofMoney transferofMoney;
+    private TransferOfMoney_m transferofMoney_m;
 
 
     // transaction
@@ -135,6 +137,8 @@ public class Control {
         this.taskListChild_m = new TaskListChild_m(this.taskListChild, this.basicFrame);
         this.loginParent = new Login();
         this.loginParent_m = new Login_m(this.loginParent);
+        this.transferofMoney = new TansferofMoney();
+        this.transferofMoney_m = new TransferOfMoney_m(this.transferofMoney);
 
 
         // 以下部分对于存取款界面进行了初始化
@@ -242,7 +246,7 @@ public class Control {
                 }
                 if(parent_account != null){
                     parent_account.dumpTaskList();
-
+                    parent_account.setLogList(parent_account.getLogList());
                 }
             }
             @Override
@@ -716,11 +720,69 @@ public class Control {
                 registerParentsMouseClicked(e);
             }
         });
+        this.mainParents.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transferMouseClicked(e);
+            }
+        });
+        this.transferofMoney.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnMainParentsMouseClicked(e);
+            }
+        });
+        this.transferofMoney.getConfirmButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transferMoneyMouseClicked(e);
+            }
+        });
+        this.transferofMoney.getCancelButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transferCancelsMouseClicked(e);
+            }
+        });
+    }
+
+    private void transferCancelsMouseClicked(MouseEvent e) {
+        this.transferofMoney.getTransferField5().setText("");
+    }
+
+    private void transferMoneyMouseClicked(MouseEvent e) {
+        this.transferofMoney_m.transferMoney(this.parent_account);
+    }
+
+    private void transferMouseClicked(MouseEvent e) {
+        this.transferofMoney_m.initMoney(this.parent_account);
+        this.transferofMoney_m.init(this.basicFrame);
     }
 
     private void registerParentsMouseClicked(MouseEvent e) {
-        this.signupParent_m.registerParent();
-        this.returnWelMouseClicked(e);
+        boolean flag = true;
+        if(!this.signupParent_m.checkNull()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Please fill in all the information!");
+            this.signupParent_m.clear();
+        }
+        if(!this.signupParent_m.checkID()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("ID Exists!");
+            this.signupParent_m.clear();
+        }
+        if(!this.signupParent_m.checkPassword()) {
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Two passwords are different!");
+            this.signupParent_m.clear();
+        }
+        if (flag) {
+            this.signupParent_m.registerParent();
+            this.returnWelMouseClicked(e);
+        }
     }
 
     private void parentLoginMouseClicked(MouseEvent e) {
@@ -738,10 +800,13 @@ public class Control {
     private void PublishTaskMouseClicked(MouseEvent e) {
         int len = this.parent_account.getTasks().size()+1;
         Task task = this.addTask_m.setTask(String.valueOf(len));
-        this.parent_account.addTask(task);
-        this.taskList_m.showTasks(this.parent_account.getTasks());
-        this.taskList_m.init(this.basicFrame);
-        this.addTask_m.clearFields();
+        if(task!=null){
+            this.parent_account.addTask(task);
+            this.taskList_m.showTasks(this.parent_account.getTasks());
+            this.taskList_m.init(this.basicFrame);
+            this.addTask_m.clearFields();
+        }
+
     }
 
     private void addTasksMouseClicked(MouseEvent e) {
@@ -756,8 +821,14 @@ public class Control {
     private void mainParentsMouseClicked(MouseEvent e) {
         try {
             this.parent_account = this.loginParent_m.checkParent();
-            this.parent_account.loadTaskList();
-            this.mainParents_m.init(this.basicFrame);
+            if(this.parent_account!=null) {
+                this.parent_account.loadTaskList();
+                this.mainParents_m.init(this.basicFrame);
+            }else{
+                this.welDial_m.init();
+                this.welDial_m.changeVal("ID or Password is wrong!");
+                this.loginParent_m.clear();
+            }
         }catch (IOException exception){
             exception.printStackTrace();
         }
@@ -855,29 +926,56 @@ public class Control {
     }
 
     private void registerMouseClicked(MouseEvent e){
-        if(this.signup_m.checkID()){
-            if(this.signup_m.checkPassword()) {
-                this.signup_m.register();
-                this.welcome_m.refreshWelcome(this.basicFrame);
-            }else{
-                this.welDial_m.init();
-                this.welDial_m.changeVal("Two passwords are different!");
-                this.signup_m.clear();
-            }
-        }else{
+        boolean flag = true;
+        if(!this.signup_m.checkNull()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Please fill in all the information!");
+            this.signup_m.clear();
+            return;
+        }
+        if(!this.signup_m.checkID()){
+            flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("ID Exists!");
             this.signup_m.clear();
+            return;
         }
+        if(!this.signup_m.checkPassword()) {
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Two passwords are different!");
+            this.signup_m.clear();
+            return;
+        }
+        if(!this.signup_m.checkParentID()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Parent ID does not exist!");
+            this.signup_m.clear();
+            return;
+        }
+        if(flag){
+            this.signup_m.register();
+            this.welcome_m.refreshWelcome(this.basicFrame);
+        }
+
     }
 
     private void LoginMouseClicked(MouseEvent e) throws IOException {
         this.child_account = this.login_m.check();
-        this.child_account.loadTaskList();//bug
-        if(this.child_account.flag != 0){
-            this.login_flag = 1;
-            this.main_page_m.init(this.basicFrame, this.child_account);
+        if(this.child_account!=null){
+            this.child_account.loadTaskList();//bug
+            if(this.child_account.flag != 0){
+                this.login_flag = 1;
+                this.main_page_m.init(this.basicFrame, this.child_account);
+            }
+        }else{
+            this.welDial_m.init();
+            this.welDial_m.changeVal("ID or Password is wrong!");
+            this.login_m.clear();
         }
+
     }
 
 
