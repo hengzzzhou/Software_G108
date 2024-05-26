@@ -21,7 +21,7 @@ public class MainPageTest {
 
     @BeforeEach
     public void setUp() {
-        // 创建模拟对象
+
         mockFrame = mock(JFrame.class);
         mockMainPage = mock(Main_page.class);
         mockUser = mock(User.class);
@@ -29,15 +29,15 @@ public class MainPageTest {
         mockGoalButton = mock(JButton.class);
         mockProgressBar = mock(JProgressBar.class);
 
-        // 初始化模型
+
         mainPageModel = new Main_page_m(mockMainPage);
 
-        // 设置必要的桩
+
         when(mockMainPage.getTotalAssets()).thenReturn(mockTotalAssetsLabel);
         when(mockMainPage.getGoalButton()).thenReturn(mockGoalButton);
         when(mockMainPage.getProgressBar1()).thenReturn(mockProgressBar);
 
-        // 准备容器
+
         Container mockContainer = mock(Container.class);
         when(mockFrame.getContentPane()).thenReturn(mockContainer);
     }
@@ -62,6 +62,6 @@ public class MainPageTest {
 
         mainPageModel.setProgressBarValue(mockUser, 200);
 
-        verify(mockProgressBar).setValue(500); // 1000 / 200 * 100
+        verify(mockProgressBar).setValue(500);
     }
 }

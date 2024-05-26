@@ -28,7 +28,11 @@ public class AddTask_m {
         addTask.getDateField().setText("");
     }
 
-    //while return button is clicked, object task will be passed to the user
+    /**
+     * Set the task
+     * @param id
+     * @return
+     */
     public Task setTask(String id){
         if(checkValidTask()){
             String name = addTask.getItemField().getText();
@@ -42,6 +46,10 @@ public class AddTask_m {
         return null;
     }
 
+    /**
+     * Check if the task is valid
+     * @return
+     */
     public boolean checkValidTask(){
         if(addTask.getItemField().getText().equals("") || addTask.getRewardField().getText().equals("") || addTask.getPriorityField().getText().equals("") || addTask.getDescriptionField().getText().equals("") || addTask.getDateField().getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill in all fields!");

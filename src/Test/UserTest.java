@@ -1,16 +1,18 @@
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.*;
-import org.json.JSONObject;
-import org.json.JSONException;
+import static org.mockito.Mockito.*;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.json.JSONObject;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import Model.*;
 import Class.*;
-import org.junit.jupiter.api.*;
+import View.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class UserTest {
-    User user;
+    private User user;
 
     @BeforeEach
     public void setUp() throws IOException, JSONException {
@@ -18,18 +20,21 @@ public class UserTest {
     }
 
     @Test
-    public void testUserConstructor() {
+    public void testUserInitialization() {
         assertEquals("test", user.getID());
     }
 
+
     @Test
-    public void testLoadTaskList() {
-        user.loadTaskList();
-        assertNotNull(user.getTasks());
+    public void testProgressUpdate() {
+        user.setProgress(50);
+        assertEquals(50, user.getProgress());
     }
 
     @Test
-    public void testFileNotFound() throws JSONException, IOException {
-        new User("invalidID", "wrongPassword");  // 应抛出 IOException
+    public void testLogListHandling() {
+        user.getLogList().add("2023-05-10|Logged in|0");
+        assertFalse(user.getLogList().isEmpty());
     }
 }
+

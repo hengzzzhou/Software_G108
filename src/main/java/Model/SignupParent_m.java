@@ -92,4 +92,10 @@ public class SignupParent_m {
             }
         }
     }
+    public boolean checkNull(){
+        if(this.signupParent.getTextField1().getText().equals("")||this.signupParent.getPasswordField1().getPassword().equals("")||this.signupParent.getPasswordField2().getPassword().equals("")){
+            return false;
+        }
+        return true;
+    }
 }

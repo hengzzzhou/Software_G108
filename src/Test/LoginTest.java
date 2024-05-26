@@ -31,55 +31,54 @@ class LoginTest {
 
     @Test
     void testCheckValidCredentials() throws Exception {
-        // 设置mock行为
+
         when(login.getTextField1()).thenReturn(new JTextField("test"));
         when(login.getPasswordField1()).thenReturn(new JPasswordField("12"));
 
-        // 调用方法
+
         Child result = loginManager.check();
 
-        // 验证结果
+
         assertNotNull(result);
         assertEquals("test", result.getID());
     }
 
     @Test
     void testCheckInvalidCredentials() throws Exception {
-        // 设置mock行为
+
         when(login.getTextField1()).thenReturn(new JTextField("user"));
         when(login.getPasswordField1()).thenReturn(new JPasswordField("wrong_password"));
 
-        // 调用方法
+
         Child result = loginManager.check();
 
-        // 验证结果
+
         assertNull(result);
     }
 
     @Test
     void testCheckParentValidCredentials() throws Exception {
-        // 设置mock行为
+
         when(login.getTextField1()).thenReturn(new JTextField("user1"));
         when(login.getPasswordField1()).thenReturn(new JPasswordField("12"));
 
-        // 调用方法
+
         Parent result = loginManager.checkParent();
 
-        // 验证结果
+
         assertNotNull(result);
         assertEquals("user1", result.getID());
     }
 
     @Test
     void testCheckParentInvalidCredentials() throws Exception {
-        // 设置mock行为
+
         when(login.getTextField1()).thenReturn(new JTextField("user"));
         when(login.getPasswordField1()).thenReturn(new JPasswordField("wrong_password"));
 
-        // 调用方法
+
         Parent result = loginManager.checkParent();
 
-        // 验证结果
         assertNull(result);
     }
 

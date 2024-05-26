@@ -761,6 +761,12 @@ public class Control {
 
     private void registerParentsMouseClicked(MouseEvent e) {
         boolean flag = true;
+        if(!this.signupParent_m.checkNull()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Please fill in all the information!");
+            this.signupParent_m.clear();
+        }
         if(!this.signupParent_m.checkID()){
             flag = false;
             this.welDial_m.init();
@@ -921,28 +927,39 @@ public class Control {
 
     private void registerMouseClicked(MouseEvent e){
         boolean flag = true;
+        if(!this.signup_m.checkNull()){
+            flag = false;
+            this.welDial_m.init();
+            this.welDial_m.changeVal("Please fill in all the information!");
+            this.signup_m.clear();
+            return;
+        }
         if(!this.signup_m.checkID()){
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("ID Exists!");
             this.signup_m.clear();
+            return;
         }
         if(!this.signup_m.checkPassword()) {
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("Two passwords are different!");
             this.signup_m.clear();
+            return;
         }
         if(!this.signup_m.checkParentID()){
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("Parent ID does not exist!");
             this.signup_m.clear();
+            return;
         }
         if(flag){
             this.signup_m.register();
             this.welcome_m.refreshWelcome(this.basicFrame);
         }
+
     }
 
     private void LoginMouseClicked(MouseEvent e) throws IOException {

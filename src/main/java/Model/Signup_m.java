@@ -79,6 +79,14 @@ public class Signup_m {
         }
     }
 
+    public boolean checkNull(){
+        if(this.signup.getTextField1().getText().equals("")||this.signup.getPasswordField1().getPassword().equals("")||this.signup.getPasswordField2().getPassword().equals("")||this.signup.getParentID().getText().equals("")){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     /****** This method registers the user, 每次改变user中的类别信息，该方法均需添加有关的条目 ******/
     public void register(){
         JSONObject jsonObject=new JSONObject();
