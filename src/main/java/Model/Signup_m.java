@@ -63,7 +63,7 @@ public class Signup_m {
             return false;
         }else{
             String parentID=this.signup.getParentID().getText();
-            File file =new File("src/main/java/Class/Accounts.jsonl");
+            File file =new File("src/main/java/Class/ParentAccounts.jsonl");
             try (BufferedReader reader = new BufferedReader(new FileReader(file))){
                 String line = null;
                 while((line=reader.readLine())!=null){

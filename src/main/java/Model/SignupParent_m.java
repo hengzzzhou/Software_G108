@@ -1,6 +1,7 @@
 package Model;
 
 import View.SignupParent;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.swing.*;
@@ -27,6 +28,19 @@ public class SignupParent_m {
 
         try{
             FileWriter fileWriter=new FileWriter("src/main/java/Class/ParentAccounts.jsonl",true);
+            PrintWriter out=new PrintWriter(fileWriter);
+            out.write(jsonObject.toString()+"\n");
+            fileWriter.close();
+            out.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        jsonObject = new JSONObject();
+        jsonObject.put("ID",this.signupParent.getTextField1().getText());
+        JSONArray jsonArray = new JSONArray();
+        jsonObject.put("Tasks",jsonArray);
+        try{
+            FileWriter fileWriter=new FileWriter("src/main/java/Class/TaskList.jsonl",true);
             PrintWriter out=new PrintWriter(fileWriter);
             out.write(jsonObject.toString()+"\n");
             fileWriter.close();

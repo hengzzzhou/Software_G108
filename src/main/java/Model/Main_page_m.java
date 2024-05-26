@@ -26,6 +26,10 @@ public class Main_page_m {
 
     public void setProgressBarValue(User user,int value) {
         double now = user.getTotal();
+
         this.main_page.getProgressBar1().setValue((int)(now/value*100));
+
     }
+
+
 }

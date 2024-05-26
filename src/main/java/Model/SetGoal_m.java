@@ -28,8 +28,22 @@ public class SetGoal_m {
 
     public Child confirmButton(Child user) {
         int value = Integer.parseInt(setGoal.getTextField1().getText());
-        user.setProgress(value);
+        if(checkValidGoal(user, value)){
+            user.setProgress(value);
+        }
         return user;
+    }
+
+    public boolean checkValidGoal(User user, int value){
+        boolean flag = true;
+        if(value<=0){
+            flag = false;
+            JOptionPane.showMessageDialog(null, "Please set a valid goal!");
+        }else if(value<=user.getTotal()){
+            flag = false;
+            JOptionPane.showMessageDialog(null, "You have already reached your goal!");
+        }
+        return flag;
     }
 }
 

@@ -794,10 +794,13 @@ public class Control {
     private void PublishTaskMouseClicked(MouseEvent e) {
         int len = this.parent_account.getTasks().size()+1;
         Task task = this.addTask_m.setTask(String.valueOf(len));
-        this.parent_account.addTask(task);
-        this.taskList_m.showTasks(this.parent_account.getTasks());
-        this.taskList_m.init(this.basicFrame);
-        this.addTask_m.clearFields();
+        if(task!=null){
+            this.parent_account.addTask(task);
+            this.taskList_m.showTasks(this.parent_account.getTasks());
+            this.taskList_m.init(this.basicFrame);
+            this.addTask_m.clearFields();
+        }
+
     }
 
     private void addTasksMouseClicked(MouseEvent e) {
