@@ -3,6 +3,7 @@ package Model.DepositWithdraw;
 import View.DepositWithdraw.WithDrawal;
 
 import javax.swing.*;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import Class.User;
 import Class.Child;
@@ -34,7 +35,9 @@ public class Withdrawal_m {
         String log = "";
         List<String> logList = user.getLogList();
         String timeStamp = user.getDepositTime();
-        log = log + timeStamp + "|" + "Withdraw" + "|" + String.format("%.2f", value);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        timeStamp = df.format(System.currentTimeMillis());
+        log = log + timeStamp + "|" + "ChangeWithdraw" + "|" + String.format("%.2f", value);
         logList.add(log);
         user.setLogList(logList);
         withDrawal.getTextField1().setText("");

@@ -4,6 +4,7 @@ import View.DepositWithdraw.DemandDeposit2;
 import Class.User;
 
 import javax.swing.*;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import Class.Child;
 
@@ -38,7 +39,9 @@ public class DemandDeposit2_m {
             String log = "";
             List<String> logList = user.getLogList();
             String timeStamp = user.getDepositTime();
-            log = log + timeStamp + "|" + "Withdraw" + "|" + String.format("%.2f", value);
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            timeStamp = df.format(System.currentTimeMillis());
+            log = log + timeStamp + "|" + "DemandWithdraw" + "|" + String.format("%.2f", value);
             logList.add(log);
             user.setLogList(logList);
         }

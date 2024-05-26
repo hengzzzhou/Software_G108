@@ -34,3 +34,14 @@
 2024-05-20|deposit|12.00
 2024-05-20|deposit|2.00
 2024-05-20|deposit|2.00
+2024-05-26 02:22:43|ChangeWithdraw|12.00
+2024-05-20|TimeDeposit|12.00
+2024-05-26 02:27:23|TimeDeposit|12.00
+2024-05-26 02:27:42|TimeWithdraw|12.00
+2024-05-26 02:28:01|DemandDeposit|12.00
+2024-05-26 02:28:07|DemandWithdraw|12.00
+2024-05-26 02:31:07|TimeWithdraw|12.00
+2024-05-26 02:31:33|DemandWithdraw|1.00
+2024-05-26 02:33:34|ChangeWithdraw|12.00
+2024-05-26 02:33:52|DemandDeposit|12.00
+2024-05-26 02:33:58|DemandWithdraw|1.00

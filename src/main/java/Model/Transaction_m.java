@@ -47,7 +47,8 @@ public class Transaction_m {
             if (transactionData.length == 3) {
                 String date = transactionData[0];
                 String type = transactionData[1];
-                String amount = type.equalsIgnoreCase("withdraw") ? "-$" + transactionData[2] : "$" + transactionData[2];
+                String regex = "Withdraw";
+                String amount = type.contains(regex) ? "-$" + transactionData[2] : "$" + transactionData[2];
                 TransactionItem transactionItem = new TransactionItem(date, type, amount);
                 panel5.add(transactionItem);
             }

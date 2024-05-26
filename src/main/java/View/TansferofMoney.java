@@ -165,4 +165,36 @@ public class TansferofMoney extends JPanel {
         ImageIcon image = new ImageIcon("src/main/imgs/TansferofMoney.png");
         g.drawImage(image.getImage(), 0, 0, this.getWidth(), this.getHeight(), this);
     }
+
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public JTextField getTotalField1() {
+        return textField1;
+    }
+
+    public JTextField getChangeField2() {
+        return textField2;
+    }
+
+    public JTextField getTimeField3() {
+        return textField3;
+    }
+
+    public JTextField getDemandField4() {
+        return textField4;
+    }
+
+    public JTextField getTransferField5() {
+        return textField5;
+    }
+
+    public JButton getConfirmButton2() {
+        return button2;
+    }
+
+    public JButton getCancelButton3() {
+        return button3;
+    }
 }

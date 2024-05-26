@@ -78,6 +78,8 @@ public class Control {
     private TaskList_m taskList_m;
     private AddTask addTask;
     private AddTask_m addTask_m;
+    private TansferofMoney transferofMoney;
+    private TransferOfMoney_m transferofMoney_m;
 
 
     // transaction
@@ -135,6 +137,8 @@ public class Control {
         this.taskListChild_m = new TaskListChild_m(this.taskListChild, this.basicFrame);
         this.loginParent = new Login();
         this.loginParent_m = new Login_m(this.loginParent);
+        this.transferofMoney = new TansferofMoney();
+        this.transferofMoney_m = new TransferOfMoney_m(this.transferofMoney);
 
 
         // 以下部分对于存取款界面进行了初始化
@@ -716,6 +720,43 @@ public class Control {
                 registerParentsMouseClicked(e);
             }
         });
+        this.mainParents.getButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transferMouseClicked(e);
+            }
+        });
+        this.transferofMoney.getButton1().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                returnMainParentsMouseClicked(e);
+            }
+        });
+        this.transferofMoney.getConfirmButton2().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transferMoneyMouseClicked(e);
+            }
+        });
+        this.transferofMoney.getCancelButton3().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                transferCancelsMouseClicked(e);
+            }
+        });
+    }
+
+    private void transferCancelsMouseClicked(MouseEvent e) {
+        this.transferofMoney.getTransferField5().setText("");
+    }
+
+    private void transferMoneyMouseClicked(MouseEvent e) {
+        this.transferofMoney_m.transferMoney(this.parent_account);
+    }
+
+    private void transferMouseClicked(MouseEvent e) {
+        this.transferofMoney_m.initMoney(this.parent_account);
+        this.transferofMoney_m.init(this.basicFrame);
     }
 
     private void registerParentsMouseClicked(MouseEvent e) {

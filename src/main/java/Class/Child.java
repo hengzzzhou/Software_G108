@@ -16,9 +16,7 @@ public class Child extends User{
     public Child(){
         super();
     }
-    public Child(String ID){
-        super(ID);
-    }
+
     public Child(String ID, String password)throws IOException, JSONException {
         super(ID, password);
         JSONObject jobj = User.findUsersByUserName(new File("src/main/java/Class/Accounts.jsonl"), ID);
@@ -159,5 +157,8 @@ public class Child extends User{
         }
         file.delete();
         tempFile.renameTo(file);
+    }
+    public String getID() {
+        return this.ID;
     }
 }
