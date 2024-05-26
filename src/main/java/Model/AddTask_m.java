@@ -8,18 +8,26 @@ import java.util.Date;
 
 public class AddTask_m {
     AddTask addTask = new AddTask();
-
+    /**
+     * Constructor
+     * @param addTask
+     */
     public AddTask_m(AddTask addTask) {
         this.addTask = addTask;
     }
-
+    /**
+     * Initialize the frame
+     * @param welcome
+     */
     public void init(JFrame welcome){
         welcome.getContentPane().removeAll();
         welcome.getContentPane().add(this.addTask);
         welcome.repaint();
         welcome.revalidate();
     }
-
+    /**
+     * Clear the fields
+     */
     public void clearFields(){
         addTask.getItemField().setText("");
         addTask.getRewardField().setText("");
@@ -27,7 +35,11 @@ public class AddTask_m {
         addTask.getDescriptionField().setText("");
         addTask.getDateField().setText("");
     }
-
+    /**
+     * Set the task
+     * @param id
+     * @return
+     */
     //while return button is clicked, object task will be passed to the user
     public Task setTask(String id){
         if(checkValidTask()){
@@ -41,7 +53,10 @@ public class AddTask_m {
         }
         return null;
     }
-
+    /**
+     * Check if the task is valid
+     * @return
+     */
     public boolean checkValidTask(){
         if(addTask.getItemField().getText().equals("") || addTask.getRewardField().getText().equals("") || addTask.getPriorityField().getText().equals("") || addTask.getDescriptionField().getText().equals("") || addTask.getDateField().getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill in all fields!");

@@ -1,0 +1,39 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 1200, 900 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:32:p, par l {par t:l {seq {comp button1:::p:108:p, space :p:569:p}, comp button2::t:p:491:p, comp button3::t:p:491:p}, seq l {space :p:186:p, comp button4:::p:583:p}}, space ::399:x}}"
+				"$verticalGroup": "par l {seq l {space :p:31:p, comp button1:::p:58:p, space :p:68:p, comp button2:::p:71:p, space :p:177:p, comp button3:::p:71:p, space ::218:x, comp button4:::p:71:p, space :p:135:p}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 1200, 900 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "R"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button4"
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1200, 900 )
+		} )
+	}
+}

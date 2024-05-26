@@ -1,0 +1,46 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 1
+			"$rowCount": 1
+		} ) {
+			name: "this"
+			"minimumSize": new java.awt.Dimension( 1200, 900 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space :p:145:p, comp button2:::p:174:p, space ::506:x, comp button3:::p:174:p, space :p:201:p}, seq t {space :0:337:x, par l {comp textField2:::p:704:p, comp textField1:::p:684:p}, space :p:159:p}, seq l {space :p:97:p, comp button1:::p:93:p, space ::1010:x}}"
+				"$verticalGroup": "par l {seq t {par t {seq {space ::284:x, comp textField1:::p:67:p, space :p:121:p, comp textField2:::p:67:p, space :p:181:p, comp button3:::p:61:p}, seq {space :p:83:p, comp button1:::p:51:p, space ::586:x, comp button2:::p:61:p}}, space :p:119:p}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 1200, 900 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "R"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField1"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 30 )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField2"
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 30 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"opaque": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"opaque": false
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1200, 900 )
+		} )
+	}
+}

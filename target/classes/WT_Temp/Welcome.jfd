@@ -1,0 +1,107 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "hidemode 3"
+			"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+			"$rowConstraints": "[][][][][][][][][]"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, comp hSpacer4:::p::p, space :::x}}"
+				"$verticalGroup": "par l {seq t {space ::9:x, comp hSpacer4:::p::p, space :p:16:p}}"
+			} ) {
+				name: "panel2"
+				"opaque": false
+				add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+					name: "hSpacer4"
+					"minimumSize": new java.awt.Dimension( 35, 35 )
+					"preferredSize": new java.awt.Dimension( 35, 35 )
+					"opaque": false
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 1"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, comp button3:::p::p, space :::x}}"
+				"$verticalGroup": "par l {seq t {space :::x, comp button3:::p::p, space :p:19:p}}"
+			} ) {
+				name: "panel3"
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"text": "?"
+					"minimumSize": new java.awt.Dimension( 45, 45 )
+					"maximumSize": new java.awt.Dimension( 60, 60 )
+					"preferredSize": new java.awt.Dimension( 35, 35 )
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 17 )
+					"background": new java.awt.Color( 255, 204, 0, 189 )
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button3MouseClicked", true ) )
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 10 1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Welcome to the Children's Virtual Bank"
+				"horizontalAlignment": 0
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 48 )
+				"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				"background": new java.awt.Color( 204, 204, 204, 255 )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 6 3,dock center"
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer2"
+				"opaque": false
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 6 5"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Log In"
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 18 )
+				"background": new java.awt.Color( 108, 232, 36, 255 )
+				"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 6 5,wmax 120"
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer1"
+				"opaque": false
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 6 5"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "Sign Up"
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 18 )
+				"background": new java.awt.Color( 108, 232, 36, 255 )
+				"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button2MouseClicked", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 6 5,wmax 120"
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.HSpacer" ) {
+				name: "hSpacer3"
+				"opaque": false
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 6 5"
+			} )
+			add( new FormComponent( "com.jformdesigner.designer.wrapper.VSpacer" ) {
+				name: "vSpacer1"
+				"opaque": false
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 6 6,hmin 70"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 316 )
+			"size": new java.awt.Dimension( 918, 704 )
+		} )
+	}
+}

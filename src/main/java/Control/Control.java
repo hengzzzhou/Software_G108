@@ -18,6 +18,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Control class manages the interactions between the view and the model components.
+ * It initializes the UI components, registers event listeners, and handles the events.
+ */
 public class Control {
     // Register all the components
     private BasicFrame basicFrame;
@@ -81,7 +85,6 @@ public class Control {
     private TansferofMoney transferofMoney;
     private TransferOfMoney_m transferofMoney_m;
 
-
     // transaction
     private Transaction transaction;
     private Transaction_m transaction_m;
@@ -90,47 +93,51 @@ public class Control {
     private SetGoal setGoal;
     private SetGoal_m setGoal_m;
 
-    public void init(){
-        /* initialize all the components */
+    /**
+     * Initializes all the components and registers the event listeners.
+     */
+    public void init() {
+        // Initialize all the components
         this.basicFrame = new BasicFrame();
 
-        // 在此处使用user对于所有的json设置进行更新
+        // Handle the basic frame close event to save user data to JSON
         this.basicFrame_close_event();
 
+        // Initialize view components
         this.welcome = new Welcome();
-        this.welcome_m=new Welcome_m(this.welcome);
-        this.signup=new Signup();
-        this.signup_m=new Signup_m(this.signup);
-        this.login=new Login();
-        this.login_m=new Login_m(this.login);
-        this.welDial=new WelDial(this.basicFrame);
-        this.welDial_m=new WelDial_m(this.welDial);
-        this.main_page=new Main_page();
-        this.main_page_m=new Main_page_m(this.main_page);
-        this.tutorial=new Tutorial();
-        this.tutorial_m=new Tutorial_m(this.tutorial);
-        this.settings=new Settings();
-        this.settings_m=new Settings_m(this.settings);
-        this.contactUs=new ContactUs();
-        this.contactUs_m=new ContactUs_m(this.contactUs);
-        this.idPasswordManagement=new IDPasswordManagement();
-        this.idPasswordManagement_m=new IDPasswordManagement_m(this.idPasswordManagement);
+        this.welcome_m = new Welcome_m(this.welcome);
+        this.signup = new Signup();
+        this.signup_m = new Signup_m(this.signup);
+        this.login = new Login();
+        this.login_m = new Login_m(this.login);
+        this.welDial = new WelDial(this.basicFrame);
+        this.welDial_m = new WelDial_m(this.welDial);
+        this.main_page = new Main_page();
+        this.main_page_m = new Main_page_m(this.main_page);
+        this.tutorial = new Tutorial();
+        this.tutorial_m = new Tutorial_m(this.tutorial);
+        this.settings = new Settings();
+        this.settings_m = new Settings_m(this.settings);
+        this.contactUs = new ContactUs();
+        this.contactUs_m = new ContactUs_m(this.contactUs);
+        this.idPasswordManagement = new IDPasswordManagement();
+        this.idPasswordManagement_m = new IDPasswordManagement_m(this.idPasswordManagement);
         this.setGoal = new SetGoal();
         this.setGoal_m = new SetGoal_m(this.setGoal);
-        this.shop=new Shop();
-        this.shop_m=new Shop_m(this.shop);
-        this.shoppingTrolley=new ShoppingTrolley();
-        this.shoppingTrolley_m=new ShoppingTrolley_m(this.shoppingTrolley);
-        this.purchaseRecord=new PurchaseRecord();
-        this.purchaseRecord_m=new PurchaseRecord_m(this.purchaseRecord);
-        this.taskView=new TaskView();
-        this.taskView_m=new Task_m(this.taskView);
-        this.mainParents=new MainParents();
-        this.mainParents_m=new MainParents_m(this.mainParents);
-        this.taskList=new TaskList();
-        this.taskList_m=new TaskList_m(this.taskList, this.basicFrame);
-        this.addTask=new AddTask();
-        this.addTask_m=new AddTask_m(this.addTask);
+        this.shop = new Shop();
+        this.shop_m = new Shop_m(this.shop);
+        this.shoppingTrolley = new ShoppingTrolley();
+        this.shoppingTrolley_m = new ShoppingTrolley_m(this.shoppingTrolley);
+        this.purchaseRecord = new PurchaseRecord();
+        this.purchaseRecord_m = new PurchaseRecord_m(this.purchaseRecord);
+        this.taskView = new TaskView();
+        this.taskView_m = new Task_m(this.taskView);
+        this.mainParents = new MainParents();
+        this.mainParents_m = new MainParents_m(this.mainParents);
+        this.taskList = new TaskList();
+        this.taskList_m = new TaskList_m(this.taskList, this.basicFrame);
+        this.addTask = new AddTask();
+        this.addTask_m = new AddTask_m(this.addTask);
         this.signupParent = new SignupParent();
         this.signupParent_m = new SignupParent_m(this.signupParent);
         this.taskListChild = new TaskListChild();
@@ -140,8 +147,7 @@ public class Control {
         this.transferofMoney = new TansferofMoney();
         this.transferofMoney_m = new TransferOfMoney_m(this.transferofMoney);
 
-
-        // 以下部分对于存取款界面进行了初始化
+        // Initialize deposit/withdrawal components
         this.personalPage = new PersonalPage();
         this.personalPage_m = new PersonalPage_m(this.personalPage);
         this.chargeWithdraw = new WithDrawal();
@@ -155,7 +161,7 @@ public class Control {
         this.timeDeposit2 = new TimeDeposit2();
         this.timeDeposit2_m = new TimeDeposit2_m(this.timeDeposit2);
 
-        // 记录
+        // Initialize transaction component
         this.transaction = new Transaction();
         this.transaction_m = new Transaction_m(transaction);
 
@@ -170,59 +176,54 @@ public class Control {
         this.eventRegistration();
     }
 
-    private void basicFrame_close_event(){
+    /**
+     * Sets up the close event for the basic frame to save user data to JSON.
+     */
+    private void basicFrame_close_event() {
         basicFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 
-        // 创建一个实现了WindowListener接口的匿名类实例
+        // Add a window listener to handle the close event
         basicFrame.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) {}
             @Override
             public void windowClosing(WindowEvent e) {
-                // 窗口关闭时的事件处理 --> 将user中信息重新存储到jsonl中
-                if (login_flag != 0){
+                // Save user information to JSONL when closing the window
+                if (login_flag != 0) {
                     File file = new File("src/main/java/Class/Accounts.jsonl");
                     File tempFile = new File("src/main/java/Class/Accounts_temp.jsonl");
                     String line;
                     List<String> lines = new ArrayList<>();
                     try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-                        // 读取所有条目到列表中
+                        // Read all entries into the list
                         while ((line = reader.readLine()) != null) {
                             lines.add(line);
                         }
-                        for (int i = 0; i < lines.size(); i++){
+                        for (int i = 0; i < lines.size(); i++) {
                             JSONObject jsonObject = new JSONObject(lines.get(i));
-                            /*** 该处需要在jsonl修改时进行修改 ***/
+                            // Update the JSON object with account information
                             if (jsonObject.getString("ID").equals(child_account.getID())) {
                                 jsonObject.put("task_list", "123");
                                 jsonObject.put("email", child_account.getEmail());
                                 jsonObject.put("ParentID", child_account.getParentID());
                                 System.out.println(child_account.getParentID());
 
-                                // 以下内容更新了账户的信息
+                                // Update the account information
                                 jsonObject.put("charge", child_account.getCharge());
                                 jsonObject.put("timeDeposit", child_account.getTimeDeposit());
                                 jsonObject.put("demandDeposit", child_account.getDemandDeposit());
                                 jsonObject.put("depositTime", child_account.getDepositTime());
 
-                                // 以下内容存储了log文件
+                                // Save the log file
                                 String logPath = "src/main/java/Class/log.txt";
                                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(logPath))) {
                                     for (String log : child_account.getLogList()) {
-                                        // 写入当前log并添加换行符
                                         writer.write(log);
-                                        writer.newLine(); // 添加换行
+                                        writer.newLine(); // Add newline
                                     }
                                 } catch (IOException ec) {
-                                    // 处理可能发生的I/O异常
                                     ec.printStackTrace();
                                 }
-
-                                // 保存信息
-                                lines.set(i, jsonObject.toString());
-
-                                // Save logList to file
-                                child_account.setLogList(child_account.getLogList());
 
                                 lines.set(i, jsonObject.toString());
                             }
@@ -230,21 +231,21 @@ public class Control {
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
                     }
-                    // 写入新文件并执行替换
+
+                    // Write to the new file and replace the old file
                     try (BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
                         for (String jsonLine : lines) {
                             writer.write(jsonLine);
                             writer.newLine();
                         }
-                    }
-                    catch (IOException ex) {
+                    } catch (IOException ex) {
                         throw new RuntimeException(ex);
                     }
                     file.delete();
                     tempFile.renameTo(file);
                     child_account.dumpTaskList();
                 }
-                if(parent_account != null){
+                if (parent_account != null) {
                     parent_account.dumpTaskList();
                     parent_account.setLogList(parent_account.getLogList());
                 }
@@ -262,11 +263,14 @@ public class Control {
         });
     }
 
+    /**
+     * Registers all the event listeners for the components.
+     */
     private void eventRegistration() {
         this.transaction.getReButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(parent_account!=null)parentReMouseClicked(e);
+                if (parent_account != null) parentReMouseClicked(e);
                 else pageReMouseClicked(e);
             }
         });
@@ -333,7 +337,7 @@ public class Control {
             }
         });
 
-        // 在此处连接personal page
+        // Connect to personal page
         this.main_page.getHomeButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -347,7 +351,7 @@ public class Control {
             }
         });
 
-        // 在此处向5个界面跳转
+        // Navigate to five pages
         this.personalPage.getCWButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -387,9 +391,7 @@ public class Control {
             }
         });
 
-
         // goal -zh
-
         this.setGoal.getButtonReturn().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -403,15 +405,14 @@ public class Control {
                 RehomeMouseClicked(e);
             }
         });
-        // 在此处从5个界面返回
+
+        // Return from five pages
         this.chargeWithdraw.getReButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
                 pageReMouseClicked(e);
             }
         });
-
         this.timeDeposit.getReButton().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -437,7 +438,7 @@ public class Control {
             }
         });
 
-        // 事件绑定
+        // Event bindings
         this.welcome.getButton1().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -545,14 +546,6 @@ public class Control {
                 goalMouseClicked(e);
             }
         });
-
-//        this.target.getButton2().addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                returnMainMouseClicked(e);
-//            }
-//        });
-
 
         this.main_page.getButton1().addMouseListener(new MouseAdapter() {
             @Override
@@ -761,13 +754,13 @@ public class Control {
 
     private void registerParentsMouseClicked(MouseEvent e) {
         boolean flag = true;
-        if(!this.signupParent_m.checkID()){
+        if (!this.signupParent_m.checkID()) {
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("ID Exists!");
             this.signupParent_m.clear();
         }
-        if(!this.signupParent_m.checkPassword()) {
+        if (!this.signupParent_m.checkPassword()) {
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("Two passwords are different!");
@@ -792,15 +785,14 @@ public class Control {
     }
 
     private void PublishTaskMouseClicked(MouseEvent e) {
-        int len = this.parent_account.getTasks().size()+1;
+        int len = this.parent_account.getTasks().size() + 1;
         Task task = this.addTask_m.setTask(String.valueOf(len));
-        if(task!=null){
+        if (task != null) {
             this.parent_account.addTask(task);
             this.taskList_m.showTasks(this.parent_account.getTasks());
             this.taskList_m.init(this.basicFrame);
             this.addTask_m.clearFields();
         }
-
     }
 
     private void addTasksMouseClicked(MouseEvent e) {
@@ -815,92 +807,105 @@ public class Control {
     private void mainParentsMouseClicked(MouseEvent e) {
         try {
             this.parent_account = this.loginParent_m.checkParent();
-            if(this.parent_account!=null) {
+            if (this.parent_account != null) {
                 this.parent_account.loadTaskList();
                 this.mainParents_m.init(this.basicFrame);
-            }else{
+            } else {
                 this.welDial_m.init();
                 this.welDial_m.changeVal("ID or Password is wrong!");
                 this.loginParent_m.clear();
             }
-        }catch (IOException exception){
+        } catch (IOException exception) {
             exception.printStackTrace();
         }
     }
 
-    // 以下内容为与存取钱commit
     private void chargeWithdrawCommitMouseClicked(MouseEvent e) {
         this.child_account = this.chargeWithdraw_m.confirmButton(this.child_account);
     }
+
     private void demandDepositCommitMouseClicked(MouseEvent e) {
         this.child_account = this.demandDeposit_m.confirmButton(this.child_account);
     }
+
     private void demandDeposit2CommitMouseClicked(MouseEvent e) {
         this.child_account = this.demandDeposit2_m.confirmButton(this.child_account);
     }
+
     private void timeDepositCommitMouseClicked(MouseEvent e) {
         this.child_account = this.timeDeposit_m.confirmButton(this.child_account);
     }
+
     private void timeDeposit2CommitMouseClicked(MouseEvent e) {
         this.child_account = this.timeDeposit2_m.confirmButton(this.child_account);
     }
 
-    // 以下内容为与存取钱cancel
     private void chargeWithdrawCancelMouseClicked(MouseEvent e) {
         this.chargeWithdraw_m.cancelButton();
     }
+
     private void demandDepositCancelMouseClicked(MouseEvent e) {
         this.demandDeposit_m.cancelButton();
     }
+
     private void demandDeposit2CancelMouseClicked(MouseEvent e) {
         this.demandDeposit2_m.cancelButton();
     }
+
     private void timeDepositCancelMouseClicked(MouseEvent e) {
         this.timeDeposit_m.cancelButton();
     }
+
     private void timeDeposit2CancelMouseClicked(MouseEvent e) {
         this.timeDeposit2_m.cancelButton();
     }
 
     // homePage
-    private void homeMouseClicked(MouseEvent e){
+    private void homeMouseClicked(MouseEvent e) {
         this.personalPage_m.init(this.basicFrame, this.child_account);
     }
-    private void RehomeMouseClicked(MouseEvent e){
+
+    private void RehomeMouseClicked(MouseEvent e) {
         this.main_page_m.init(this.basicFrame, this.child_account);
     }
 
     // 以下为向五个界面的跳转逻辑
-    private void CWpageMouseClicked(MouseEvent e){
+    private void CWpageMouseClicked(MouseEvent e) {
         this.chargeWithdraw_m.init(this.basicFrame);
     }
-    private void DDpageMouseClicked(MouseEvent e){
+
+    private void DDpageMouseClicked(MouseEvent e) {
         this.demandDeposit_m.init(this.basicFrame);
-    }private void DWpageMouseClicked(MouseEvent e){
+    }
+
+    private void DWpageMouseClicked(MouseEvent e) {
         this.demandDeposit2_m.init(this.basicFrame);
-    }private void TDpageMouseClicked(MouseEvent e){
+    }
+
+    private void TDpageMouseClicked(MouseEvent e) {
         this.timeDeposit_m.init(this.basicFrame);
     }
-    private void TWpageMouseClicked(MouseEvent e){
+
+    private void TWpageMouseClicked(MouseEvent e) {
         this.timeDeposit2_m.init(this.basicFrame);
     }
 
-    private void transactionPageMouseClicked(MouseEvent e){
-        if(parent_account!=null){this.transaction_m.init(this.basicFrame, this.parent_account);}
-        else this.transaction_m.init(this.basicFrame, this.child_account);
-
+    private void transactionPageMouseClicked(MouseEvent e) {
+        if (parent_account != null) {
+            this.transaction_m.init(this.basicFrame, this.parent_account);
+        } else {
+            this.transaction_m.init(this.basicFrame, this.child_account);
+        }
     }
 
-    // 以下为5个界面的返回逻辑跳转
-    private void pageReMouseClicked(MouseEvent e){
+    private void pageReMouseClicked(MouseEvent e) {
         this.personalPage_m.init(this.basicFrame, this.child_account);
     }
 
-    private void parentReMouseClicked(MouseEvent e){
+    private void parentReMouseClicked(MouseEvent e) {
         this.mainParents_m.init(this.basicFrame);
     }
 
-    // 以下为其他内容的事件绑定
     private void Wel2LoginButtonMouseClicked(MouseEvent e) {
         this.login_m.init(this.basicFrame);
     }
@@ -911,35 +916,34 @@ public class Control {
 
     private void Wel2TutMouseClicked(MouseEvent e) {
         this.tutorial_m.init(this.basicFrame);
-
     }
 
-    private void returnWelMouseClicked(MouseEvent e){
+    private void returnWelMouseClicked(MouseEvent e) {
         this.welcome_m.refreshWelcome(this.basicFrame);
         this.signup_m.clear();
     }
 
-    private void registerMouseClicked(MouseEvent e){
+    private void registerMouseClicked(MouseEvent e) {
         boolean flag = true;
-        if(!this.signup_m.checkID()){
+        if (!this.signup_m.checkID()) {
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("ID Exists!");
             this.signup_m.clear();
         }
-        if(!this.signup_m.checkPassword()) {
+        if (!this.signup_m.checkPassword()) {
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("Two passwords are different!");
             this.signup_m.clear();
         }
-        if(!this.signup_m.checkParentID()){
+        if (!this.signup_m.checkParentID()) {
             flag = false;
             this.welDial_m.init();
             this.welDial_m.changeVal("Parent ID does not exist!");
             this.signup_m.clear();
         }
-        if(flag){
+        if (flag) {
             this.signup_m.register();
             this.welcome_m.refreshWelcome(this.basicFrame);
         }
@@ -947,53 +951,56 @@ public class Control {
 
     private void LoginMouseClicked(MouseEvent e) throws IOException {
         this.child_account = this.login_m.check();
-        if(this.child_account!=null){
-            this.child_account.loadTaskList();//bug
-            if(this.child_account.flag != 0){
+        if (this.child_account != null) {
+            this.child_account.loadTaskList();
+            if (this.child_account.flag != 0) {
                 this.login_flag = 1;
                 this.main_page_m.init(this.basicFrame, this.child_account);
             }
-        }else{
+        } else {
             this.welDial_m.init();
             this.welDial_m.changeVal("ID or Password is wrong!");
             this.login_m.clear();
         }
-
     }
 
-
-    private void main2SetMouseClicked(MouseEvent e){
+    private void main2SetMouseClicked(MouseEvent e) {
         this.settings_m.init(this.basicFrame);
     }
 
-    private void returnMainMouseClicked(MouseEvent e){
-        this.main_page_m.init(this.basicFrame,this.child_account);
+    private void returnMainMouseClicked(MouseEvent e) {
+        this.main_page_m.init(this.basicFrame, this.child_account);
     }
 
-    private void changePasswordMouseClicked(MouseEvent e){
+    private void changePasswordMouseClicked(MouseEvent e) {
         this.idPasswordManagement_m.init(this.basicFrame);
     }
 
-    private void returnSettingMouseClicked(MouseEvent e){
+    private void returnSettingMouseClicked(MouseEvent e) {
         this.settings_m.init(this.basicFrame);
     }
 
-    private void contactUsMouseClicked(MouseEvent e){
+    private void contactUsMouseClicked(MouseEvent e) {
         this.contactUs_m.init(this.basicFrame);
     }
-    private void goalMouseClicked(MouseEvent e){
+
+    private void goalMouseClicked(MouseEvent e) {
         this.setGoal_m.init(this.basicFrame);
     }
-    private void shopMouseClicked(MouseEvent e){
+
+    private void shopMouseClicked(MouseEvent e) {
         this.shop_m.init(this.basicFrame);
     }
-    private void shoppingTrolleyMouseClicked(MouseEvent e){
+
+    private void shoppingTrolleyMouseClicked(MouseEvent e) {
         this.shoppingTrolley_m.init(this.basicFrame);
     }
-    private void purchaseRecordMouseClicked(MouseEvent e){
+
+    private void purchaseRecordMouseClicked(MouseEvent e) {
         this.purchaseRecord_m.init(this.basicFrame);
     }
-    private void taskMouseClicked(MouseEvent e){
+
+    private void taskMouseClicked(MouseEvent e) {
         this.taskListChild_m.showTasks(this.child_account.getTasks());
         this.taskListChild_m.init(this.basicFrame);
     }
@@ -1001,7 +1008,4 @@ public class Control {
     private void confirmGoal(MouseEvent e) {
         this.child_account = this.setGoal_m.confirmButton(this.child_account);
     }
-//    private void withDrawalMouseClicked(MouseEvent e){
-//        this.withdrawal_m.init(this.basicFrame);
-//    }
 }

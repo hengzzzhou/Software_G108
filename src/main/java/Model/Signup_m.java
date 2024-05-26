@@ -79,7 +79,6 @@ public class Signup_m {
         }
     }
 
-    /****** This method registers the user, 每次改变user中的类别信息，该方法均需添加有关的条目 ******/
     public void register(){
         JSONObject jsonObject=new JSONObject();
 

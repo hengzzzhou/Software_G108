@@ -1,0 +1,98 @@
+JFDML JFormDesigner: "8.2.2.0.382" Java: "17.0.3" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 3
+			"$rowCount": 3
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space :0:15:x, comp button1:::p::p}}"
+				"$verticalGroup": "par l {seq t {space :0:15:x, comp button1:::p::p}}"
+			} ) {
+				name: "panel3"
+				"preferredSize": new java.awt.Dimension( 50, 50 )
+				"minimumSize": new java.awt.Dimension( 50, 50 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "R"
+					"font": new java.awt.Font( "Eras Bold ITC", 1, 14 )
+					"background": new java.awt.Color( 0, 153, 255, 255 )
+					"maximumSize": new java.awt.Dimension( 50, 50 )
+					"preferredSize": new java.awt.Dimension( 35, 35 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"anchor": 6
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Task List"
+				"font": new java.awt.Font( "Eras Bold ITC", 1, 28 )
+				"foreground": new java.awt.Color( 239, 239, 239, 255 )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:50:x}"
+				"$verticalGroup": "par l {space :0:50:x}"
+			} ) {
+				name: "panel4"
+				"preferredSize": new java.awt.Dimension( 50, 50 )
+				"opaque": false
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 2
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::l::673:x, seq l {comp label2:::p::p, space :p:288:p, comp label3:::p::p, space :0:301:x}}, space :::p}}"
+				"$verticalGroup": "par l {seq l {space :p:17:p, par b {comp label2::b:p::p, comp label3::b:p::p}, space u:::p, comp scrollPane1:::p:438:p, space ::44:x}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 800, 600 )
+				"font": &Font0 new java.awt.Font( "Eras Bold ITC", 1, 14 )
+				"opaque": false
+				"minimumSize": new java.awt.Dimension( 555, 500 )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane1"
+					"font": #Font0
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+						name: "panel5"
+						"font": #Font0
+						"opaque": false
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Item"
+					"font": #Font0
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Status"
+					"font": #Font0
+					"foreground": new java.awt.Color( 239, 239, 239, 255 )
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 1
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:685:x}"
+				"$verticalGroup": "par l {space :0:47:x}"
+			} ) {
+				name: "panel2"
+				"preferredSize": new java.awt.Dimension( 800, 100 )
+				"opaque": false
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 2
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 905, 635 )
+		} )
+	}
+}

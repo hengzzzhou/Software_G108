@@ -1,0 +1,63 @@
+JFDML JFormDesigner: "8.2.3.0.386" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.intellij.uiDesigner.core.GridLayoutManager ) {
+			"$columnCount": 3
+			"$rowCount": 3
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {comp label1:::p::p, space :0:730:x}, seq {space :::p, comp label2:::p::p, space :p:359:p, comp label3:::p::p, space ::296:x, comp label4:::p::p, space :::p}, comp scrollPane1::l::800:x}"
+				"$verticalGroup": "par l {seq l {comp label1:::p::p, space ::20:x, par b {comp label2::b:p::p, comp label3::b:p::p, comp label4::b:p::p}, space :::p, comp scrollPane1:::p:438:p}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 800, 500 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Transaction"
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane1"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.swingx.VerticalLayout ) ) {
+						name: "panel5"
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Time"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Resource"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "Amount"
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 1
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:45:p, comp button1:::p::p, space ::677:x}}"
+				"$verticalGroup": "par l {seq t {comp button1:::p::p, space ::66:x}}"
+			} ) {
+				name: "panel2"
+				"preferredSize": new java.awt.Dimension( 800, 100 )
+				"opaque": false
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "Return"
+				} )
+			}, new FormLayoutConstraints( class com.intellij.uiDesigner.core.GridConstraints ) {
+				"column": 1
+				"row": 2
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 905, 635 )
+		} )
+	}
+}
