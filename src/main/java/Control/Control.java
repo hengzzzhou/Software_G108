@@ -246,7 +246,7 @@ public class Control {
                 }
                 if(parent_account != null){
                     parent_account.dumpTaskList();
-
+                    parent_account.setLogList(parent_account.getLogList());
                 }
             }
             @Override

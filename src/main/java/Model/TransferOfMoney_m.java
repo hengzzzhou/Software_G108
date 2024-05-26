@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import Class.Parent;
 import javax.swing.*;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +54,10 @@ public class TransferOfMoney_m {
     }
 
     public void transferMoney(Parent parent){
+        if(!validTransfer()){
+            this.tansferofMoney.getTransferField5().setText("");
+            return;
+        }
         double transfer=Double.parseDouble(this.tansferofMoney.getTransferField5().getText());
         this.total+=transfer;
         this.change+=transfer;
@@ -60,7 +65,29 @@ public class TransferOfMoney_m {
         this.tansferofMoney.getTotalField1().setText(String.valueOf(this.total));
         this.tansferofMoney.getTransferField5().setText("");
         this.updateAccount(parent);
-
+        this.dumpTransfer(parent, transfer);
+    }
+    public void dumpTransfer(Parent parent, double value){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String timeStamp = df.format(System.currentTimeMillis());
+        String info = timeStamp + "|" + "Transfer" + "|" + String.format("%.2f", value);
+        parent.getLogList().add(info);
+    }
+    public boolean validTransfer(){
+        if(this.tansferofMoney.getTransferField5().getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter a number!");
+            return false;
+        }
+        if(!this.tansferofMoney.getTransferField5().getText().matches("^[0-9]+(.[0-9]{1,2})?$")){
+            JOptionPane.showMessageDialog(null, "Please enter a valid number!");
+            return false;
+        }
+        double transfer=Double.parseDouble(this.tansferofMoney.getTransferField5().getText());
+        if(transfer<=0){
+            JOptionPane.showMessageDialog(null, "Please enter a valid number! (Greater than 0)");
+            return false;
+        }
+        return true;
     }
     public void updateAccount(Parent parent){
         File file = new File("src/main/java/Class/Accounts.jsonl");

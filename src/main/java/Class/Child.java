@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -72,7 +73,12 @@ public class Child extends User{
                     for(int i = 0; i < taskJson.getJSONArray("Tasks").length(); i++){
                         JSONObject taskJsonItem = jsonArray.getJSONObject(i);
                         if (taskJsonItem.getString("taskStatus").equals("Completed")){
-                            this.charge+=taskJsonItem.getInt("taskReward");
+                            int value = taskJsonItem.getInt("taskReward");
+                            this.charge+=value;
+                            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                            String timeStamp = df.format(System.currentTimeMillis());
+                            String info = timeStamp + "|" + "TaskDone" + "|" + String.format("%d", value);
+                            this.logList.add(info);
                             continue;
                         }
                         Task tmp = new Task(taskJsonItem.getString("taskID"), taskJsonItem.getString("taskName"), taskJsonItem.getInt("taskReward"), taskJsonItem.getInt("taskPriority"), taskJsonItem.getString("taskDescription"), taskJsonItem.getString("taskDate"), taskJsonItem.getString("taskStatus"));
@@ -160,5 +166,8 @@ public class Child extends User{
     }
     public String getID() {
         return this.ID;
+    }
+    public void setTotal(int charge){
+        this.charge = charge;
     }
 }
