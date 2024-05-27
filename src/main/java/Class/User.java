@@ -30,6 +30,7 @@ public class User {
     private double timeRate;
     private double total;
     private String depositTime;
+    private int timeLeft;
 
     /******** 以下内容为log有关信息 ********/
     protected List<String> logList;  // list的每一项为(日期|事项|金额)，初始化可对txt文件进行按行读取，此处未实现
@@ -62,13 +63,13 @@ public class User {
                 this.progress = readProgressFromFile(); // 读取进度
                 this.flag = 1;
 
-
                 // 以下内容初始化有关账户的信息
                 this.logList = loadLogListFromFile();
                 this.charge = matchedUsers.getDouble("charge");
                 this.depositTime = matchedUsers.getString("depositTime");
                 this.timeDeposit = matchedUsers.getDouble("timeDeposit");
                 this.timeRate = matchedUsers.getDouble("timeRate");
+                this.timeLeft = matchedUsers.getInt("timeLeft");
                 this.update_timeAndDeposit();
                 this.demandDeposit = matchedUsers.getDouble("demandDeposit");
                 this.total = this.charge + this.timeDeposit + this.demandDeposit;
@@ -157,6 +158,10 @@ public class User {
     public void setID(String username) {
         this.ID = username;
     }
+
+    public int getTimeLeft() { return timeLeft; }
+    public void setTimeLeft(int timeLeft) { this.timeLeft = timeLeft; }
+
     public Double getTimeRate() {
         return timeRate;
     }
@@ -193,18 +198,37 @@ public class User {
         LocalDate date = LocalDate.parse(this.depositTime, formatter);
         int year_pas = date.getYear();
         int month_pas = date.getMonthValue();
-        int day_pas = date.getDayOfMonth();
 
         // 获取系统当前日期
         Calendar cal = Calendar.getInstance();
         int year_cur = cal.get(Calendar.YEAR);
         int month_cur = cal.get(Calendar.MONTH) + 1; // Calendar.MONTH是从0开始的
-        int day_cur = cal.get(Calendar.DAY_OF_MONTH);
 
         // 计算更新后的定期与活期存款 (可进一步完善逻辑)
-        this.timeDeposit = this.timeDeposit + this.timeDeposit * (month_cur - month_pas) * this.timeRate;
+        int period = 0;
+        int flag = 0;
+        if (year_cur == year_pas){
+            period = month_cur - month_pas;
+        } else {
+            period = month_cur - month_pas + 12 * (year_cur - year_pas);
+        }
+
+        if (period < timeLeft){
+            timeLeft -= period;
+        }else{
+            timeLeft = 0;
+            period = timeLeft;
+            flag = 1;
+        }
+
+        this.timeDeposit = this.timeDeposit + this.timeDeposit * period * this.timeRate;
         double demandRate = 0.02;
-        this.demandDeposit = this.demandDeposit + this.demandDeposit * (month_cur - month_pas) * demandRate;
+        this.demandDeposit = this.demandDeposit + this.demandDeposit * period * demandRate;
+
+        if (flag == 1){
+            this.charge += this.timeDeposit;
+            this.timeDeposit = 0;
+        }
 
         // 格式化信息为所需字符串，设置当前日期
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

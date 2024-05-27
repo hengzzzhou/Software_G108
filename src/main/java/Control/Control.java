@@ -204,6 +204,7 @@ public class Control {
                                 jsonObject.put("timeDeposit", child_account.getTimeDeposit());
                                 jsonObject.put("demandDeposit", child_account.getDemandDeposit());
                                 jsonObject.put("depositTime", child_account.getDepositTime());
+                                jsonObject.put("timeLeft", child_account.getTimeLeft());
 
                                 // 以下内容存储了log文件
                                 String logPath = "src/main/java/Class/log.txt";

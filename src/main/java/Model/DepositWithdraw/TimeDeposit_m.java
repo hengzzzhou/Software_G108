@@ -32,13 +32,15 @@ public class TimeDeposit_m {
         double accVal = user.getTimeDeposit();
         double ChaVal = user.getCharge();
 
-        int time = 12;
+        int time = 0;
         if (!Objects.equals(timeDeposit.getTextTime().getText(), "")){
             time = (int)Double.parseDouble(timeDeposit.getTextTime().getText());
         }
 
-        if (time != 0){
+        if (time <= 0){
+            time = 12;
             user.setTimeRate(get_time_rate(time));
+            user.setTimeLeft(time);
         }
 
         if (!checkValidDeposit(user, value)){
