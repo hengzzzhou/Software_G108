@@ -1,0 +1,7 @@
+{"ParentID":"user1","timeRate":0,"charge":26,"demandDeposit":25,"ID":"test","timeDeposit":6,"task_list":"123","depositTime":"2024-05-20","email":"","parentID":"user1","Password":"12"}
+{"ParentID":"user2","timeRate":0,"charge":212.1,"demandDeposit":0,"ID":"test2","timeDeposit":100,"task_list":"123","depositTime":"2024-05-24","email":"","parentID":"user2","Password":"12"}
+{"ParentID":"p","timeRate":0,"charge":1270,"demandDeposit":3,"ID":"c","timeDeposit":0,"task_list":"123","depositTime":"2024-05-26","email":"","parentID":"p","Password":"12"}
+{"ParentID":"parentID","timeRate":0,"charge":100,"demandDeposit":0,"ID":"userID","timeDeposit":0,"task_list":"","depositTime":"2024-05-26","email":"","parentID":"parentID","Password":"password"}
+{"ParentID":"parent1","timeRate":0,"charge":63,"demandDeposit":33,"ID":"child1","timeDeposit":12,"task_list":"123","depositTime":"2024-05-27","email":"","parentID":"parent1","Password":"1234"}
+{"ParentID":"parent2","timeRate":0,"charge":0,"demandDeposit":0,"ID":"child2","timeDeposit":0,"task_list":"123","depositTime":"2024-05-27","email":"","parentID":"parent2","Password":"1234"}
+{"ParentID":"parent3","timeRate":0,"charge":53,"demandDeposit":12,"ID":"child3","timeDeposit":59,"task_list":"123","depositTime":"2024-05-27","email":"","parentID":"parent3","Password":"12"}
